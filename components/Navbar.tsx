@@ -10,7 +10,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > window.innerHeight * 0.1) {
+      if (window.scrollY > window.innerHeight * 0.2) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -23,8 +23,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full h-[16vh] px-[18px] ${
-        isScrolled ? "bg-[#FFF4F5]" : "bg-transparent"
+      className={`fixed top-0 w-full h-[16vh] px-[18px] transition-all ease-linear duration-200 ${
+        isScrolled ? "bg-white" : "bg-transparent"
       } flex items-center justify-between z-[5]`}
     >
       <Link href="/">

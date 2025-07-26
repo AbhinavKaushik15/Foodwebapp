@@ -1,8 +1,6 @@
 import Image from "next/image";
 
 const page = () => {
-
-
   return (
     // Hero Section
     <>
@@ -112,6 +110,98 @@ const page = () => {
               width={300}
               height={300}
             />
+          </div>
+        </div>
+      </div>
+
+      <div className="explore w-full h-[135vh] mt-[25.5vh]">
+        <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-3xl text-center">
+          Explore
+        </h3>
+        <h1 className="font-['figtree'] text-[8.7vh] text-center font-[900] mt-4">
+          Our Delicious Menu
+        </h1>
+
+        <div className="w-full gap-10 flex flex-nowrap items-center justify-center mt-[7.5vh]">
+          <div className="w-[75vw] flex flex-wrap items-center justify-center gap-[7vh]">
+            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+              <Image
+                className="w-40 h-40"
+                src="/image/food-menu-1.webp"
+                alt="menu1"
+                width={100}
+                height={100}
+              />
+              <h1 className="text-2xl font-[900] font-['figtree']">Cakes</h1>
+              <h2 className="font-['Fredoka'] text-xl text-[#DB6885] font-black">
+                3 Menu
+              </h2>
+            </div>
+            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+              <Image
+                className="w-40 h-40"
+                src="/image/food-menu-2.webp"
+                alt="menu2"
+                width={100}
+                height={100}
+              />
+              <h1 className="text-2xl font-[900] font-['figtree']">Cupcakes</h1>
+              <h2 className="font-['Fredoka'] text-xl text-[#DB6885] font-black">
+                3 Menu
+              </h2>
+            </div>
+            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+              <Image
+                className="w-40 h-40"
+                src="/image/food-menu-3.webp"
+                alt="menu3"
+                width={100}
+                height={100}
+              />
+              <h1 className="text-2xl font-[900] font-['figtree']">Donuts</h1>
+              <h2 className="font-['Fredoka'] text-xl text-[#DB6885] font-black">
+                2 Menu
+              </h2>
+            </div>
+            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+              <Image
+                className="w-40 h-40"
+                src="/image/food-menu-4.webp"
+                alt="menu4"
+                width={100}
+                height={100}
+              />
+              <h1 className="text-2xl font-[900] font-['figtree']">Cookies</h1>
+              <h2 className="font-['Fredoka'] text-xl text-[#DB6885] font-black">
+                1 Menu
+              </h2>
+            </div>
+            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+              <Image
+                className="w-40 h-40"
+                src="/image/food-menu-5.webp"
+                alt="menu5"
+                width={100}
+                height={100}
+              />
+              <h1 className="text-2xl font-[900] font-['figtree']">Macarons</h1>
+              <h2 className="font-['Fredoka'] text-xl text-[#DB6885] font-black">
+                0 Menu
+              </h2>
+            </div>
+            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+              <Image
+                className="w-40 h-40"
+                src="/image/food-menu-6.webp"
+                alt="menu6"
+                width={100}
+                height={100}
+              />
+              <h1 className="text-2xl font-[900] font-['figtree']">Drinks</h1>
+              <h2 className="font-['Fredoka'] text-xl text-[#DB6885] font-black">
+                0 Menu
+              </h2>
+            </div>
           </div>
         </div>
       </div>
