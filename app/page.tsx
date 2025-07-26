@@ -1,103 +1,122 @@
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+const page = () => {
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+
+  return (
+    // Hero Section
+    <>
+      <div className="w-full h-[100vh] bg-[#FFF4F5]">
+        <Image
+          className="absolute top-0 right-0 w-[34.75vw]"
+          src="/image/hero-shape.png"
+          alt="shape"
+          width={1000}
+          height={1000}
+        />
+
+        <Image
+          className="absolute top-[13.1vh] right-[44.5px] w-[47.45vw]"
+          src="/image/hero-cake.webp"
+          alt="shape"
+          width={1000}
+          height={1000}
+        />
+
+        <div className="absolute w-[50vw] h-[120vh] left-4">
+          <h1 className="text-[#DB6885] text-[2vw] mt-2 font-black font-['Fredoka']">
+            Welcome to Fofood
+          </h1>
+
+          <h1 className="text-[5vw] tracking-tight leading-[1.3] mt-5 font-black text-[#2F3137] font-['Figtree']">
+            Super Delicious Food Special for You
+          </h1>
+          <p className="text-[1.32vw] text-zinc-600 w-[27vw] font-[500] leading-[1.9] mt-7">
+            Order your favorites food from anywhere and get delivery at your
+            door
+          </p>
+
+          <div className="flex items-center gap-5 mt-[5.1vh]">
+            <button className="px-[3.1vw] text-lg tracking-tight py-[2.8vh] shadow-[#DB6885] shadow-2xl bg-[#DB6885] hover:bg-[#FFC008] rounded-full text-white hover:text-black transition-all ease-linear duration-200">
+              Order Now
+            </button>
+            <button className="px-[2.85vw] text-lg tracking-tight py-[2.7vh] bg-white border border-[#DB6885] hover:bg-[#DB6885] rounded-full text-[#DB6885] hover:text-white transition-all ease-linear duration-200">
+              Learn More
+            </button>
+          </div>
+
+          <div className="w-1/2 flex items-center justify-between mt-[10.8vh] bg-blue-[200]">
+            <div className="flex">
+              <Image
+                className="w-14 h-14 rounded-full bg-red-400 border-white border-[2px]"
+                src="/image/avatar-1.webp"
+                alt="avatar1"
+                width={50}
+                height={50}
+              />
+              <Image
+                className="w-14 h-14 rounded-full bg-red-400 border-white border-[2px] -ml-3"
+                src="/image/avatar-2.webp"
+                alt="avatar2"
+                width={50}
+                height={50}
+              />
+              <Image
+                className="w-14 h-14 rounded-full bg-red-400 border-white border-[2px] -ml-3"
+                src="/image/avatar-3.webp"
+                alt="avatar3"
+                width={50}
+                height={50}
+              />
+              <Image
+                className="w-14 h-14 rounded-full bg-red-400 border-white border-[2px] -ml-3"
+                src="/image/avatar-4.webp"
+                alt="avatar4"
+                width={50}
+                height={50}
+              />
+            </div>
+
+            <div className="w-fit flex flex-col items-center justify-center">
+              <div className="tracking-tighter text-[2.4vh] font-[600] text-zinc-700">
+                Our Happy Customers
+              </div>
+              <div className="flex items-center">
+                <span className="text-sm -ml-[1.4vh] mr-1">⭐</span>
+                <span className="tracking-tighter text-[2.4vh] font-[600] text-zinc-700 mr-1">
+                  4.9
+                </span>
+                <span className="text-zinc-600 text-[2.4vh] tracking-tighter">
+                  (12.8k reviews)
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <h1 className="text-[1.03vw] text-zinc-600 w-[27vw] font-[500] leading-[1.9] mt-8 font-['Fredoka']">
+            For Better Service Download Our Mobile App Now
+          </h1>
+
+          <div className="flex items-center gap-5 mt-3">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              className="w-[13.63vw]"
+              src="/image/btn-google-play.webp"
+              alt="appStore"
+              width={300}
+              height={300}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <Image
+              className="w-[13.63vw]"
+              src="/image/btn-app-store.webp"
+              alt="googlePlay"
+              width={300}
+              height={300}
+            />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </>
   );
-}
+};
+
+export default page;
