@@ -1,9 +1,10 @@
+import { Images } from "lucide-react";
 import Image from "next/image";
 
 const page = () => {
   return (
-    // Hero Section
     <>
+      {/* Hero Section */}
       <div className="w-full h-[100vh] bg-[#FFF4F5]">
         <Image
           className="absolute top-0 right-0 w-[34.75vw]"
@@ -114,6 +115,7 @@ const page = () => {
         </div>
       </div>
 
+      {/* Explore */}
       <div className="explore w-full h-[135vh] mt-[25.5vh]">
         <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-3xl text-center">
           Explore
@@ -122,6 +124,7 @@ const page = () => {
           Our Delicious Menu
         </h1>
 
+        {/* Explore Cards */}
         <div className="w-full gap-10 flex flex-nowrap items-center justify-center mt-[7.5vh]">
           <div className="w-[75vw] flex flex-wrap items-center justify-center gap-[7vh]">
             <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
@@ -203,6 +206,42 @@ const page = () => {
               </h2>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* About us */}
+      <div className="w-full h-[100vh] flex items-center justify-between">
+        <div className="left-imgs w-1/2 h-[90vh] flex gap-8 px-[2.8vh]">
+          <Image
+            className="w-[21vw] h-[67vh] rounded-2xl mt-5"
+            src="/image/about-us-1.webp"
+            alt=""
+            width={800}
+            height={800}
+          />
+          <Image
+            className="w-[21vw] h-[67vh] rounded-2xl mt-[11vh]"
+            src="/image/about-us-2.webp"
+            alt=""
+            width={800}
+            height={800}
+          />
+        </div>
+
+        <div className="right-details w-1/2 h-[90vh] bg-[#94d63155] py-10 px-[8.1vh]">
+          <h3 className="text-[#DB6885] text-[2.15vw] font-black font-['Fredoka']">
+            About us
+          </h3>
+          <h1 className="font-['figtree'] font-[900] text-[8.6vh] mt-3">
+            Welcome to Fofood
+          </h1>
+          <p className="w-[35vw] text-zinc-600 text-[2.6vh] leading-[2.1] mt-6">
+            Welcome to Fofood, where we‘re committed to combating food deserts.
+            Our goal is to ensure everyone has access to fresh, healthy, and
+            affordable food, regardless of their location. Join us in creating a
+            brighter future for all.
+          </p>
+          <button className="px-14 text-[#DB6885  ]">Read More</button>
         </div>
       </div>
     </>
