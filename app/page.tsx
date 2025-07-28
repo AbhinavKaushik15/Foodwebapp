@@ -1,5 +1,10 @@
-import { Heart, Images } from "lucide-react";
+"use client";
+import { Heart } from "lucide-react";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css/pagination";
+import "swiper/css";
 
 const page = () => {
   return (
@@ -248,7 +253,7 @@ const page = () => {
       </div>
 
       {/* Popular Menu */}
-      <div className="w-full h-[170vh] mt-[11.2vh] bg-blue-100">
+      <div className="relative w-full h-[190vh] mt-[11.2vh]">
         <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-3xl text-center">
           Popular Menu
         </h3>
@@ -256,100 +261,334 @@ const page = () => {
           Most Popular Food
         </h1>
 
+        {/* Popular Food List */}
         <div className="w-full gap-10 flex flex-nowrap items-center justify-center mt-[7.5vh]">
           <div className="w-full flex flex-wrap items-center justify-center -mt-5 gap-[4vh] px-2">
-            <div className="w-[48vh] h-[56vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+            <div className="relative w-[48vh] h-[56vh] rounded-xl flex flex-col items-center">
               <Image
-                className="w-[34vh] h-[34vh]"
+                className="w-[34vh] h-[34vh] absolute top-5"
                 src="/image/food-1.webp"
-                alt="menu1"
+                alt="food-1"
                 width={100}
                 height={100}
               />
-              <h1 className="text-[3.9vh] font-[900] font-['figtree'] hover:text-[#DB6885] hover:underline transition-all ease-linear duration-200 cursor-pointer">
-                Chococheese Cake
-              </h1>
-              <h2 className="font-['Fredoka'] text-[3vh] text-[#DB6885] font-black">
-                $2.5
-              </h2>
-
-              <div className="flex items-center gap-2 mt-3">
-                <div className="circle w-9 h-9 rounded-full border-[1.5px] border-[#DB6885] hover:bg-[#DB6885] flex items-center justify-center text-[#DB6885] hover:text-white transition-all ease-linear duration-200">
-                  <Heart />
+              <div className="group w-full h-36 flex items-center justify-center gap-10 mt-54">
+                <div className="flex flex-col items-center justify-center mb-8">
+                  <h1 className="text-[3.9vh] font-[900] font-['figtree'] hover:text-[#DB6885] hover:underline transition-all ease-linear duration-200 cursor-pointer">
+                    Chococheese Cake
+                  </h1>
+                  <h2 className="font-['Fredoka'] text-[3vh] text-[#DB6885] font-black">
+                    $2.5
+                  </h2>
                 </div>
-                <button className="px-9 py-2 bg-[#DB6885] hover:bg-[#FFC107] hover:text-black text-white rounded-full transition-all ease-linear duration-200">
-                  Add to Cart
-                </button>
+
+                <div className="group-hover:block hidden transition-all ease-linear duration-200 absolute bottom-0">
+                  <div className="flex gap-2">
+                    <div className="circle w-9 h-9 rounded-full border-[1.5px] border-[#DB6885] hover:bg-[#DB6885] flex items-center justify-center text-[#DB6885] hover:text-white transition-all ease-linear duration-200">
+                      <Heart />
+                    </div>
+                    <button className="px-9 py-2 bg-[#DB6885] hover:bg-[#FFC107] hover:text-black text-white rounded-full transition-all ease-linear duration-200">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
+            <div className="relative w-[48vh] h-[56vh] rounded-xl flex flex-col items-center">
+              <Image
+                className="w-[34vh] h-[34vh] absolute top-5"
+                src="/image/food-2.webp"
+                alt="food-2"
+                width={100}
+                height={100}
+              />
+              <div className="group w-full h-36 flex items-center justify-center gap-10 mt-54">
+                <div className="flex flex-col items-center justify-center mb-8">
+                  <h1 className="text-[3.9vh] font-[900] font-['figtree'] hover:text-[#DB6885] hover:underline transition-all ease-linear duration-200 cursor-pointer">
+                    Pink Donuts
+                  </h1>
+                  <h2 className="font-['Fredoka'] text-[3vh] text-[#DB6885] font-black">
+                    $2.8
+                  </h2>
+                </div>
 
-            <div className="w-[48vh] h-[50vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
-              <Image
-                className="w-40 h-40"
-                src="/image/food-menu-2.webp"
-                alt="menu2"
-                width={100}
-                height={100}
-              />
-              <h1 className="text-2xl font-[900] font-['figtree']">Cupcakes</h1>
-              <h2 className="font-['Fredoka'] text-xl text-[#DB6885] font-black">
-                3 Menu
-              </h2>
+                <div className="group-hover:block hidden transition-all ease-linear duration-200 absolute bottom-0">
+                  <div className="flex gap-2">
+                    <div className="circle w-9 h-9 rounded-full border-[1.5px] border-[#DB6885] hover:bg-[#DB6885] flex items-center justify-center text-[#DB6885] hover:text-white transition-all ease-linear duration-200">
+                      <Heart />
+                    </div>
+                    <button className="px-9 py-2 bg-[#DB6885] hover:bg-[#FFC107] hover:text-black text-white rounded-full transition-all ease-linear duration-200">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+            <div className="relative w-[48vh] h-[56vh] rounded-xl flex flex-col items-center">
               <Image
-                className="w-40 h-40"
-                src="/image/food-menu-3.webp"
-                alt="menu3"
+                className="w-[34vh] h-[34vh] absolute top-5"
+                src="/image/food-3.webp"
+                alt="food-3"
                 width={100}
                 height={100}
               />
-              <h1 className="text-2xl font-[900] font-['figtree']">Donuts</h1>
-              <h2 className="font-['Fredoka'] text-xl text-[#DB6885] font-black">
-                2 Menu
-              </h2>
+              <div className="group w-full h-36 flex items-center justify-center gap-10 mt-54">
+                <div className="flex flex-col items-center justify-center mb-8">
+                  <h1 className="text-[3.9vh] font-[900] font-['figtree'] hover:text-[#DB6885] hover:underline transition-all ease-linear duration-200 cursor-pointer">
+                    Choco Cake
+                  </h1>
+                  <h2 className="font-['Fredoka'] text-[3vh] text-[#DB6885] font-black">
+                    $2.9
+                  </h2>
+                </div>
+
+                <div className="group-hover:block hidden transition-all ease-linear duration-200 absolute bottom-0">
+                  <div className="flex gap-2">
+                    <div className="circle w-9 h-9 rounded-full border-[1.5px] border-[#DB6885] hover:bg-[#DB6885] flex items-center justify-center text-[#DB6885] hover:text-white transition-all ease-linear duration-200">
+                      <Heart />
+                    </div>
+                    <button className="px-9 py-2 bg-[#DB6885] hover:bg-[#FFC107] hover:text-black text-white rounded-full transition-all ease-linear duration-200">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+            <div className="relative w-[48vh] h-[56vh] rounded-xl flex flex-col items-center">
               <Image
-                className="w-40 h-40"
-                src="/image/food-menu-4.webp"
-                alt="menu4"
+                className="w-[34vh] h-[34vh] absolute top-5"
+                src="/image/food-4.webp"
+                alt="food-4"
                 width={100}
                 height={100}
               />
-              <h1 className="text-2xl font-[900] font-['figtree']">Cookies</h1>
-              <h2 className="font-['Fredoka'] text-xl text-[#DB6885] font-black">
-                1 Menu
-              </h2>
+              <div className="group w-full h-36 flex items-center justify-center gap-10 mt-54">
+                <div className="flex flex-col items-center justify-center mb-8">
+                  <h1 className="text-[3.9vh] font-[900] font-['figtree'] hover:text-[#DB6885] hover:underline transition-all ease-linear duration-200 cursor-pointer">
+                    Sweet Cake
+                  </h1>
+                  <h2 className="font-['Fredoka'] text-[3vh] text-[#DB6885] font-black">
+                    $2.3
+                  </h2>
+                </div>
+
+                <div className="group-hover:block hidden transition-all ease-linear duration-200 absolute bottom-0">
+                  <div className="flex gap-2">
+                    <div className="circle w-9 h-9 rounded-full border-[1.5px] border-[#DB6885] hover:bg-[#DB6885] flex items-center justify-center text-[#DB6885] hover:text-white transition-all ease-linear duration-200">
+                      <Heart />
+                    </div>
+                    <button className="px-9 py-2 bg-[#DB6885] hover:bg-[#FFC107] hover:text-black text-white rounded-full transition-all ease-linear duration-200">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+            <div className="relative w-[48vh] h-[56vh] rounded-xl flex flex-col items-center">
               <Image
-                className="w-40 h-40"
-                src="/image/food-menu-5.webp"
-                alt="menu5"
+                className="w-[34vh] h-[34vh] absolute top-5"
+                src="/image/food-5.webp"
+                alt="food-5"
                 width={100}
                 height={100}
               />
-              <h1 className="text-2xl font-[900] font-['figtree']">Macarons</h1>
-              <h2 className="font-['Fredoka'] text-xl text-[#DB6885] font-black">
-                0 Menu
-              </h2>
+              <div className="group w-full h-36 flex items-center justify-center gap-10 mt-54">
+                <div className="flex flex-col items-center justify-center mb-8">
+                  <h1 className="text-[3.9vh] font-[900] font-['figtree'] hover:text-[#DB6885] hover:underline transition-all ease-linear duration-200 cursor-pointer">
+                    Pink Sweet
+                  </h1>
+                  <h2 className="font-['Fredoka'] text-[3vh] text-[#DB6885] font-black">
+                    $2.1
+                  </h2>
+                </div>
+
+                <div className="group-hover:block hidden transition-all ease-linear duration-200 absolute bottom-0">
+                  <div className="flex gap-2">
+                    <div className="circle w-9 h-9 rounded-full border-[1.5px] border-[#DB6885] hover:bg-[#DB6885] flex items-center justify-center text-[#DB6885] hover:text-white transition-all ease-linear duration-200">
+                      <Heart />
+                    </div>
+                    <button className="px-9 py-2 bg-[#DB6885] hover:bg-[#FFC107] hover:text-black text-white rounded-full transition-all ease-linear duration-200">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+            <div className="relative w-[48vh] h-[56vh] rounded-xl flex flex-col items-center">
               <Image
-                className="w-40 h-40"
-                src="/image/food-menu-6.webp"
-                alt="menu6"
+                className="w-[34vh] h-[34vh] absolute top-5"
+                src="/image/food-6.webp"
+                alt="food-6"
                 width={100}
                 height={100}
               />
-              <h1 className="text-2xl font-[900] font-['figtree']">Drinks</h1>
-              <h2 className="font-['Fredoka'] text-xl text-[#DB6885] font-black">
-                0 Menu
-              </h2>
+              <div className="group w-full h-36 flex items-center justify-center gap-10 mt-54">
+                <div className="flex flex-col items-center justify-center mb-8">
+                  <h1 className="text-[3.9vh] font-[900] font-['figtree'] hover:text-[#DB6885] hover:underline transition-all ease-linear duration-200 cursor-pointer">
+                    Choco Cookies
+                  </h1>
+                  <h2 className="font-['Fredoka'] text-[3vh] text-[#DB6885] font-black">
+                    $2.8
+                  </h2>
+                </div>
+
+                <div className="group-hover:block hidden transition-all ease-linear duration-200 absolute bottom-0">
+                  <div className="flex gap-2">
+                    <div className="circle w-9 h-9 rounded-full border-[1.5px] border-[#DB6885] hover:bg-[#DB6885] flex items-center justify-center text-[#DB6885] hover:text-white transition-all ease-linear duration-200">
+                      <Heart />
+                    </div>
+                    <button className="px-9 py-2 bg-[#DB6885] hover:bg-[#FFC107] hover:text-black text-white rounded-full transition-all ease-linear duration-200">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative w-[48vh] h-[56vh] rounded-xl flex flex-col items-center">
+              <Image
+                className="w-[34vh] h-[34vh] absolute top-5"
+                src="/image/food-7.webp"
+                alt="food-7"
+                width={100}
+                height={100}
+              />
+              <div className="group w-full h-36 flex items-center justify-center gap-10 mt-54">
+                <div className="flex flex-col items-center justify-center mb-8">
+                  <h1 className="text-[3.9vh] font-[900] font-['figtree'] hover:text-[#DB6885] hover:underline transition-all ease-linear duration-200 cursor-pointer">
+                    Sweet Donuts
+                  </h1>
+                  <h2 className="font-['Fredoka'] text-[3vh] text-[#DB6885] font-black">
+                    $1.8
+                  </h2>
+                </div>
+
+                <div className="group-hover:block hidden transition-all ease-linear duration-200 absolute bottom-0">
+                  <div className="flex gap-2">
+                    <div className="circle w-9 h-9 rounded-full border-[1.5px] border-[#DB6885] hover:bg-[#DB6885] flex items-center justify-center text-[#DB6885] hover:text-white transition-all ease-linear duration-200">
+                      <Heart />
+                    </div>
+                    <button className="px-9 py-2 bg-[#DB6885] hover:bg-[#FFC107] hover:text-black text-white rounded-full transition-all ease-linear duration-200">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative w-[48vh] h-[56vh] rounded-xl flex flex-col items-center">
+              <Image
+                className="w-[34vh] h-[34vh] absolute top-5"
+                src="/image/food-8.webp"
+                alt="food-8"
+                width={100}
+                height={100}
+              />
+              <div className="group w-full h-36 flex items-center justify-center gap-10 mt-54">
+                <div className="flex flex-col items-center justify-center mb-8">
+                  <h1 className="text-[3.9vh] font-[900] font-['figtree'] hover:text-[#DB6885] hover:underline transition-all ease-linear duration-200 cursor-pointer">
+                    Sweet Choco
+                  </h1>
+                  <h2 className="font-['Fredoka'] text-[3vh] text-[#DB6885] font-black">
+                    $3.6
+                  </h2>
+                </div>
+
+                <div className="group-hover:block hidden transition-all ease-linear duration-200 absolute bottom-0">
+                  <div className="flex gap-2">
+                    <div className="circle w-9 h-9 rounded-full border-[1.5px] border-[#DB6885] hover:bg-[#DB6885] flex items-center justify-center text-[#DB6885] hover:text-white transition-all ease-linear duration-200">
+                      <Heart />
+                    </div>
+                    <button className="px-9 py-2 bg-[#DB6885] hover:bg-[#FFC107] hover:text-black text-white rounded-full transition-all ease-linear duration-200">
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Button */}
+        <button className="absolute left-1/2 -translate-x-1/2 bottom-[162px] px-[6.8vh] font-['figtree'] font-[900] text-[#DB6885] text-[2.55vh] border border-[#DB6885] py-[2.88vh] rounded-full mt-6">
+          See All Menu
+        </button>
+      </div>
+
+      {/* Testimonial */}
+      <div className="relative w-full h-[150vh]">
+        <Image
+          className="absolute w-[96vw] h-[130vh] left-1/2 -translate-x-1/2"
+          src="/image/bg-testimonial.jpg"
+          alt="testimonialBG"
+          width={1000}
+          height={1000}
+        />
+        <div className="absolute left-1/2 -translate-x-1/2 top-24">
+          <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-3xl text-center">
+            Testimonial
+          </h3>
+          <h1 className="font-['figtree'] text-[8.7vh] text-center font-[900] mt-4">
+            What People Say
+          </h1>
+        </div>
+        <Swiper
+          pagination={true}
+          modules={[Pagination, Navigation]}
+          className="mySwiper absolute top-[44.5vh] w-[56.5vw] h-[56.5vh] bg-white rounded-2xl"
+        >
+          <SwiperSlide className="relative">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vw] h-full flex flex-col gap-4 items-center justify-center">
+              <Image
+                className="w-14 h-14 rounded-full bg-red-400 border-white border-[2px]"
+                src="/image/avatar-1.webp"
+                alt="avatar1"
+                width={50}
+                height={50}
+              />
+              <h1 className="text-xl font-[900] font-['figtree']">
+                It's very Delicious!
+              </h1>
+              <p>⭐⭐⭐⭐⭐</p>
+              <p className="text-lg text-center font-['figtree'] font-[500] text-zinc-700 leading-[1.8]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti architecto adipisci corporis similique non quisquam
+                omnis, nulla natus, fugiat quae accusantium fuga molestiae iusto
+                quas!
+              </p>
+              <h1 className="font-['Fredoka'] font-[900] text-[#DB6885]">
+                Abhinav Kaushik
+              </h1>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vw] h-full flex flex-col gap-4 items-center justify-center">
+              <Image
+                className="w-14 h-14 rounded-full bg-red-400 border-white border-[2px]"
+                src="/image/avatar-2.webp"
+                alt="avatar2"
+                width={50}
+                height={50}
+              />
+              <h1 className="text-xl font-[900] font-['figtree']">
+                It's very Delicious!
+              </h1>
+              <p>⭐⭐⭐⭐⭐</p>
+              <p className="text-lg text-center font-['figtree'] font-[500] text-zinc-700 leading-[1.8]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti architecto adipisci corporis similique non quisquam
+                omnis, nulla natus, fugiat quae accusantium fuga molestiae iusto
+                quas!
+              </p>
+              <h1 className="font-['Fredoka'] font-[900] text-[#DB6885]">
+                Harsh Kumar
+              </h1>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+
+      {/* Our Blog */}
+      <div className="w-full h-[150vh]">
+        
       </div>
     </>
   );
