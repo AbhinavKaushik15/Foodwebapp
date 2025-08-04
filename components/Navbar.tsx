@@ -4,8 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import ContactButton from "./ContactButton";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const tabs = [
+    { label: "home", path: "/" },
+    { label: "about", path: "/about" },
+    { label: "menu", path: "/menu" },
+    { label: "blog", path: "/blog" },
+  ];
+
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -39,34 +48,33 @@ const Navbar = () => {
 
       <div className="flex items-center gap-[62px]">
         <div className="flex items-center gap-[71.5px]">
-          <Link className="font-[500] tracking-wide text-zinc-800" href="/">
-            Home
-          </Link>
-          <Link className="font-[500] tracking-wide text-zinc-800" href="/">
-            About
-          </Link>
-          <Link className="font-[500] tracking-wide text-zinc-800" href="/">
-            Menu
-          </Link>
-          <Link className="font-[500] tracking-wide text-zinc-800" href="/">
-            Blog
-          </Link>
-          <Link className="flex items-center gap-1" href="/">
-            Pages <ChevronDown className="w-4 h-4" />
-          </Link>
+          {tabs.map(({ label, path }) => (
+            <Link
+              key={label}
+              href={path}
+              className={`capitalize font-[500] ${
+                pathname === path
+                  ? "text-[#DB6885]"
+                  : "text-zinc-800 hover:text-[#DB6885]"
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
         </div>
         <Link
-          className="flex items-center gap-2 font-[500] tracking-wide text-zinc-800"
-          href="/"
+          className="flex items-center gap-2 font-[500] tracking-wide text-zinc-800 hover:text-[#DB6885]"
+          href="/my-favorites"
         >
-          <Heart className="w-[3.2vh] h-[3.2vh] text-zinc-800" /> My Favorites
+          <Heart className="w-[3.2vh] h-[3.2vh] text-zinc-800 hover:text-[#DB6885]" />
+          My Favorites
         </Link>
         <div className="w-[0.5px] h-6 bg-[#dadada]"></div>
         <Link
-          className="flex items-center gap-2 font-[500] tracking-wide text-zinc-800"
-          href="/"
+          className="flex items-center gap-2 font-[500] tracking-wide text-zinc-800 hover:text-[#DB6885]"
+          href="/my-cart"
         >
-          <ShoppingCart className="text-zinc-800" />
+          <ShoppingCart className="text-zinc-800 font-[100] w-5 h-5" />
           My Cart
         </Link>
         <Link href="/">
