@@ -66,7 +66,7 @@ export default function SplashCursor({
   SHADING = true,
   COLOR_UPDATE_SPEED = 10,
   BACK_COLOR = { r: 0.5, g: 0, b: 0 },
-  TRANSPARENT = true
+  TRANSPARENT = true,
 }: SplashCursorProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -1511,7 +1511,11 @@ export default function SplashCursor({
 
   return (
     <div className="fixed top-0 left-0 z-50 pointer-events-none w-full h-full">
-      <canvas ref={canvasRef} id="fluid" className="w-screen h-screen block"></canvas>
+      <canvas
+        ref={canvasRef}
+        id="fluid"
+        className="w-screen h-screen block"
+      ></canvas>
     </div>
   );
 }

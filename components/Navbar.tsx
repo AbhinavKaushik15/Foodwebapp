@@ -3,7 +3,6 @@ import { ChevronDown, Heart, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import ContactButton from "./ContactButton";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
@@ -63,22 +62,29 @@ const Navbar = () => {
           ))}
         </div>
         <Link
-          className="flex items-center gap-2 font-[500] tracking-wide text-zinc-800 hover:text-[#DB6885]"
+          className={`flex items-center gap-2 font-[500] tracking-wide ${
+            pathname === "/my-favorites"
+              ? "text-[#DB6885]"
+              : "text-zinc-800 hover:text-[#DB6885]"
+          }`}
           href="/my-favorites"
         >
-          <Heart className="w-[3.2vh] h-[3.2vh] text-zinc-800 hover:text-[#DB6885]" />
+          <Heart className="w-[3.2vh] h-[3.2vh]" />
           My Favorites
         </Link>
         <div className="w-[0.5px] h-6 bg-[#dadada]"></div>
         <Link
-          className="flex items-center gap-2 font-[500] tracking-wide text-zinc-800 hover:text-[#DB6885]"
+          className={`flex items-center gap-2 font-[500] tracking-wide ${pathname === "/my-cart" ? "text-[#DB6885]" : "text-zinc-800 hover:text-[#DB6885]"}`}
           href="/my-cart"
         >
-          <ShoppingCart className="text-zinc-800 font-[100] w-5 h-5" />
+          <ShoppingCart className="font-[100] w-5 h-5" />
           My Cart
         </Link>
-        <Link href="/">
-          <ContactButton />
+        <Link
+          className={`px-[27px] py-[7px] rounded-full text-[1.2vw] tight-wide transition-all duration-200 ease-linear ${pathname === "/contact" ? "border border-[#DB6885] text-white bg-[#DB6885]" : "border hover:border-[#DB6885] hover:bg-[#DB6885] hover:text-white"}`}
+          href="/contact"
+        >
+          <div>Contact us</div>
         </Link>
       </div>
     </nav>

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Heart } from "lucide-react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,6 +9,9 @@ import "swiper/css";
 import Link from "next/link";
 
 const Homepage = () => {
+  useEffect(() => {
+    document.title = "Homepage | Fofood";
+  }, []);
   return (
     <>
       {/* Hero Section */}

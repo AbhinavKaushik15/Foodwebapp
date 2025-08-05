@@ -1,12 +1,15 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css";
 
 const about = () => {
+    useEffect(() => {
+      document.title = "About | Fofood";
+    }, []);
   return (
     <div className="w-full">
       {/* top page */}
