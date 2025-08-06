@@ -6,6 +6,8 @@ import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const tabs = [
     { label: "home", path: "/" },
     { label: "about", path: "/about" },
@@ -30,64 +32,81 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 w-full h-[16vh] px-[18px] transition-all ease-linear duration-200 ${
-        isScrolled ? "bg-white" : "bg-transparent"
-      } flex items-center justify-between z-[5]`}
-    >
-      <Link href="/">
-        <Image
-          className="w-[5.9vw]"
-          src="/image/logo-color.webp"
-          alt="logo"
-          width={100}
-          height={100}
-        />
-      </Link>
+    <div className="relative">
+      <div className="absolute -top-[71.9vh] h-[71.9vh] w-full bg-gradient-to-b from-white z-[20] to-white/80"></div>
+      <nav
+        className={`fixed top-0 w-full h-[16vh] px-[94px] lg:px-[18px] transition-all ease-linear duration-200 ${
+          isScrolled ? "bg-[#ffffffdc] lg:bg-white" : "bg-transparent"
+        } flex items-center justify-between z-[15]`}
+      >
+        <Link href="/">
+          <Image
+            className="w-[85px]"
+            src="/image/logo-color.webp"
+            alt="logo"
+            width={120}
+            height={120}
+          />
+        </Link>
 
-      <div className="flex items-center gap-[62px]">
-        <div className="flex items-center gap-[71.5px]">
-          {tabs.map(({ label, path }) => (
+        <div className="hidden sm:flex items-center lg:gap-[4.6vw] xl:gap-[5.9vw]">
+          <div className="hidden lg:flex items-center lg:gap-[4.4vw] xl:gap-[5.75vw] font-['fredoka'] font-[700]">
+            {tabs.map(({ label, path }) => (
+              <Link
+                key={label}
+                href={path}
+                className={`capitalize ${
+                  pathname === path
+                    ? "text-[#DB6885]"
+                    : "text-zinc-800 hover:text-[#DB6885]"
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+          <div className="hidden lg:flex items-center lg:gap-[3.2vw] xl:gap-[4.23vw] font-['fredoka'] font-[700]">
             <Link
-              key={label}
-              href={path}
-              className={`capitalize font-[500] ${
-                pathname === path
+              className={`flex items-center gap-2 tracking-wide ${
+                pathname === "/my-favorites"
                   ? "text-[#DB6885]"
                   : "text-zinc-800 hover:text-[#DB6885]"
               }`}
+              href="/my-favorites"
             >
-              {label}
+              <Heart className="w-[3.2vh] h-[3.2vh]" />
+              My Favorites
             </Link>
-          ))}
+            <div className="w-[0.5px] h-5 bg-zinc-400 mx-1"></div>
+            <Link
+              className={`flex items-center gap-2 tracking-wide ${pathname === "/my-cart" ? "text-[#DB6885]" : "text-zinc-800 hover:text-[#DB6885]"}`}
+              href="/my-cart"
+            >
+              <ShoppingCart className="font-[100] w-5 h-5" />
+              My Cart
+            </Link>
+            <Link
+              className={`px-[27.3px] py-[7.2px] rounded-full text-[17px] font-['figtree'] font-[600] tracking-tight transition-all duration-200 ease-linear ${pathname === "/contact" ? "border border-[#DB6885] text-white bg-[#DB6885]" : "border hover:border-[#DB6885] hover:bg-[#DB6885] hover:text-white"}`}
+              href="/contact"
+            >
+              <div>Contact us</div>
+            </Link>
+          </div>
         </div>
-        <Link
-          className={`flex items-center gap-2 font-[500] tracking-wide ${
-            pathname === "/my-favorites"
-              ? "text-[#DB6885]"
-              : "text-zinc-800 hover:text-[#DB6885]"
-          }`}
-          href="/my-favorites"
-        >
-          <Heart className="w-[3.2vh] h-[3.2vh]" />
-          My Favorites
-        </Link>
-        <div className="w-[0.5px] h-6 bg-[#dadada]"></div>
-        <Link
-          className={`flex items-center gap-2 font-[500] tracking-wide ${pathname === "/my-cart" ? "text-[#DB6885]" : "text-zinc-800 hover:text-[#DB6885]"}`}
-          href="/my-cart"
-        >
-          <ShoppingCart className="font-[100] w-5 h-5" />
-          My Cart
-        </Link>
-        <Link
-          className={`px-[27px] py-[7px] rounded-full text-[1.2vw] tight-wide transition-all duration-200 ease-linear ${pathname === "/contact" ? "border border-[#DB6885] text-white bg-[#DB6885]" : "border hover:border-[#DB6885] hover:bg-[#DB6885] hover:text-white"}`}
-          href="/contact"
-        >
-          <div>Contact us</div>
-        </Link>
-      </div>
-    </nav>
+
+        <div className="flex lg:hidden items-center gap-6">
+          <ShoppingCart className="font-[100] w-6 h-6" />
+          <label className="flex">
+            <div className="w-[47px] h-[50px] cursor-pointer flex flex-col items-center justify-center">
+              <input className="hidden peer" type="checkbox" />
+              <div className="w-[50%] h-[2px] bg-black rounded-sm transition-all duration-300 origin-left translate-y-[0.57rem] peer-checked:rotate-[-45deg]"></div>
+              <div className="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-center peer-checked:hidden"></div>
+              <div className="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-left -translate-y-[0.57rem] peer-checked:rotate-[45deg]"></div>
+            </div>
+          </label>
+        </div>
+      </nav>
+    </div>
   );
 };
 

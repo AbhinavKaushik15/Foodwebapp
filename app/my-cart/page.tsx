@@ -88,7 +88,7 @@ const mycart = () => {
                   <input
                     value={count}
                     onChange={handleInputChange}
-                    className="py-[1.5vh] px-3 w-20 border-[1px] text-xl font-[600] border-zinc-300 text-center outline-none"
+                    className="py-[1.5vh] px-3 w-20 border-[0.3px] text-xl font-['fredoka'] text-[#DB6885] font-[600] border-zinc-300 text-center outline-none"
                     type="text"
                   />
                   <button

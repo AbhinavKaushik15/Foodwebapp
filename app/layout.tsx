@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SplashCursor from "@/Reactbits/SplashCursor/SplashCursor";
+import ScrollTop from "@/components/ScrollTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,8 @@ export default function RootLayout({
       <body
         className={`flex flex-col min-h-screen ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SplashCursor />
+        {/* <SplashCursor /> */}
+        <ScrollTop />
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
