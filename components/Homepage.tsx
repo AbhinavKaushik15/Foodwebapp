@@ -32,7 +32,7 @@ const Homepage = () => {
           height={1000}
         />
 
-        <div className="absolute w-[50vw] h-[120vh] left-4">
+        <div className="absolute w-[50vw] xl:h-[120vh] left-4">
           <h1 className="text-[#DB6885] text-[2vw] mt-2 font-black font-['Fredoka']">
             Welcome to Fofood
           </h1>
@@ -40,7 +40,7 @@ const Homepage = () => {
           <h1 className="text-[5vw] tracking-tight leading-[1.3] mt-5 font-black text-[#2F3137] font-['Figtree']">
             Super Delicious Food Special for You
           </h1>
-          <p className="text-[1.32vw] text-zinc-[34vh]0 w-[27vw] font-[500] leading-[1.9] mt-7">
+          <p className="lg:text-[1.9vw] xl:text-[1.32vw] text-zinc-500 font-['figtree'] lg:w-[43vw] xl:w-[27vw] font-[500] leading-[1.9] mt-7">
             Order your favorites food from anywhere and get delivery at your
             door
           </p>
@@ -54,7 +54,7 @@ const Homepage = () => {
             </button>
           </div>
 
-          <div className="w-1/2 flex items-center justify-between mt-[10.8vh] bg-blue-[200]">
+          <div className="w-[54.3vh] flex items-center justify-between mt-[10.8vh]">
             <div className="flex">
               <Image
                 className="w-14 h-14 rounded-full bg-red-400 border-white border-[2px]"
@@ -87,7 +87,7 @@ const Homepage = () => {
             </div>
 
             <div className="w-fit flex flex-col items-center justify-center">
-              <div className="tracking-tighter text-[2.4vh] font-[600] text-zinc-700">
+              <div className="text-[2.3vh] font-[800] text-black font-['figtree']">
                 Our Happy Customers
               </div>
               <div className="flex items-center">
@@ -126,7 +126,7 @@ const Homepage = () => {
       </div>
 
       {/* Explore */}
-      <div className="explore w-full h-[135vh] mt-[25.5vh]">
+      <div className="explore w-full lg:h-[178vh] xl:h-[135vh] mt-[15vh] lg:mt-[25.5vh]">
         <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-3xl text-center">
           Explore
         </h3>
@@ -220,17 +220,17 @@ const Homepage = () => {
       </div>
 
       {/* About us */}
-      <div className="w-full h-[100vh] flex items-center justify-between">
-        <div className="left-imgs w-1/2 h-[90vh] flex gap-8 px-[2.8vh]">
+      <div className="w-full md:h-[200vh] lg:h-[100vh] flex md:flex-col lg:flex-row items-center justify-between">
+        <div className="left-imgs w-full lg:w-1/2 h-[90vh] flex md:items-center md:justify-center gap-8 px-[2.8vh]">
           <Image
-            className="w-[21vw] h-[67vh] rounded-2xl mt-5"
+            className="w-[35vw] lg:w-[21vw] h-[67vh] rounded-2xl mt-5 object-cover"
             src="/image/about-us-1.webp"
             alt=""
             width={800}
             height={800}
           />
           <Image
-            className="w-[21vw] h-[67vh] rounded-2xl mt-[11vh]"
+            className="w-[35vw] lg:w-[21vw] h-[67vh] rounded-2xl mt-[11vh] object-cover"
             src="/image/about-us-2.webp"
             alt=""
             width={800}
@@ -238,7 +238,7 @@ const Homepage = () => {
           />
         </div>
 
-        <div className="right-details w-1/2 h-[90vh] py-10 px-[8.1vh]">
+        <div className="right-details w-full lg:w-1/2 h-[90vh] py-10 px-[8.1vh]">
           <h3 className="text-[#DB6885] text-[2.15vw] font-black font-['Fredoka']">
             About us
           </h3>

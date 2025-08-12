@@ -1,6 +1,7 @@
 "use client";
-import { Minus, Plus } from "lucide-react";
+import { ChevronLeft, Minus, Plus } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const mycart = () => {
@@ -44,7 +45,7 @@ const mycart = () => {
       </div>
 
       {/* Products Table */}
-      <div className="w-full mt-24 h-[110vh] overflow-x-auto px-[18px]">
+      <div className="w-full mt-24 min-h-[50vh] overflow-x-auto px-[18px]">
         <table className="table">
           {/* head */}
           <thead>
@@ -160,6 +161,55 @@ const mycart = () => {
             </tr>
           </tbody>
         </table>
+        <div className="w-full h-[0.6px] bg-[#dadada94] px-[18px]"></div>
+      </div>
+
+      {/* Coupon & Subtotal section */}
+      <div className="w-full min-h-[69vh] px-[18px] flex justify-between">
+        <div className="left w-[31vw] flex flex-col gap-3.5">
+          <h1 className="font-['figtree'] font-[800] text-[23px]">Coupon</h1>
+          <div className="flex items-center gap-3">
+            <input
+              className="px-[1.3vw] w-[34.4vh] text-lg tracking-tight py-[3vh] bg-[#FFF4F5] outline-[#DB6885] rounded-full text-black hover:text-black transition-all ease-linear duration-200"
+              placeholder="Coupon code"
+              type="text"
+            />
+            <button className="px-[2vw] w-[30vh] font-[700] font-['figtree'] text-[2.6vh] py-[3.3vh] shadow-[#DB6885] shadow-2xl bg-[#DB6885] hover:bg-[#FFC008] rounded-full text-white hover:text-black transition-all ease-linear duration-200">
+              Apply Coupon
+            </button>
+          </div>
+        </div>
+
+        <div className="right w-[32vw] flex flex-col gap-12 mt-11">
+          <div className="flex items-center justify-between">
+            <h1 className="font-['figtree'] font-[900] text-[3.6vh]">
+              Subtotal
+            </h1>
+            <h2 className="font-['fredoka'] font-[900] text-[#DB6885] text-[3.2vh]">
+              $7.4
+            </h2>
+          </div>
+          <div className="flex items-center justify-between">
+            <h1 className="font-['figtree'] font-[900] text-[4.5vh]">Total</h1>
+            <h2 className="font-['fredoka'] font-black text-[#DB6885] text-[4.3vh]">
+              $7.4
+            </h2>
+          </div>
+          <div className="w-full h-[0.4px] bg-zinc-300 -mt-4"></div>
+          <button className="px-[2vw] font-[700] font-['figtree'] -mt-3 text-[2.6vh] py-[2.8vh] shadow-[#DB6885] shadow-2xl bg-[#DB6885] hover:bg-[#FFC008] rounded-full text-white hover:text-black transition-all ease-linear duration-200">
+            Checkout
+          </button>
+
+          <Link
+            href="/menu"
+            className="flex items-center text-[#DB6885] text-[2.2vh] gap-2 -mt-6"
+          >
+            <ChevronLeft className="w-3 h-3" />
+            <h1 className="hover:underline font-[900] font-['figtree']">
+              Continue Shopping
+            </h1>
+          </Link>
+        </div>
       </div>
     </div>
   );

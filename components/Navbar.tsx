@@ -33,13 +33,51 @@ const Navbar = () => {
 
   return (
     <div className="relative">
-      <div className="absolute -top-[71.9vh] h-[71.9vh] w-full bg-gradient-to-b from-white z-[20] to-white/80"></div>
+      <div
+        className={`flex lg:hidden fixed -top-[71.9vh] h-[66vh] w-full bg-gradient-to-b from-white z-[15] to-white/80 ${isOpen ? "top-0 transition-all duration-200 ease-out" : "-top-[71.9vh] transition-all duration-300 ease-in"}`}
+      >
+        <div className="w-full h-full flex flex-col items-start font-['fredoka'] text-lg gap-5 mt-29 font-[700] px-[94px]">
+          {tabs.map(({ label, path }) => (
+            <Link
+              onClick={() => setIsOpen(false)}
+              key={label}
+              href={path}
+              className={`capitalize ${
+                pathname === path
+                  ? "text-[#DB6885]"
+                  : "text-zinc-800 hover:text-[#DB6885]"
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
+          <Link
+            onClick={() => setIsOpen(false)}
+            className={`flex items-center gap-2 tracking-wide ${
+              pathname === "/my-favorites"
+                ? "text-[#DB6885]"
+                : "text-zinc-800 hover:text-[#DB6885]"
+            }`}
+            href="/my-favorites"
+          >
+            <Heart className="w-[3.2vh] h-[3.2vh]" />
+            My Favorites
+          </Link>
+          <Link
+            onClick={() => setIsOpen(false)}
+            className={`w-full text-center py-[7.2px] rounded-full text-[17px] font-['figtree'] font-[600] tracking-tight transition-all duration-200 ease-linear ${pathname === "/contact" ? "border border-[#DB6885] text-white bg-[#DB6885]" : "border hover:border-[#DB6885] hover:bg-[#DB6885] hover:text-white"}`}
+            href="/contact"
+          >
+            <div>Contact us</div>
+          </Link>
+        </div>
+      </div>
       <nav
         className={`fixed top-0 w-full h-[16vh] px-[94px] lg:px-[18px] transition-all ease-linear duration-200 ${
           isScrolled ? "bg-[#ffffffdc] lg:bg-white" : "bg-transparent"
         } flex items-center justify-between z-[15]`}
       >
-        <Link href="/">
+        <Link onClick={() => setIsOpen(false)} href="/">
           <Image
             className="w-[85px]"
             src="/image/logo-color.webp"
@@ -95,15 +133,31 @@ const Navbar = () => {
         </div>
 
         <div className="flex lg:hidden items-center gap-6">
-          <ShoppingCart className="font-[100] w-6 h-6" />
-          <label className="flex">
-            <div className="w-[47px] h-[50px] cursor-pointer flex flex-col items-center justify-center">
-              <input className="hidden peer" type="checkbox" />
-              <div className="w-[50%] h-[2px] bg-black rounded-sm transition-all duration-300 origin-left translate-y-[0.57rem] peer-checked:rotate-[-45deg]"></div>
-              <div className="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-center peer-checked:hidden"></div>
-              <div className="w-[50%] h-[2px] bg-black rounded-md transition-all duration-300 origin-left -translate-y-[0.57rem] peer-checked:rotate-[45deg]"></div>
+          <Link onClick={() => setIsOpen(false)} href="/my-cart">
+            <ShoppingCart className="font-[100] w-6 h-6" />
+          </Link>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-[47px] h-[50px] flex items-center justify-center cursor-pointer"
+          >
+            <div className="relative w-6 h-5">
+              <span
+                className={`absolute h-[2.5px] w-full bg-black rounded transition-all duration-300 ease-in-out
+            ${isOpen ? "rotate-45 top-2" : "top-0"}
+          `}
+              ></span>
+              <span
+                className={`absolute h-[2.3px] w-full bg-black rounded transition-all duration-300 ease-in-out
+            ${isOpen ? "opacity-0" : "top-2"}
+          `}
+              ></span>
+              <span
+                className={`absolute h-[2.3px] w-full bg-black rounded transition-all duration-300 ease-in-out
+            ${isOpen ? "-rotate-45 top-2" : "top-4"}
+          `}
+              ></span>
             </div>
-          </label>
+          </button>
         </div>
       </nav>
     </div>
