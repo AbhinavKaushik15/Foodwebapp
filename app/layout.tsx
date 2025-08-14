@@ -6,6 +6,7 @@ import SplashCursor from "@/Reactbits/SplashCursor/SplashCursor";
 import ScrollTop from "@/components/ScrollTop";
 import { usePathname } from "next/navigation";
 import FooterWrapper from "@/components/FooterWrapper";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +15,7 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  subsets: ["latin"], 
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default function RootLayout({
         className={`flex flex-col min-h-screen ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* <SplashCursor /> */}
+        <Toaster />
         <ScrollTop />
         <Navbar />
         <main className="flex-grow">{children}</main>
