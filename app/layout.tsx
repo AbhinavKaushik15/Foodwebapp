@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import SplashCursor from "@/Reactbits/SplashCursor/SplashCursor";
 import ScrollTop from "@/components/ScrollTop";
-import { usePathname } from "next/navigation";
 import FooterWrapper from "@/components/FooterWrapper";
 import { Toaster } from "react-hot-toast";
+import NavbarWrapper from "@/components/NavbarWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +35,7 @@ export default function RootLayout({
         {/* <SplashCursor /> */}
         <Toaster />
         <ScrollTop />
-        <Navbar />
+        <NavbarWrapper />
         <main className="flex-grow">{children}</main>
         <FooterWrapper />
       </body>

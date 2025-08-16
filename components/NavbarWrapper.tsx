@@ -1,14 +1,11 @@
 "use client";
-
 import { usePathname } from "next/navigation";
-import Footer from "@/components/Footer";
+import Navbar from "./Navbar";
 
-export default function FooterWrapper() {
+export default function NavbarWrapper() {
   const pathname = usePathname();
 
-  const hideFooterRoutes = [
-    "/login",
-    "/sign-up",
+  const hideNavbarRoutes = [
     "/admin",
     "/admin/products",
     "/admin/categories",
@@ -19,9 +16,9 @@ export default function FooterWrapper() {
     "/admin/admins",
   ];
 
-  if (hideFooterRoutes.includes(pathname)) {
+  if (hideNavbarRoutes.includes(pathname)) {
     return null;
   }
 
-  return <Footer />;
+  return <Navbar />;
 }

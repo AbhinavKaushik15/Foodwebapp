@@ -1,11 +1,22 @@
 "use client";
+import { useAuth } from "@/contexts/AuthContext";
 import { auth } from "@/lib/firestore/firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 export default function login() {
+  const { user } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (user) {
+      router.push("/dashboard");
+    }
+  }, [user]);
+
   return (
     <>
       <div className="w-full min-h-[140vh]">

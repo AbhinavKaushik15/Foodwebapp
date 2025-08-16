@@ -7,6 +7,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css";
 import Link from "next/link";
+import MyMap from "./MyMap";
 
 const Homepage = () => {
   useEffect(() => {
@@ -659,6 +660,8 @@ const Homepage = () => {
           </div>
         </div>
       </div>
+
+      <MyMap />
     </>
   );
 };
