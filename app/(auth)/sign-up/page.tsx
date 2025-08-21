@@ -29,17 +29,15 @@ export default function signup() {
         />
       </div>
 
-      <div className="absolute top-34 left-[25vh] w-[42vw] h-[110vh] border border-zinc-300 rounded-3xl flex flex-col items-center gap-[5vh] justify-center px-[10vh]">
-        <SignupAccount />
-      </div>
+      <SignUpAuth />
     </>
   );
 }
 
-function SignUp() {
+function SignUpAuth() {
   const [fullName, setFullName] = useState("");
-  const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -59,8 +57,8 @@ function SignUp() {
       await addDoc(userRef, user);
       toast.success("Signup Successfully.");
       setFullName("");
-      setemail("");
-      setpassword("");
+      setEmail("");
+      setPassword("");
       setLoading(false);
       setTimeout(() => {
         window.location.href = "/login";
@@ -71,7 +69,7 @@ function SignUp() {
     }
   };
   return (
-    <div>
+    <div className="absolute top-34 left-[25vh] w-[42vw] h-[110vh] border border-zinc-300 rounded-3xl flex flex-col items-center gap-[5vh] justify-center px-[10vh]">
       <div className="flex flex-col gap-3 items-center mb-3">
         <h1 className="text-[5.5vh] font-['fredoka'] text-[#DB6885] font-[900]">
           Welcome
@@ -83,19 +81,30 @@ function SignUp() {
       <input
         className="py-5 w-full border outline-[#DB6885] font-[500] text-xl placeholder:text-zinc-500 text-zinc-500 border-zinc-300 rounded-full px-[7vh]"
         type="text"
+        name="fullName"
+        value={fullName}
+        onChange={(e) => setFullName(e.target.value)}
         placeholder="Full Name"
       />
       <input
         className="py-5 w-full border outline-[#DB6885] font-[500] text-xl placeholder:text-zinc-500 text-zinc-500 border-zinc-300 rounded-full px-[7vh]"
-        type="mail"
+        type="email"
+        name="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         placeholder="Email Address"
       />
       <input
         className="py-5 w-full border outline-[#DB6885] font-[500] text-xl border-zinc-300 rounded-full placeholder:text-zinc-500 text-zinc-500 px-[7vh]"
         type="text"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
       />
-      <button className="w-full text-white font-[500] bg-[#DB6885] py-5 rounded-full text-lg hover:text-black hover:bg-[#FEBE0B] transition-all duration-200 ease-linear">
+      <button
+        onClick={SignupAccount}
+        className="w-full text-white font-[500] bg-[#DB6885] py-5 rounded-full text-lg hover:text-black hover:bg-[#FEBE0B] transition-all duration-200 ease-linear"
+      >
         Create Account
       </button>
       <p>
