@@ -1,7 +1,11 @@
 "use client";
 import { useAuth } from "@/contexts/AuthContext";
 import { auth } from "@/lib/firestore/firebase";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -38,29 +42,8 @@ export default function login() {
       </div>
 
       <div className="absolute top-34 left-[25vh] w-[42vw] h-[105vh] border border-zinc-300 rounded-3xl flex flex-col items-center gap-[5vh] justify-center px-[10vh]">
-        <div className="flex flex-col gap-3 items-center mb-3">
-          <h1 className="text-[5.5vh] font-['fredoka'] text-[#DB6885] font-[900]">
-            Welcome
-          </h1>
-          <h1 className="text-[3.7vh] font-['figtree'] font-[900]">
-            Sign in to your account
-          </h1>
-        </div>
-        <input
-          className="py-5 w-full border outline-[#DB6885] font-[500] text-xl placeholder:text-zinc-500 text-zinc-500 border-zinc-300 rounded-full px-[7vh]"
-          type="mail"
-          placeholder="Email Address"
-        />
-        <input
-          className="py-5 w-full border outline-[#DB6885] font-[500] text-xl border-zinc-300 rounded-full placeholder:text-zinc-500 text-zinc-500 px-[7vh]"
-          type="text"
-          placeholder="Password"
-        />
-        <button className="w-full text-white font-[500] bg-[#DB6885] py-5 rounded-full text-lg hover:text-black hover:bg-[#FEBE0B] transition-all duration-200 ease-linear">
-          Sign in
-        </button>
+        <Login />
         <div className="w-full h-[1px] bg-zinc-200"></div>
-
         <SignInWithGoogleComponent />
         <p>
           Don't have an account?
@@ -75,7 +58,7 @@ export default function login() {
 
 function SignInWithGoogleComponent() {
   const [isLoading, setIsLoading] = useState(false);
-  const handleLogin = async () => {
+  const handleGoogleLogin = async () => {
     setIsLoading(true);
     try {
       const user = await signInWithPopup(auth, new GoogleAuthProvider());
@@ -86,7 +69,7 @@ function SignInWithGoogleComponent() {
   };
   return (
     <button
-      onClick={handleLogin}
+      onClick={handleGoogleLogin}
       disabled={isLoading}
       className={`btn bg-white text-black w-full font-[500] py-7 rounded-full text-lg hover:text-black transition-all duration-200 ease-linear`}
     >
@@ -120,5 +103,63 @@ function SignInWithGoogleComponent() {
       </svg>
       {isLoading ? "Loading..." : "Login with Google"}
     </button>
+  );
+}
+
+function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+  const handleLogin = async () => {
+    setLoading(true);
+    if (!email || !password) {
+      toast.error("All fields are required!");
+    }
+    try {
+      const result = await signInWithEmailAndPassword(auth, email, password);
+      localStorage.setItem("user", JSON.stringify(result));
+      toast.success("Login Successfull.");
+      setEmail("");
+      setPassword("");
+      router.push("/dashboard");
+    } catch (error) {
+      toast.error("Login failed!");
+      setLoading(false);
+    }
+  };
+  return (
+    <div className="w-full flex flex-col gap-[5vh]">
+      <div className="flex flex-col gap-3 items-center mb-3">
+        <h1 className="text-[5.5vh] font-['fredoka'] text-[#DB6885] font-[900]">
+          Welcome
+        </h1>
+        <h1 className="text-[3.7vh] font-['figtree'] font-[900]">
+          Sign in to your account
+        </h1>
+      </div>
+      <input
+        className="py-5 w-full border outline-[#DB6885] font-[500] text-xl placeholder:text-zinc-500 text-zinc-500 border-zinc-300 rounded-full px-[7vh]"
+        type="email"
+        name="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Email Address"
+      />
+      <input
+        className="py-5 w-full border outline-[#DB6885] font-[500] text-xl border-zinc-300 rounded-full placeholder:text-zinc-500 text-zinc-500 px-[7vh]"
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
+      />
+      <button
+        onClick={handleLogin}
+        className="w-full text-white font-[500] bg-[#DB6885] py-5 rounded-full text-lg hover:text-black hover:bg-[#FEBE0B] transition-all duration-200 ease-linear"
+      >
+        Sign in
+      </button>
+    </div>
   );
 }
