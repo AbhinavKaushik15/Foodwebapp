@@ -7,7 +7,7 @@ const ScrollTop = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > window.innerHeight * 0.1) {
+      if (window.scrollY > window.innerHeight * 0.3) {
         setVisible(true);
       } else {
         setVisible(false);

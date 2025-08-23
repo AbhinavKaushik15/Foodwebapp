@@ -1,5 +1,5 @@
 "use client";
-import { ChevronDown, Heart, ShoppingCart } from "lucide-react";
+import { CircleUser, Heart, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -123,6 +123,10 @@ const Navbar = () => {
               <ShoppingCart className="font-[100] w-5 h-5" />
               My Cart
             </Link>
+            <Link className="" href="/login">
+              <CircleUser className="w-9 h-9 text-[#333]" />
+            </Link>
+
             <Link
               className={`px-[27.3px] py-[7.2px] rounded-full text-[17px] font-['figtree'] font-[600] tracking-tight transition-all duration-200 ease-linear ${pathname === "/contact" ? "border border-[#DB6885] text-white bg-[#DB6885]" : "border hover:border-[#DB6885] hover:bg-[#DB6885] hover:text-white"}`}
               href="/contact"
