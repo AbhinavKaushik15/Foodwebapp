@@ -1,35 +1,31 @@
 "use client";
+
+import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
-import { ReactNode, useEffect, useState } from "react";
-import { onAuthStateChanged, User } from "firebase/auth";
-import { auth } from "@/lib/firestore/firebase";
+import { useEffect } from "react";
 
-const ADMIN_EMAIL = "abhinavsharmaas20000@gmail.com";
-
-interface AdminProtectedRouteProps {
-  children: ReactNode;
+interface ProtectedRouteProps {
+  children: React.ReactNode;
+  // adminOnly?: boolean;
 }
 
-export default function AdminProtectedRoute({
-  children,
-}: AdminProtectedRouteProps) {
+export default function ProtectedRoute({ children }: ProtectedRouteProps) {
+  const { user, isLoading } = useAuth(); // user => Firebase User | null
   const router = useRouter();
-  const [loading, setLoading] = useState<boolean>(true);
-  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (!currentUser || currentUser.email !== ADMIN_EMAIL) {
+    if (!isLoading) {
+      if (!user) {
         router.push("/login");
-      } else {
-        setUser(currentUser);
+      } else if (user.email === "abhinavsharmaas20000@gmail.com") {
+        router.push("/admin");
+      } else if (user) {
+        router.push("/profile");
       }
-      setLoading(false);
-    });
-    return () => unsubscribe();
-  }, [router]);
+    }
+  }, [user, isLoading, router]);
 
-  if (loading) return <p>Loading...</p>;
+  if (isLoading) return <p>Loading...</p>;
 
-  return user ? <>{children}</> : null;
+  return <>{children}</>;
 }

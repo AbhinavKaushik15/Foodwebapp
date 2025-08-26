@@ -1,7 +1,8 @@
+import ProtectedRoute from "@/components/ProtectedRoute";
 import React from "react";
 
 const admin = () => {
-  return <div>Admin</div>;
+  return <ProtectedRoute>Admin</ProtectedRoute>;
 };
 
 export default admin;

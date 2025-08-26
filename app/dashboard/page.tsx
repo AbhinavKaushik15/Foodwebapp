@@ -1,11 +1,12 @@
+import ProtectedRoute from "@/components/ProtectedRoute";
 import React from "react";
 
-const dashboard = () => {
+export default function dashboard() {
   return (
-    <div className="w-full h-[90vh] text-xl font-[700] flex items-center justify-center ">
-      Dashboard
-    </div>
+    <ProtectedRoute>
+      <div className="w-full h-[90vh] text-xl font-[700] flex items-center justify-center">
+        Dashboard
+      </div>
+    </ProtectedRoute>
   );
-};
-
-export default dashboard;
+}
