@@ -38,7 +38,7 @@ const layout = ({ children }: LayoutProps) => {
   }, []);
 
   return (
-    <main className="relative flex">
+    <main className="relative flex w-full">
       <div className="hidden md:flex">
         <Sidebar />
       </div>
@@ -48,7 +48,7 @@ const layout = ({ children }: LayoutProps) => {
       >
         <Sidebar />
       </div>
-      <section className="flex-1 min-h-screen bg-[#eff3f4]">
+      <section className="flex-1 min-h-screen w-full bg-[#eff3f4]">
         <Header toggleHandler={toggleHandler} />
         <section className="flex-1 py-4 px-5">{children}</section>
       </section>

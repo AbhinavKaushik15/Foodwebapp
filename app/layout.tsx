@@ -7,6 +7,7 @@ import FooterWrapper from "@/components/FooterWrapper";
 import { Toaster } from "react-hot-toast";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { ProductProvider } from "@/contexts/ProductContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,11 +38,13 @@ export default function RootLayout({
         {/* <SplashCursor /> */}
         <Toaster />
         <ScrollTop />
-        <AuthProvider>
-          <NavbarWrapper />
-          <main className="flex-grow">{children}</main>
-          <FooterWrapper />
-        </AuthProvider>
+        <ProductProvider>
+          <AuthProvider>
+            <NavbarWrapper />
+            <main className="flex-grow">{children}</main>
+            <FooterWrapper />
+          </AuthProvider>
+        </ProductProvider>
       </body>
     </html>
   );

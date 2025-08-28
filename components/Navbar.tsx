@@ -9,6 +9,7 @@ import { useAuth } from "@/contexts/AuthContext";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useAuth();
+  const isAdmin = user && user.email === "abhinavsharmaas20000@gmail.com";
 
   const tabs = [
     { label: "home", path: "/" },
@@ -126,39 +127,56 @@ const Navbar = () => {
               My Cart
             </Link>
 
-            {user && user.email === "abhinavsharmaas20000@gmail.com" ? (
+
+
+
+
+            {/* Admin link (only for admin) */}
+            {isAdmin && (
               <Link
                 href="/admin"
-                className={`text-[17px] font-['figtree'] font-[600] tracking-tight flex items-center gap-1 ${pathname === "/admin" ? "text-[#DB6885]" : "text-zinc-800 hover:text-[#DB6885]"}`}
+                className={`text-[17px] font-['figtree'] font-[600] tracking-tight flex items-center gap-1 ${
+                  pathname === "/admin"
+                    ? "text-[#DB6885]"
+                    : "text-zinc-800 hover:text-[#DB6885]"
+                }`}
               >
-                <ShieldUser className="font-[100] w-6 h-6" />
-                Admin
-              </Link>
-            ) : (
-              <Link
-                className={`text-[17px] font-['figtree'] font-[600] tracking-tight flex items-center gap-1 ${pathname === "/login" ? "text-[#DB6885]" : "text-zinc-800 hover:text-[#DB6885]"}`}
-                href="/login"
-              >
-                <ShieldUser className="font-[100] w-6 h-6" />
+                <ShieldUser className="w-6 h-6" />
                 Admin
               </Link>
             )}
 
-            {user && user.email !== "abhinavsharmaas20000@gmail.com" ? (
+            {/* Profile link (for logged-in non-admin users) */}
+            {user && !isAdmin && (
               <Link
-                className={`text-[17px] font-['figtree'] font-[600] tracking-tight flex items-center gap-1 ${pathname === "/profile" ? "text-[#DB6885]" : "text-zinc-800 hover:text-[#DB6885]"}`}
                 href="/profile"
+                className={`text-[17px] font-['figtree'] font-[600] tracking-tight flex items-center gap-1 ${
+                  pathname === "/profile"
+                    ? "text-[#DB6885]"
+                    : "text-zinc-800 hover:text-[#DB6885]"
+                }`}
               >
-                <CircleUser className="w-9 h-9" />
-              </Link>
-            ) : (
-              <Link
-                className={`text-[17px] font-['figtree'] font-[600] tracking-tight flex items-center gap-1 ${pathname === "/login" ? "text-[#DB6885]" : "text-zinc-800 hover:text-[#DB6885]"}`}
-                href="/login"
-              >
-                <CircleUser className="w-9 h-9" />
+                <CircleUser className="w-6 h-6" />
+                Profile
               </Link>
             )}
+
+            {/* Login link (for not logged-in users) */}
+            {!user && (
+              <Link
+                href="/login"
+                className={`text-[17px] font-['figtree'] font-[600] tracking-tight flex items-center gap-1 ${
+                  pathname === "/login"
+                    ? "text-[#DB6885]"
+                    : "text-zinc-800 hover:text-[#DB6885]"
+                }`}
+              >
+                <CircleUser className="w-6 h-6" />
+                Login
+              </Link>
+            )}
+
+            
 
             <Link
               className={`px-[27.3px] py-[7.2px] rounded-full text-[17px] font-['figtree'] font-[600] tracking-tight transition-all duration-200 ease-linear ${pathname === "/contact" ? "border border-[#DB6885] text-white bg-[#DB6885]" : "border hover:border-[#DB6885] hover:bg-[#DB6885] hover:text-white"}`}

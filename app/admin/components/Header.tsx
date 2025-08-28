@@ -7,7 +7,7 @@ interface togglePorps {
 
 const Header = ({ toggleHandler }: togglePorps) => {
   return (
-    <section className="flex items-center gap-2 border-b border-zinc-300 py-4 px-4 bg-white">
+    <section className="w-full flex items-center gap-2 border-b border-zinc-300 py-4 px-4 bg-white">
       <button onClick={toggleHandler} className="flex md:hidden">
         <Menu className="w-5 h-5" />
       </button>

@@ -14,6 +14,8 @@ export default function NavbarWrapper() {
     "/admin/reviews",
     "/admin/collections",
     "/admin/admins",
+    "/admin/products/create-form",
+    "/admin/products/update-product",
   ];
 
   if (hideNavbarRoutes.includes(pathname)) {

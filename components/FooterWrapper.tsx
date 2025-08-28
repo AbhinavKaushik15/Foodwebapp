@@ -17,6 +17,8 @@ export default function FooterWrapper() {
     "/admin/reviews",
     "/admin/collections",
     "/admin/admins",
+    "/admin/products/create-form",
+    "/admin/products/update-product",
   ];
 
   if (hideFooterRoutes.includes(pathname)) {
