@@ -8,7 +8,7 @@ import { Toaster } from "react-hot-toast";
 import NavbarWrapper from "@/components/NavbarWrapper";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ProductProvider } from "@/contexts/ProductContext";
-import ChatbotIcon from "@/components/ChatbotIcon";
+import ChatbotIcon from "./components/ChatbotIcon";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,11 +38,11 @@ export default function RootLayout({
       >
         {/* <SplashCursor /> */}
         <Toaster />
-        <ChatbotIcon />
         <ScrollTop />
         <ProductProvider>
           <AuthProvider>
             <NavbarWrapper />
+            <ChatbotIcon />
             <main className="flex-grow">{children}</main>
             <FooterWrapper />
           </AuthProvider>
