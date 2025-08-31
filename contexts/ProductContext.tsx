@@ -44,7 +44,7 @@ interface ProductContextValue {
   setAllProducts: React.Dispatch<React.SetStateAction<ProductWithId[]>>;
   getProduct: () => void;
   updateProductHandler: (item: Product) => void;
-  updateProduct: () => void;
+  updateProduct: (item: Product) => void;
   deleteProduct: (item: Product) => void;
 }
 

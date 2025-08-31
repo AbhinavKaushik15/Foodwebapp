@@ -1,6 +1,6 @@
 "use client";
 import { useAuth } from "@/contexts/AuthContext";
-import { auth } from "@/lib/firestore/firebase";
+import { auth, fireDb } from "@/lib/firestore/firebase";
 import {
   GoogleAuthProvider,
   signInWithEmailAndPassword,
@@ -9,10 +9,16 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import toast from "react-hot-toast";
-export default function login() {
-  const { user } = useAuth();
+
+interface LoginContextValue {
+  isLoading: boolean;
+  handleLogin: () => void;
+  handleGoogleLogin: () => void;
+}
+const Login: React.FC<LoginContextValue> = () => {
+  const { saveUserToFirestore } = useAuth();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
@@ -24,16 +30,20 @@ export default function login() {
       toast.error("All fields are required!");
     }
     try {
-      const user = await signInWithEmailAndPassword(auth, email, password);
-      localStorage.setItem("user", JSON.stringify(user));
+      const res = await signInWithEmailAndPassword(auth, email, password);
+      const loggedInUser = res.user;
+
+      await saveUserToFirestore(loggedInUser, false);
+
+      localStorage.setItem("user", JSON.stringify(loggedInUser));
       toast.success("Login Successfull.");
-      setEmail("");
-      setPassword("");
-      if (email === "abhinavsharmaas20000@gmail.com") {
+      if (loggedInUser.email === "abhinavsharmaas20000@gmail.com") {
         router.push("/dashboard");
       } else {
         router.push("/profile");
       }
+      setEmail("");
+      setPassword("");
     } catch (error) {
       toast.error("Login failed!");
       setIsLoading(false);
@@ -43,10 +53,14 @@ export default function login() {
   const handleGoogleLogin = async () => {
     setIsLoading(true);
     try {
-      const user = await signInWithPopup(auth, new GoogleAuthProvider());
-      localStorage.setItem("user", JSON.stringify(user));
+      const res = await signInWithPopup(auth, new GoogleAuthProvider());
+      const loggedInUser = res.user;
+
+      await saveUserToFirestore(loggedInUser, true);
+
+      localStorage.setItem("user", JSON.stringify(loggedInUser));
       toast.success("Login Successfull.");
-      if (email === "abhinavsharmaas20000@gmail.com") {
+      if (loggedInUser.email === "abhinavsharmaas20000@gmail.com") {
         router.push("/dashboard");
       } else {
         router.push("/profile");
@@ -152,4 +166,6 @@ export default function login() {
       </div>
     </>
   );
-}
+};
+
+export default Login;

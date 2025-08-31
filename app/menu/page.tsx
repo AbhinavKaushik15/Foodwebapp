@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import Link from "next/link";
 import Image from "next/image";
 
 const menu = () => {
@@ -200,7 +199,7 @@ const menu = () => {
                 return (
                   <Tab
                     key={index}
-                    className="w-full rounded-2xl py-[1.9vh] px-[2.1vh] flex items-center gap-4 justify-start text-sm font-semibold focus:not-data-focus:outline-none hover:bg-[#DB6885] data-selected:bg-[#DB6885] data-selected:text-white border border-zinc-300 shadow-2xs"
+                    className="w-full rounded-2xl py-[1.9vh] px-[2.1vh] flex items-center gap-4 justify-start text-sm font-semibold focus:not-data-focus:outline-none hover:bg-[#DB6885] data-selected:bg-[#DB6885] data-selected:text-white hover:text-white border border-zinc-300 shadow-2xs"
                   >
                     <Image
                       src={item.imageURL}
@@ -220,6 +219,7 @@ const menu = () => {
             </div>
           ))}
 
+          {/* Get 50% off! */}
           <div className="relative w-[22.5vw] h-[75vh] mt-14 overflow-hidden">
             <Image
               className="absolute w-full h-full object-top rounded-4xl z-[-1]"

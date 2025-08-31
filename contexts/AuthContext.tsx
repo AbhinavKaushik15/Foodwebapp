@@ -1,6 +1,7 @@
 "use client";
-import { auth } from "@/lib/firestore/firebase";
+import { auth, fireDb } from "@/lib/firestore/firebase";
 import { onAuthStateChanged, User } from "firebase/auth";
+import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { createContext, useContext, useEffect, useState } from "react";
 
 interface AuthProviderProps {
@@ -10,6 +11,7 @@ interface AuthProviderProps {
 interface AuthContextValue {
   user: User | null;
   isLoading: boolean;
+  saveUserToFirestore: (user: any) => void;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -32,8 +34,34 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     return () => unSub();
   }, []);
 
+  const saveUserToFirestore = async (
+    user: User,
+    isNewUser: boolean = false
+  ): Promise<void> => {
+    if (!user) return;
+
+    try {
+      const userRef = doc(fireDb, "users", user.uid);
+      const userSnap = await getDoc(userRef);
+
+      if (!userSnap.exists() || isNewUser) {
+        await setDoc(userRef, {
+          uid: user.uid,
+          name: user.displayName || "No Name",
+          email: user.email,
+          photoURL: user.photoURL || null,
+          createdAt: serverTimestamp(),
+        });
+      } else {
+        console.log("User already exists, skipping save...");
+      }
+    } catch (error) {
+      console.error("Error saving user:", error);
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ user, isLoading }}>
+    <AuthContext.Provider value={{ user, isLoading, saveUserToFirestore }}>
       {children}
     </AuthContext.Provider>
   );

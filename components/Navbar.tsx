@@ -9,6 +9,8 @@ import { useAuth } from "@/contexts/AuthContext";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useAuth();
+  const pathname = usePathname();
+  
   const isAdmin = user && user.email === "abhinavsharmaas20000@gmail.com";
 
   const tabs = [
@@ -18,7 +20,6 @@ const Navbar = () => {
     { label: "blog", path: "/blog" },
   ];
 
-  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -127,10 +128,6 @@ const Navbar = () => {
               My Cart
             </Link>
 
-
-
-
-
             {/* Admin link (only for admin) */}
             {isAdmin && (
               <Link
@@ -175,8 +172,6 @@ const Navbar = () => {
                 Login
               </Link>
             )}
-
-            
 
             <Link
               className={`px-[27.3px] py-[7.2px] rounded-full text-[17px] font-['figtree'] font-[600] tracking-tight transition-all duration-200 ease-linear ${pathname === "/contact" ? "border border-[#DB6885] text-white bg-[#DB6885]" : "border hover:border-[#DB6885] hover:bg-[#DB6885] hover:text-white"}`}
