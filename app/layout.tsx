@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import SplashCursor from "@/Reactbits/SplashCursor/SplashCursor";
+// import SplashCursor from "@/Reactbits/SplashCursor/SplashCursor";
 import ScrollTop from "@/components/ScrollTop";
 import FooterWrapper from "@/components/FooterWrapper";
 import { Toaster } from "react-hot-toast";
@@ -9,6 +9,7 @@ import NavbarWrapper from "@/components/NavbarWrapper";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ProductProvider } from "@/contexts/ProductContext";
 import ChatbotIcon from "./components/ChatbotIcon";
+import LocomotiveProvider from "@/components/LocomotiveProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,20 +32,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
         className={`flex flex-col min-h-screen ${geistSans.variable} ${geistMono.variable} antialiased`}
-        suppressHydrationWarning
       >
         {/* <SplashCursor /> */}
         <Toaster />
         <ScrollTop />
         <ProductProvider>
           <AuthProvider>
-            <NavbarWrapper />
-            <ChatbotIcon />
-            <main className="flex-grow">{children}</main>
-            <FooterWrapper />
+            <LocomotiveProvider>
+              <NavbarWrapper />
+              <ChatbotIcon />
+              <main className="flex-grow">{children}</main>
+              <FooterWrapper />
+            </LocomotiveProvider>
           </AuthProvider>
         </ProductProvider>
       </body>

@@ -15,7 +15,7 @@ const mycart = () => {
     setCount((prev) => Math.min(6, prev + 1));
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value, 10);
 
     if (isNaN(value)) {
@@ -125,14 +125,14 @@ const mycart = () => {
                     className="origin-right duration-500 group-hover:rotate-90"
                   >
                     <line
-                      stroke-width="4"
+                      strokeWidth="4"
                       stroke="white"
                       y2="5"
                       x2="39"
                       y1="5"
                     ></line>
                     <line
-                      stroke-width="3"
+                      strokeWidth="3"
                       stroke="white"
                       y2="1.5"
                       x2="26.0357"
@@ -149,12 +149,8 @@ const mycart = () => {
                       fill="white"
                       d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z"
                     ></path>
-                    <path
-                      stroke-width="4"
-                      stroke="white"
-                      d="M12 6L12 29"
-                    ></path>
-                    <path stroke-width="4" stroke="white" d="M21 6V29"></path>
+                    <path strokeWidth="4" stroke="white" d="M12 6L12 29"></path>
+                    <path strokeWidth="4" stroke="white" d="M21 6V29"></path>
                   </svg>
                 </button>
               </th>
