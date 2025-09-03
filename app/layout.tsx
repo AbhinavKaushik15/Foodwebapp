@@ -35,6 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`flex flex-col min-h-screen ${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
         {/* <SplashCursor /> */}
         <Toaster />

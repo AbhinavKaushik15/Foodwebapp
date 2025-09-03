@@ -1,6 +1,6 @@
 "use client";
 import { useAuth } from "@/contexts/AuthContext";
-import { auth, fireDb } from "@/lib/firestore/firebase";
+import { auth } from "@/lib/firestore/firebase";
 import {
   GoogleAuthProvider,
   signInWithEmailAndPassword,
@@ -33,7 +33,7 @@ const Login: React.FC<LoginContextValue> = () => {
       const res = await signInWithEmailAndPassword(auth, email, password);
       const loggedInUser = res.user;
 
-      await saveUserToFirestore(loggedInUser, false);
+      await saveUserToFirestore(loggedInUser);
 
       localStorage.setItem("user", JSON.stringify(loggedInUser));
       toast.success("Login Successfull.");
@@ -56,7 +56,7 @@ const Login: React.FC<LoginContextValue> = () => {
       const res = await signInWithPopup(auth, new GoogleAuthProvider());
       const loggedInUser = res.user;
 
-      await saveUserToFirestore(loggedInUser, true);
+      await saveUserToFirestore(loggedInUser);
 
       localStorage.setItem("user", JSON.stringify(loggedInUser));
       toast.success("Login Successfull.");

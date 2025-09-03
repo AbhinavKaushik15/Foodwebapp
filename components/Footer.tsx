@@ -121,25 +121,25 @@ const Footer = () => {
             </h1>
             <Link
               className="font-['figtree'] font-[600] hover:underline"
-              href="/"
+              href="/my-favorites"
             >
               My favorites
             </Link>
             <Link
               className="font-['figtree'] font-[600] hover:underline"
-              href="/about"
+              href="/my-cart"
             >
               My Cart
             </Link>
             <Link
               className="font-['figtree'] font-[600] hover:underline"
-              href="/menu"
+              href="/"
             >
               Empty State
             </Link>
             <Link
               className="font-['figtree'] font-[600] hover:underline"
-              href="/blog"
+              href="/contact"
             >
               Contact us
             </Link>

@@ -1,8 +1,7 @@
 "use client";
 import { useAuth } from "@/contexts/AuthContext";
-import { auth, fireDb } from "@/lib/firestore/firebase";
+import { auth } from "@/lib/firestore/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { addDoc, collection } from "firebase/firestore";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -26,7 +25,7 @@ const Signup = () => {
       const newUser = res.user;
 
       // ✅ New account -> force save
-      await saveUserToFirestore(newUser, true);
+      await saveUserToFirestore(newUser);
       toast.success("Signup Successfully.");
       setFullName("");
       setEmail("");
@@ -110,4 +109,3 @@ const Signup = () => {
 };
 
 export default Signup;
-  
