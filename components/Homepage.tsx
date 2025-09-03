@@ -5,13 +5,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css";
-import Link from "next/link";
-import { Heart } from "lucide-react";
-import { useProduct } from "@/contexts/ProductContext";
+import PopularMenuCards from "./PopularMenuCards";
+import OurBlog from "./OurBlog";
 
 const Homepage = () => {
-  const { allProducts } = useProduct();
-
   useEffect(() => {
     document.title = "Homepage | Fofood";
   }, []);
@@ -261,62 +258,7 @@ const Homepage = () => {
       </div>
 
       {/* Popular Menu */}
-      <div className="relative w-full h-[190vh] mt-[11.2vh]">
-        <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-3xl text-center">
-          Popular Menu
-        </h3>
-        <h1 className="font-['figtree'] text-[8.7vh] text-center font-[900] mt-4">
-          Most Popular Food
-        </h1>
-
-        {/* Popular Food List */}
-        <div className="w-full gap-10 flex flex-nowrap items-center justify-center mt-[7.5vh]">
-          <div className="w-full flex flex-wrap items-center justify-center -mt-5 gap-[4vh] px-2">
-            {allProducts.map((item, id) => {
-              const { title, price, imageURL } = item;
-              return (
-                <Link key={item.id} href={`/productpage/${item.id}`}>
-                  <div
-                    key={id}
-                    className="relative w-[48vh] h-[56vh] rounded-xl flex flex-col items-center"
-                  >
-                    <img
-                      className="w-[34vh] h-[34vh] absolute top-5"
-                      src={imageURL as string}
-                      alt=""
-                    />
-                    <div className="group w-full h-36 flex items-center justify-center gap-10 mt-54">
-                      <div className="flex flex-col items-center justify-center mb-8">
-                        <h1 className="text-[3.9vh] font-[900] font-['figtree'] hover:text-[#DB6885] hover:underline transition-all ease-linear duration-200 cursor-pointer">
-                          {title}
-                        </h1>
-                        <h2 className="font-['Fredoka'] text-[3vh] text-[#DB6885] font-black">
-                          ₹ {price}
-                        </h2>
-                      </div>
-
-                      <div className="group-hover:block hidden transition-all ease-linear duration-200 absolute bottom-0">
-                        <div className="flex gap-2">
-                          <div className="circle w-9 h-9 rounded-full border-[1.5px] border-[#DB6885] hover:bg-[#DB6885] flex items-center justify-center text-[#DB6885] hover:text-white transition-all ease-linear duration-200">
-                            <Heart />
-                          </div>
-                          <button className="px-9 py-2 bg-[#DB6885] hover:bg-[#FFC107] hover:text-black text-white rounded-full transition-all ease-linear duration-200">
-                            Add to Cart
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-        {/* Button */}
-        <button className="absolute left-1/2 -translate-x-1/2 bottom-[162px] px-[6.8vh] font-['figtree'] font-[900] text-[#DB6885] text-[2.55vh] border border-[#DB6885] py-[2.88vh] rounded-full mt-6">
-          See All Menu
-        </button>
-      </div>
+      <PopularMenuCards />
 
       {/* Testimonial */}
       <div className="relative w-full h-[150vh]">
@@ -392,73 +334,7 @@ const Homepage = () => {
       </div>
 
       {/* Our Blog */}
-      <div className="w-full h-[123vh]">
-        <div className="mt-14">
-          <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-3xl text-center">
-            Our Blog
-          </h3>
-          <h1 className="font-['figtree'] text-[8.7vh] text-center font-[900] mt-4">
-            Latest Post
-          </h1>
-        </div>
-
-        <div className="w-full h-[70vh] flex items-center justify-between px-4 mt-18">
-          <div className="left h-full w-[31vw] flex flex-col gap-7">
-            <Image
-              className="w-full h-[43vh] rounded-2xl object-cover"
-              src="/image/article-1.jpg"
-              alt="article-1"
-              width={1000}
-              height={1000}
-            />
-            <h1 className="text-2xl text-[#2F3137] font-['figtree'] font-[900] tracking-tight leading-[1.5] w-[30vw]">
-              How To Cook The Sweet Cupcakes with Strawberry Honey
-            </h1>
-            <Link
-              className="font-['Fredoka'] font-[900] text-[#DB6885] hover:underline"
-              href=""
-            >
-              Read More ››
-            </Link>
-          </div>
-          <div className="middle h-full w-[31vw] flex flex-col gap-7">
-            <Image
-              className="w-full h-[43vh] rounded-2xl object-cover"
-              src="/image/article-2.jpg"
-              alt="article-2"
-              width={1000}
-              height={1000}
-            />
-            <h1 className="text-2xl text-[#2F3137] font-['figtree'] font-[900] tracking-tight leading-[1.5] w-[30vw]">
-              Donut topping recommendations for donut lovers
-            </h1>
-            <Link
-              className="font-['Fredoka'] font-[900] text-[#DB6885] hover:underline"
-              href=""
-            >
-              Read More ››
-            </Link>
-          </div>
-          <div className="right h-full w-[31vw] flex flex-col gap-7">
-            <Image
-              className="w-full h-[43vh] rounded-2xl object-cover"
-              src="/image/article-3.jpg"
-              alt="article-3"
-              width={1000}
-              height={1000}
-            />
-            <h1 className="text-2xl text-[#2F3137] font-['figtree'] font-[900] tracking-tight leading-[1.5] w-[30vw]">
-              How To Cook The Sweet Macarons with Strawberry Cream
-            </h1>
-            <Link
-              className="font-['Fredoka'] font-[900] text-[#DB6885] hover:underline"
-              href=""
-            >
-              Read More ››
-            </Link>
-          </div>
-        </div>
-      </div>
+      <OurBlog />
     </>
   );
 };

@@ -1,7 +1,12 @@
 "use client";
 
+import PopularMenuCards from "@/components/PopularMenuCards";
+import QuantityButton from "@/components/QuantityButton";
 import { useProduct } from "@/contexts/ProductContext";
+import { Heart } from "lucide-react";
+import Link from "next/link";
 import { useParams } from "next/navigation";
+import { useState } from "react";
 
 export default function ProductPage() {
   const { id } = useParams();
@@ -12,19 +17,40 @@ export default function ProductPage() {
   if (!product) return <h1 className="p-6">Product not found</h1>;
 
   return (
-    <div className="w-full min-h-[100vh] flex justify-center mt-34">
-      <div className="w-[40vw] h-full bg-red-300">
-        <img
-          className="w-[50vw] h-full object-cover mt-10"
-          src={product.imageURL as string}
-          alt=""
-        />
+    <>
+      {/* Product Detail */}
+      <div className="w-full min-h-[100vh] flex justify-center mt-34 text-[#2F3137]">
+        <div className="left w-[45vw] h-full">
+          <img
+            className="w-[40vw] h-full object-cover mt-10"
+            src={product.imageURL as string}
+            alt=""
+          />
+        </div>
+
+        <div className="right w-[45vw] flex flex-col gap-10">
+          <h1 className="text-[5vw] font-bold">{product.title}</h1>
+          <div>
+            <h1 className="text-3xl font-[800]">Price</h1>
+            <p className="font-['Fredoka'] text-[3vh] text-[#DB6885] font-[900]">
+              ₹ {product.price}
+            </p>
+          </div>
+          <div>
+            <h1 className="text-3xl font-[800]">Description</h1>
+            <p className="mt-2 text-gray-600">{product.description}</p>
+          </div>
+
+          <div className="flex gap-14">
+            <h1 className="text-3xl font-[700]">Quantity:</h1>
+            <QuantityButton />
+          </div>
+        </div>
       </div>
-      <div className="w-[40vw] bg-blue-400 ">
-        <h1 className="text-6xl font-bold">{product.title}</h1>
-        <p className="mt-2 text-gray-600">{product.description}</p>
-        <p className="mt-4 text-lg font-semibold">{product.price} ₹</p>
+
+      <div className="-mt-24">
+        <PopularMenuCards />
       </div>
-    </div>
+    </>
   );
 }
