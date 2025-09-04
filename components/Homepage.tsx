@@ -334,7 +334,17 @@ const Homepage = () => {
       </div>
 
       {/* Our Blog */}
-      <OurBlog />
+      <div className="flex flex-col gap-8.5 mb-44">
+        <div className="mt-13">
+          <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-3xl text-center">
+            Our Blog
+          </h3>
+          <h1 className="font-['figtree'] text-[8.7vh] text-center font-[900] mt-4">
+            Latest Post
+          </h1>
+        </div>
+        <OurBlog />
+      </div>
     </>
   );
 };

@@ -1,14 +1,10 @@
 "use client";
-
 import PopularMenuCards from "@/components/PopularMenuCards";
 import QuantityButton from "@/components/QuantityButton";
 import { useProduct } from "@/contexts/ProductContext";
-import { Heart } from "lucide-react";
-import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useState } from "react";
 
-export default function ProductPage() {
+const ProductPage = () => {
   const { id } = useParams();
   const { allProducts } = useProduct();
 
@@ -53,4 +49,5 @@ export default function ProductPage() {
       </div>
     </>
   );
-}
+};
+export default ProductPage;

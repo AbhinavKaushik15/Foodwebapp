@@ -9,7 +9,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 interface LoginContextValue {
@@ -18,6 +18,10 @@ interface LoginContextValue {
   handleGoogleLogin: () => void;
 }
 const Login: React.FC<LoginContextValue> = () => {
+  useEffect(() => {
+    document.title = "Login | Fofood";
+  }, []);
+
   const { saveUserToFirestore } = useAuth();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);

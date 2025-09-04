@@ -1,7 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function ChatbotPage() {
+const ChatbotPage = () => {
+  useEffect(() => {
+    document.title = "AI Chatbot | Fofood";
+  }, []);
+
   const [messages, setMessages] = useState<{ role: string; text: string }[]>(
     []
   );
@@ -76,4 +80,6 @@ export default function ChatbotPage() {
       </div>
     </div>
   );
-}
+};
+
+export default ChatbotPage;

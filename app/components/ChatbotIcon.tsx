@@ -11,7 +11,7 @@ const ChatbotIcon = () => {
   return (
     <Link
       href={user ? "/chatbot" : "/login"}
-      className={`fixed right-10 bottom-30 z-[10] ${pathname === "/chatbot" ? "hidden" : "flex"}`}
+      className={`fixed right-10 bottom-10 z-[10] ${pathname === "/chatbot" ? "hidden" : "flex"}`}
     >
       <div className="group relative bg-black border-4 border-[#DB6885] w-16 h-16 rounded-full flex items-center justify-center">
         <button>
@@ -33,7 +33,7 @@ const ChatbotIcon = () => {
             <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z"></path>
           </svg>
         </button>
-        <span className="absolute -top-22 left-[50%] w-24 -translate-x-[50%] z-20 origin-left scale-0 px-3 rounded-lg border border-gray-300 bg-white py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100">
+        <span className="absolute w-24 -translate-x-[90%] z-20 origin-left scale-0 px-3 rounded-lg border border-gray-300 bg-white py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100">
           {user ? "Fofood AI Chatbot" : "First login, then chat with me"}
           <span> </span>
         </span>

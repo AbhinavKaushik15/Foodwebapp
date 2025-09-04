@@ -4,13 +4,11 @@ import { GoogleGenAI } from "@google/genai";
 export async function POST(req: Request) {
   try {
     const { message } = await req.json();
-
     const ai = new GoogleGenAI({
       apiKey: process.env.GEMINI_API_KEY,
     });
-
     const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash", // text model
+      model: "gemini-2.0-flash",
       contents: [
         {
           role: "user",

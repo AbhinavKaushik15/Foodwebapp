@@ -7,7 +7,7 @@ const ScrollTop = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > window.innerHeight * 0.3) {
+      if (window.scrollY > window.innerHeight * 0.1) {
         setVisible(true);
       } else {
         setVisible(false);
@@ -24,7 +24,7 @@ const ScrollTop = () => {
       {visible && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="hidden sm:flex fixed cursor-pointer z-[12] right-10 bottom-10 after:content-['scroll_to_top'] after:text-white after:absolute after:text-nowrap after:scale-0 hover:after:scale-100 transition-all ease-linear after:duration-200 w-16 h-16 rounded-full border-4 border-[#DB6885] bg-black pointer items-center justify-center duration-300 hover:rounded-[50px] hover:w-36 group/button overflow-hidden active:scale-90"
+          className="hidden sm:flex fixed cursor-pointer z-[12] right-10 bottom-30 after:content-['scroll_to_top'] after:text-white after:absolute after:text-nowrap after:scale-0 hover:after:scale-100 transition-all ease-linear after:duration-200 w-16 h-16 rounded-full border-4 border-[#DB6885] bg-black pointer items-center justify-center duration-300 hover:rounded-[50px] hover:w-36 group/button overflow-hidden active:scale-90"
         >
           <svg
             className="w-3 fill-white delay-50 duration-200 group-hover/button:-translate-y-12"

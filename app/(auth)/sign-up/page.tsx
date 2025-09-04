@@ -5,10 +5,14 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 const Signup = () => {
+  useEffect(() => {
+    document.title = "Signup | Fofood";
+  }, []);
+
   const { saveUserToFirestore } = useAuth();
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
