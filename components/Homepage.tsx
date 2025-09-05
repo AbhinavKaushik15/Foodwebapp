@@ -15,7 +15,7 @@ const Homepage = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="w-full h-[122vh] md:h-[100vh] bg-[#FFF4F5]">
+      <div className="w-full h-[1070px] md:h-[100vh] bg-[#FFF4F5]">
         <Image
           className="absolute top-0 right-0 w-[95vw] sm:w-[34.75vw]"
           src="/image/hero-shape.png"
@@ -32,7 +32,7 @@ const Homepage = () => {
           height={1000}
         />
 
-        <div className="absolute w-[80vw] md:w-[50vw] h-[120vh] top-[62vh] md:top-0 left-4">
+        <div className="absolute w-[80vw] md:w-[50vw] h-[120vh] top-[539px] md:top-0 left-4">
           <h1 className="text-[#DB6885] text-[4.5vw] md:text-[2vw] mt-2 font-black font-['Fredoka']">
             Welcome to Fofood
           </h1>
@@ -57,28 +57,28 @@ const Homepage = () => {
           <div className="w-[75vw] md:w-[54.3vh] flex items-center justify-between mt-6.5 md:mt-[10.8vh]">
             <div className="flex">
               <Image
-                className="w-13 md:w-14 h-13 md:h-14 rounded-full bg-red-400 border-white border-[2px]"
+                className="w-13 md:w-14 h-13 md:h-14 rounded-full border-white border-[2px]"
                 src="/image/avatar-1.webp"
                 alt="avatar1"
                 width={50}
                 height={50}
               />
               <Image
-                className="w-13 md:w-14 h-13 md:h-14 rounded-full bg-red-400 border-white border-[2px] -ml-3"
+                className="w-13 md:w-14 h-13 md:h-14 rounded-full border-white border-[2px] -ml-3"
                 src="/image/avatar-2.webp"
                 alt="avatar2"
                 width={50}
                 height={50}
               />
               <Image
-                className="w-13 md:w-14 h-13 md:h-14 rounded-full bg-red-400 border-white border-[2px] -ml-3"
+                className="w-13 md:w-14 h-13 md:h-14 rounded-full border-white border-[2px] -ml-3"
                 src="/image/avatar-3.webp"
                 alt="avatar3"
                 width={50}
                 height={50}
               />
               <Image
-                className="w-13 md:w-14 h-13 md:h-14 rounded-full bg-red-400 border-white border-[2px] -ml-3"
+                className="w-13 md:w-14 h-13 md:h-14 rounded-full border-white border-[2px] -ml-3"
                 src="/image/avatar-4.webp"
                 alt="avatar4"
                 width={50}
@@ -91,7 +91,9 @@ const Homepage = () => {
                 Our Happy Customers
               </div>
               <div className="flex items-center">
-                <span className="text-[3vw] md:text-sm -ml-[1.4vh] mr-1">⭐</span>
+                <span className="text-[3vw] md:text-sm -ml-[1.4vh] mr-1">
+                  ⭐
+                </span>
                 <span className="tracking-tighter text-[1.8vh] md:text-[2.4vh] font-[600] text-zinc-700 mr-1">
                   4.9
                 </span>
@@ -102,44 +104,44 @@ const Homepage = () => {
             </div>
           </div>
 
-          <h1 className="text-[1.03vw] text-zinc-600 w-[27vw] font-[500] leading-[1.9] mt-8 font-['Fredoka']">
+          <h1 className="text-[13.6px] md:text-[1.03vw] text-zinc-600 w-full md:w-[27vw] font-[500] leading-[1.9] mt-8 font-['Fredoka']">
             For Better Service Download Our Mobile App Now
           </h1>
 
-          {/* <div className="flex items-center gap-5 mt-3">
+          <div className="flex items-center gap-5 mt-3">
             <Image
-              className="w-[13.63vw]"
+              className="w-[47vw] md:w-[13.63vw]"
               src="/image/btn-google-play.webp"
               alt="appStore"
               width={300}
               height={300}
             />
             <Image
-              className="w-[13.63vw]"
+              className="w-[47vw] md:w-[13.63vw]"
               src="/image/btn-app-store.webp"
               alt="googlePlay"
               width={300}
               height={300}
             />
-          </div> */}
+          </div>
         </div>
       </div>
 
       {/* Explore */}
-      {/* <div className="explore w-full lg:h-[178vh] xl:h-[135vh] mt-[15vh] lg:mt-[25.5vh]">
-        <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-3xl text-center">
+      <div className="explore w-full h-[1850px] lg:h-[178vh] xl:h-[135vh] mt-[100px] md:mt-[15vh] lg:mt-[25.5vh]">
+        <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-xl md:text-3xl text-center">
           Explore
         </h3>
-        <h1 className="font-['figtree'] text-[8.7vh] text-center font-[900] mt-4">
+        <h1 className="font-['figtree'] text-[25px] md:text-[8.7vh] text-center font-[900] mt-3.5 md:mt-4">
           Our Delicious Menu
-        </h1> */}
+        </h1>
 
-      {/* Explore Cards */}
-      {/* <div className="w-full gap-10 flex flex-nowrap items-center justify-center mt-[7.5vh]">
-          <div className="w-[75vw] flex flex-wrap items-center justify-center gap-[7vh]">
-            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+        {/* Explore Cards */}
+        <div className="w-full gap-10 flex flex-nowrap items-center justify-center mt-[7.5vh]">
+          <div className="w-[75vw] flex flex-wrap items-center justify-center gap-10 md:gap-[7vh]">
+            <div className="w-[315px] md:w-[48vh] h-[240px] md:h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
               <Image
-                className="w-40 h-40"
+                className="w-30 md:w-40 h-30 md:h-40"
                 src="/image/food-menu-1.webp"
                 alt="menu1"
                 width={100}
@@ -150,9 +152,10 @@ const Homepage = () => {
                 3 Menu
               </h2>
             </div>
-            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+
+            <div className="w-[315px] md:w-[48vh] h-[240px] md:h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
               <Image
-                className="w-40 h-40"
+                className="w-30 md:w-40 h-30 md:h-40"
                 src="/image/food-menu-2.webp"
                 alt="menu2"
                 width={100}
@@ -163,9 +166,9 @@ const Homepage = () => {
                 3 Menu
               </h2>
             </div>
-            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+            <div className="w-[315px] md:w-[48vh] h-[240px] md:h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
               <Image
-                className="w-40 h-40"
+                className="w-30 md:w-40 h-30 md:h-40"
                 src="/image/food-menu-3.webp"
                 alt="menu3"
                 width={100}
@@ -176,9 +179,9 @@ const Homepage = () => {
                 2 Menu
               </h2>
             </div>
-            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+            <div className="w-[315px] md:w-[48vh] h-[240px] md:h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
               <Image
-                className="w-40 h-40"
+                className="w-30 md:w-40 h-30 md:h-40"
                 src="/image/food-menu-4.webp"
                 alt="menu4"
                 width={100}
@@ -189,9 +192,9 @@ const Homepage = () => {
                 1 Menu
               </h2>
             </div>
-            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+            <div className="w-[315px] md:w-[48vh] h-[240px] md:h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
               <Image
-                className="w-40 h-40"
+                className="w-30 md:w-40 h-30 md:h-40"
                 src="/image/food-menu-5.webp"
                 alt="menu5"
                 width={100}
@@ -202,9 +205,9 @@ const Homepage = () => {
                 0 Menu
               </h2>
             </div>
-            <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
+            <div className="w-[315px] md:w-[48vh] h-[240px] md:h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
               <Image
-                className="w-40 h-40"
+                className="w-30 md:w-40 h-30 md:h-40"
                 src="/image/food-menu-6.webp"
                 alt="menu6"
                 width={100}
@@ -216,21 +219,21 @@ const Homepage = () => {
               </h2>
             </div>
           </div>
-        </div> */}
-      {/* </div> */}
+        </div>
+      </div>
 
       {/* About us */}
-      {/* <div className="w-full md:h-[200vh] lg:h-[100vh] flex md:flex-col lg:flex-row items-center justify-between">
-        <div className="left-imgs w-full lg:w-1/2 h-[90vh] flex md:items-center md:justify-center gap-8 px-[2.8vh]">
+      <div className="w-full h-[640px] md:h-[200vh] lg:h-[100vh] flex flex-col lg:flex-row items-center justify-between">
+        <div className="left-imgs w-full h-[400px] md:h-[90vh] flex md:items-center justify-center gap-3 md:gap-8 px-3 md:px-[2.8vh]">
           <Image
-            className="w-[35vw] lg:w-[21vw] h-[67vh] rounded-2xl mt-5 object-cover"
+            className="w-[200px] lg:w-[21vw] h-[280px] md:h-[67vh] rounded-2xl mt-5 object-cover"
             src="/image/about-us-1.webp"
             alt=""
             width={800}
             height={800}
           />
           <Image
-            className="w-[35vw] lg:w-[21vw] h-[67vh] rounded-2xl mt-[11vh] object-cover"
+            className="w-[200px] lg:w-[21vw] h-[280px] md:h-[67vh] rounded-2xl mt-[60px] md:mt-[11vh] object-cover"
             src="/image/about-us-2.webp"
             alt=""
             width={800}
@@ -238,24 +241,24 @@ const Homepage = () => {
           />
         </div>
 
-        <div className="right-details w-full lg:w-1/2 h-[90vh] py-10 px-[8.1vh]">
-          <h3 className="text-[#DB6885] text-[2.15vw] font-black font-['Fredoka']">
+        <div className="right-details w-full lg:w-1/2 h-[90vh] py-10 px-4 md:px-[8.1vh]">
+          <h3 className="text-[#DB6885] text-xl md:text-[2.15vw] font-black font-['Fredoka']">
             About us
           </h3>
-          <h1 className="font-['figtree'] font-[900] text-[8.6vh] mt-3">
+          <h1 className="font-['figtree'] font-[900] text-[25px] md:text-[8.6vh] mt-3">
             Welcome to Fofood
           </h1>
-          <p className="w-[35vw] text-zinc-600 text-[2.6vh] leading-[2.1] mt-6">
+          <p className="w-full md:w-[35vw] text-zinc-600 text-[15px] md:text-[2.6vh] leading-[1.8] md:leading-[2.1] mt-4 md:mt-6">
             Welcome to Fofood, where we‘re committed to combating food deserts.
             Our goal is to ensure everyone has access to fresh, healthy, and
             affordable food, regardless of their location. Join us in creating a
             brighter future for all.
           </p>
-          <button className="px-[6.8vh] font-['figtree'] font-[900] text-[#DB6885] text-[2.6vh] border border-[#DB6885] py-[2.88vh] rounded-full mt-6">
+          <button className="px-9 md:px-[2.85vw] text-lg tracking-tight py-[17.5px] md:py-[2.7vh] bg-white border border-[#DB6885] hover:bg-[#DB6885] rounded-full text-[#DB6885] hover:text-white transition-all ease-linear duration-200 font-['figtree'] font-[900] text-[15px] md:text-[2.6vh] mt-6">
             Read More
           </button>
         </div>
-      </div> */}
+      </div>
 
       {/* Popular Menu */}
       <PopularMenuCards />
@@ -285,7 +288,7 @@ const Homepage = () => {
           <SwiperSlide className="relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vw] h-full flex flex-col gap-4 items-center justify-center">
               <Image
-                className="w-14 h-14 rounded-full bg-red-400 border-white border-[2px]"
+                className="w-14 h-14 rounded-full border-white border-[2px]"
                 src="/image/avatar-1.webp"
                 alt="avatar1"
                 width={50}
@@ -309,7 +312,7 @@ const Homepage = () => {
           <SwiperSlide>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vw] h-full flex flex-col gap-4 items-center justify-center">
               <Image
-                className="w-14 h-14 rounded-full bg-red-400 border-white border-[2px]"
+                className="w-14 h-14 rounded-full border-white border-[2px]"
                 src="/image/avatar-2.webp"
                 alt="avatar2"
                 width={50}
@@ -334,17 +337,17 @@ const Homepage = () => {
       </div> */}
 
       {/* Our Blog */}
-      {/* <div className="flex flex-col gap-8.5 mb-44">
-        <div className="mt-13">
-          <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-3xl text-center">
+      <div className="flex flex-col h-[2680px] md:h-[182vh] gap-8.5 mb-44 -mt-14 md:mt-0">
+        <div className="md:mt-13">
+          <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-xl md:text-3xl text-center">
             Our Blog
           </h3>
-          <h1 className="font-['figtree'] text-[8.7vh] text-center font-[900] mt-4">
+          <h1 className="font-['figtree'] text-[25px] md:text-[8.7vh] text-center font-[900] mt-4">
             Latest Post
           </h1>
         </div>
         <OurBlog />
-      </div> */}
+      </div>
     </>
   );
 };

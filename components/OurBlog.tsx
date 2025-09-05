@@ -39,18 +39,18 @@ const OurBlog = () => {
 
   return (
     <div className="w-full min-h-[148vh]">
-      <div className="w-full flex flex-wrap items-center justify-center gap-x-[4vh] gap-y-[11vh] px-2 mt-10">
+      <div className="w-full flex flex-wrap items-center justify-center gap-x-[4vh] gap-y-[50px] md:gap-y-[11vh] px-2 mt-10">
         {cardDetails.map((item, id) => {
           return (
-            <div key={id} className="h-full w-[31vw] flex flex-col gap-7">
+            <div key={id} className="h-full w-[400px] md:w-[31vw] flex flex-col gap-7">
               <Image
-                className="w-full h-[43vh] rounded-2xl object-cover"
+                className="w-full h-[250px] md:h-[43vh] rounded-2xl object-cover"
                 src={item.imageURL}
                 alt="article-1"
                 width={1000}
                 height={1000}
               />
-              <h1 className="text-2xl text-[#2F3137] font-['figtree'] font-[900] tracking-tight leading-[1.5] w-[30vw]">
+              <h1 className="text-[22px] md:text-2xl text-[#2F3137] font-['figtree'] font-[900] tracking-tight leading-[1.5] w-full md:w-[30vw]">
                 {item.title}
               </h1>
               <Link
