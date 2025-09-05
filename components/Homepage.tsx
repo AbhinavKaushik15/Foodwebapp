@@ -15,9 +15,9 @@ const Homepage = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="w-full h-[100vh] bg-[#FFF4F5]">
+      <div className="w-full h-[122vh] md:h-[100vh] bg-[#FFF4F5]">
         <Image
-          className="absolute top-0 right-0 w-[34.75vw]"
+          className="absolute top-0 right-0 w-[95vw] sm:w-[34.75vw]"
           src="/image/hero-shape.png"
           alt="shape"
           width={1000}
@@ -25,60 +25,60 @@ const Homepage = () => {
         />
 
         <Image
-          className="absolute top-[13.1vh] right-[44.5px] w-[47.45vw]"
+          className="absolute top-[12.3vh] md:top-[13.1vh] right-5 md:right-[44.5px] w-[90vw] md:w-[47.45vw]"
           src="/image/hero-cake.webp"
           alt="shape"
           width={1000}
           height={1000}
         />
 
-        <div className="absolute w-[50vw] xl:h-[120vh] left-4">
-          <h1 className="text-[#DB6885] text-[2vw] mt-2 font-black font-['Fredoka']">
+        <div className="absolute w-[80vw] md:w-[50vw] h-[120vh] top-[62vh] md:top-0 left-4">
+          <h1 className="text-[#DB6885] text-[4.5vw] md:text-[2vw] mt-2 font-black font-['Fredoka']">
             Welcome to Fofood
           </h1>
 
-          <h1 className="text-[5vw] tracking-tight leading-[1.3] mt-5 font-black text-[#2F3137] font-['Figtree']">
+          <h1 className="text-[8.6vw] md:text-[5vw] tracking-tight leading-[1.3] mt-1 md:mt-5 font-black text-[#2F3137] font-['Figtree']">
             Super Delicious Food Special for You
           </h1>
-          <p className="lg:text-[1.9vw] xl:text-[1.32vw] text-zinc-500 font-['figtree'] lg:w-[43vw] xl:w-[27vw] font-[500] leading-[1.9] mt-7">
+          <p className="lg:text-[1.9vw] xl:text-[1.32vw] text-zinc-500 font-['figtree'] lg:w-[43vw] xl:w-[27vw] font-[500] leading-[1.9] mt-1 md:mt-7">
             Order your favorites food from anywhere and get delivery at your
             door
           </p>
 
-          <div className="flex items-center gap-5 mt-[5.1vh]">
-            <button className="px-[3.1vw] text-lg tracking-tight py-[2.8vh] shadow-[#DB6885] shadow-2xl bg-[#DB6885] hover:bg-[#FFC008] rounded-full text-white hover:text-black transition-all ease-linear duration-200">
+          <div className="flex items-center gap-5 mt-2 md:mt-[5.1vh]">
+            <button className="px-10.5 md:px-[3.1vw] text-md md:text-lg tracking-tight py-[18px] md:py-[2.8vh] shadow-[#DB6885] shadow-2xl bg-[#DB6885] hover:bg-[#FFC008] rounded-full text-white hover:text-black transition-all ease-linear duration-200">
               Order Now
             </button>
-            <button className="px-[2.85vw] text-lg tracking-tight py-[2.7vh] bg-white border border-[#DB6885] hover:bg-[#DB6885] rounded-full text-[#DB6885] hover:text-white transition-all ease-linear duration-200">
+            <button className="px-9 md:px-[2.85vw] text-lg tracking-tight py-[17.5px] md:py-[2.7vh] bg-white border border-[#DB6885] hover:bg-[#DB6885] rounded-full text-[#DB6885] hover:text-white transition-all ease-linear duration-200">
               Learn More
             </button>
           </div>
 
-          <div className="w-[54.3vh] flex items-center justify-between mt-[10.8vh]">
+          <div className="w-[75vw] md:w-[54.3vh] flex items-center justify-between mt-6.5 md:mt-[10.8vh]">
             <div className="flex">
               <Image
-                className="w-14 h-14 rounded-full bg-red-400 border-white border-[2px]"
+                className="w-13 md:w-14 h-13 md:h-14 rounded-full bg-red-400 border-white border-[2px]"
                 src="/image/avatar-1.webp"
                 alt="avatar1"
                 width={50}
                 height={50}
               />
               <Image
-                className="w-14 h-14 rounded-full bg-red-400 border-white border-[2px] -ml-3"
+                className="w-13 md:w-14 h-13 md:h-14 rounded-full bg-red-400 border-white border-[2px] -ml-3"
                 src="/image/avatar-2.webp"
                 alt="avatar2"
                 width={50}
                 height={50}
               />
               <Image
-                className="w-14 h-14 rounded-full bg-red-400 border-white border-[2px] -ml-3"
+                className="w-13 md:w-14 h-13 md:h-14 rounded-full bg-red-400 border-white border-[2px] -ml-3"
                 src="/image/avatar-3.webp"
                 alt="avatar3"
                 width={50}
                 height={50}
               />
               <Image
-                className="w-14 h-14 rounded-full bg-red-400 border-white border-[2px] -ml-3"
+                className="w-13 md:w-14 h-13 md:h-14 rounded-full bg-red-400 border-white border-[2px] -ml-3"
                 src="/image/avatar-4.webp"
                 alt="avatar4"
                 width={50}
@@ -87,15 +87,15 @@ const Homepage = () => {
             </div>
 
             <div className="w-fit flex flex-col items-center justify-center">
-              <div className="text-[2.3vh] font-[800] text-black font-['figtree']">
+              <div className="text-[1.5vh] md:text-[2.3vh] font-[800] text-black font-['figtree']">
                 Our Happy Customers
               </div>
               <div className="flex items-center">
-                <span className="text-sm -ml-[1.4vh] mr-1">⭐</span>
-                <span className="tracking-tighter text-[2.4vh] font-[600] text-zinc-700 mr-1">
+                <span className="text-[3vw] md:text-sm -ml-[1.4vh] mr-1">⭐</span>
+                <span className="tracking-tighter text-[1.8vh] md:text-[2.4vh] font-[600] text-zinc-700 mr-1">
                   4.9
                 </span>
-                <span className="text-zinc-600 text-[2.4vh] tracking-tighter">
+                <span className="text-zinc-600 text-[1.8vh] md:text-[2.4vh] tracking-tighter">
                   (12.8k reviews)
                 </span>
               </div>
@@ -106,7 +106,7 @@ const Homepage = () => {
             For Better Service Download Our Mobile App Now
           </h1>
 
-          <div className="flex items-center gap-5 mt-3">
+          {/* <div className="flex items-center gap-5 mt-3">
             <Image
               className="w-[13.63vw]"
               src="/image/btn-google-play.webp"
@@ -121,21 +121,21 @@ const Homepage = () => {
               width={300}
               height={300}
             />
-          </div>
+          </div> */}
         </div>
       </div>
 
       {/* Explore */}
-      <div className="explore w-full lg:h-[178vh] xl:h-[135vh] mt-[15vh] lg:mt-[25.5vh]">
+      {/* <div className="explore w-full lg:h-[178vh] xl:h-[135vh] mt-[15vh] lg:mt-[25.5vh]">
         <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-3xl text-center">
           Explore
         </h3>
         <h1 className="font-['figtree'] text-[8.7vh] text-center font-[900] mt-4">
           Our Delicious Menu
-        </h1>
+        </h1> */}
 
-        {/* Explore Cards */}
-        <div className="w-full gap-10 flex flex-nowrap items-center justify-center mt-[7.5vh]">
+      {/* Explore Cards */}
+      {/* <div className="w-full gap-10 flex flex-nowrap items-center justify-center mt-[7.5vh]">
           <div className="w-[75vw] flex flex-wrap items-center justify-center gap-[7vh]">
             <div className="w-[48vh] h-[40vh] rounded-xl bg-white border flex flex-col items-center justify-center border-[#dadada] hover:border-[#DB6885] hover:shadow-xl">
               <Image
@@ -216,11 +216,11 @@ const Homepage = () => {
               </h2>
             </div>
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
       {/* About us */}
-      <div className="w-full md:h-[200vh] lg:h-[100vh] flex md:flex-col lg:flex-row items-center justify-between">
+      {/* <div className="w-full md:h-[200vh] lg:h-[100vh] flex md:flex-col lg:flex-row items-center justify-between">
         <div className="left-imgs w-full lg:w-1/2 h-[90vh] flex md:items-center md:justify-center gap-8 px-[2.8vh]">
           <Image
             className="w-[35vw] lg:w-[21vw] h-[67vh] rounded-2xl mt-5 object-cover"
@@ -255,13 +255,13 @@ const Homepage = () => {
             Read More
           </button>
         </div>
-      </div>
+      </div> */}
 
       {/* Popular Menu */}
       <PopularMenuCards />
 
       {/* Testimonial */}
-      <div className="relative w-full h-[150vh]">
+      {/* <div className="relative w-full h-[150vh]">
         <Image
           className="absolute w-[96vw] h-[130vh] left-1/2 -translate-x-1/2"
           src="/image/bg-testimonial.jpg"
@@ -331,10 +331,10 @@ const Homepage = () => {
             </div>
           </SwiperSlide>
         </Swiper>
-      </div>
+      </div> */}
 
       {/* Our Blog */}
-      <div className="flex flex-col gap-8.5 mb-44">
+      {/* <div className="flex flex-col gap-8.5 mb-44">
         <div className="mt-13">
           <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-3xl text-center">
             Our Blog
@@ -344,7 +344,7 @@ const Homepage = () => {
           </h1>
         </div>
         <OurBlog />
-      </div>
+      </div> */}
     </>
   );
 };

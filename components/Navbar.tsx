@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useAuth();
   const pathname = usePathname();
-  
+
   const isAdmin = user && user.email === "abhinavsharmaas20000@gmail.com";
 
   const tabs = [
@@ -37,10 +37,11 @@ const Navbar = () => {
 
   return (
     <div className="relative">
+      {/* Mobile Hidden Menubar */}
       <div
-        className={`flex lg:hidden fixed -top-[71.9vh] h-[66vh] w-full bg-gradient-to-b from-white z-[15] to-white/80 ${isOpen ? "top-0 transition-all duration-200 ease-out" : "-top-[71.9vh] transition-all duration-300 ease-in"}`}
+        className={`flex lg:hidden fixed -top-[71.9vh] h-[50vh] w-full bg-gradient-to-b from-white z-[15] to-white/80 ${isOpen ? "top-0 transition-all duration-200 ease-out" : "-top-[71.9vh] transition-all duration-300 ease-in"}`}
       >
-        <div className="w-full h-full flex flex-col items-start font-['fredoka'] text-lg gap-5 mt-29 font-[700] px-[94px]">
+        <div className="w-full h-full flex flex-col items-start font-['fredoka'] text-lg gap-5 mt-24 font-[700] px-5">
           {tabs.map(({ label, path }) => (
             <Link
               onClick={() => setIsOpen(false)}
@@ -64,7 +65,7 @@ const Navbar = () => {
             }`}
             href="/my-favorites"
           >
-            <Heart className="w-[3.2vh] h-[3.2vh]" />
+            <Heart className="w-[2.5vh] h-[2.5vh]" />
             My Favorites
           </Link>
           <Link
@@ -77,13 +78,13 @@ const Navbar = () => {
         </div>
       </div>
       <nav
-        className={`fixed top-0 w-full h-[16vh] px-[94px] lg:px-[18px] transition-all ease-linear duration-200 ${
+        className={`fixed -top-6 sm:top-0 w-full h-[16vh] px-4 lg:px-[18px] transition-all ease-linear duration-200 ${
           isScrolled ? "bg-[#ffffffdc] lg:bg-white" : "bg-transparent"
         } flex items-center justify-between z-[15]`}
       >
         <Link onClick={() => setIsOpen(false)} href="/">
           <Image
-            className="w-[85px]"
+            className="w-[80px] sm:w-[85px]"
             src="/image/logo-color.webp"
             alt="logo"
             width={120}
@@ -91,6 +92,7 @@ const Navbar = () => {
           />
         </Link>
 
+        {/* Tablet & Desktop */}
         <div className="hidden sm:flex items-center lg:gap-[4.6vw] xl:gap-[5.9vw]">
           <div className="hidden lg:flex items-center lg:gap-[4.4vw] xl:gap-[5.75vw] font-['fredoka'] font-[700]">
             {tabs.map(({ label, path }) => (
@@ -182,9 +184,10 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex lg:hidden items-center gap-6">
+        {/* Mobile */}
+        <div className="flex lg:hidden items-center gap-3">
           <Link onClick={() => setIsOpen(false)} href="/my-cart">
-            <ShoppingCart className="font-[100] w-6 h-6" />
+            <ShoppingCart className="font-[100] w-6.5 h-6.5" />
           </Link>
           <button
             onClick={() => setIsOpen(!isOpen)}
