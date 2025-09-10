@@ -17,7 +17,7 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
     if (!isLoading) {
       if (!user) {
         router.push("/login");
-      } else if (user.email === "abhinavsharmaas20000@gmail.com") {
+      } else if (user.email === "abhinav@gmail.com") {
         router.push("/admin");
       } else if (user) {
         router.push("/profile");

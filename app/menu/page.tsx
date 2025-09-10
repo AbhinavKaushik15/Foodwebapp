@@ -1,232 +1,139 @@
 "use client";
-import React, { useEffect } from "react";
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
+import React, { useEffect, useMemo, useState } from "react";
+import { useProduct } from "@/contexts/ProductContext";
+import Link from "next/link";
 import Image from "next/image";
+
+interface Product {
+  id: string | number;
+  title: string;
+  price: number;
+  imageURL: string;
+  category: string;
+}
+
+// Category ka type
+interface Category {
+  title: string;
+  imageURL: string;
+  count: number;
+}
+
+const categoryImages: Record<string, string> = {
+  Cake: "/image/food-menu-1.webp",
+  Cupcake: "/image/food-menu-2.webp",
+  Donut: "/image/food-menu-3.webp",
+  Cookie: "/image/food-menu-4.webp",
+  Macaron: "/image/food-menu-5.webp",
+  Drinks: "/image/food-menu-6.webp",
+};
 
 const menu = () => {
   useEffect(() => {
     document.title = "Menu | Fofood";
   }, []);
 
-  const categories = [
-    {
-      uid: "1",
-      category: [
-        { imageURL: "/image/menu.png", title: "All", menuCount: "8 Menu" },
-      ],
-      menuCards: [
-        {
-          id: 1,
-          imageURL: "/image/food-1.webp",
-          title: "Chococheese Cake",
-          price: "$2.5",
-        },
-        {
-          id: 2,
-          imageURL: "/image/food-2.webp",
-          title: "Pink Donuts",
-          price: "$2.8",
-        },
-        {
-          id: 3,
-          imageURL: "/image/food-3.webp",
-          title: "Choco Cake",
-          price: "$2.9",
-        },
-        {
-          id: 4,
-          imageURL: "/image/food-4.webp",
-          title: "Sweet Cake",
-          price: "$2.3",
-        },
-        {
-          id: 5,
-          imageURL: "/image/food-5.webp",
-          title: "Pink Cake",
-          price: "$2.1",
-        },
-        {
-          id: 6,
-          imageURL: "/image/food-6.webp",
-          title: "Choco Cookies",
-          price: "$2.8",
-        },
-        {
-          id: 7,
-          imageURL: "/image/food-7.webp",
-          title: "Sweet Donuts",
-          price: "$1.8",
-        },
-        {
-          id: 8,
-          imageURL: "/image/food-8.webp",
-          title: "Sweet Choco",
-          price: "$3.6",
-        },
-      ],
-      option: [{ title: "All Menu", counts: "8 Menu" }],
-    },
-    {
-      uid: "2",
-      category: [
-        {
-          imageURL: "/image/food-menu-1.webp",
-          title: "Cakes",
-          menuCount: "3 Menu",
-        },
-      ],
-      menuCards: [
-        {
-          id: 1,
-          imageURL: "/image/food-1.webp",
-          title: "Chococheese Cake",
-          price: "$2.5",
-        },
-        {
-          id: 2,
-          imageURL: "/image/food-3.webp",
-          title: "Choco Cake",
-          price: "$2.9",
-        },
-        {
-          id: 3,
-          imageURL: "/image/food-4.webp",
-          title: "Sweet Cake",
-          price: "$2.3",
-        },
-      ],
-      option: [{ title: "Cakes Menu", counts: "3 Menu" }],
-    },
-    {
-      uid: "3",
-      category: [
-        {
-          imageURL: "/image/food-menu-2.webp",
-          title: "Cupcakes",
-          menuCount: "3 Menu",
-        },
-      ],
-      menuCards: [
-        {
-          id: 1,
-          imageURL: "/image/food-4.webp",
-          title: "Sweet Cake",
-          price: "$2.3",
-        },
-        {
-          id: 2,
-          imageURL: "/image/food-5.webp",
-          title: "Pink Cake",
-          price: "$2.1",
-        },
-        {
-          id: 3,
-          imageURL: "/image/food-8.webp",
-          title: "Sweet Choco",
-          price: "$3.6",
-        },
-      ],
-      option: [{ title: "Cupcakes Menu", counts: "3 Menu" }],
-    },
-    {
-      uid: "4",
-      category: [
-        {
-          imageURL: "/image/food-menu-3.webp",
-          title: "Cookies",
-          menuCount: "1 Menu",
-        },
-      ],
-      menuCards: [
-        {
-          id: 1,
-          imageURL: "/image/food-6.webp",
-          title: "Choco Cookies",
-          price: "$2.8",
-        },
-      ],
-      option: [{ title: "Cookies Menu", counts: "1 Menu" }],
-    },
-    {
-      uid: "5",
-      category: [
-        {
-          imageURL: "/image/food-menu-4.webp",
-          title: "Macarons",
-          menuCount: "0 Menu",
-        },
-      ],
-      menuCards: [],
-      option: [{ title: "Macarons Menu", counts: "0 Menu" }],
-    },
-    {
-      uid: "6",
-      category: [
-        {
-          imageURL: "/image/food-menu-5.webp",
-          title: "Drinks",
-          menuCount: "0 Menu",
-        },
-      ],
-      menuCards: [],
-      option: [{ title: "Drinks Menu", counts: "0 Menu" }],
-    },
-  ];
+  const { allProducts } = useProduct();
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+
+  const categories: Category[] = useMemo(() => {
+    const catMap: Record<string, Category> = {};
+
+    allProducts.forEach((item: any) => {
+      if (!catMap[item.category]) {
+        catMap[item.category] = {
+          title: item.category,
+          imageURL: categoryImages[item.category],
+          count: 1,
+        };
+      } else {
+        catMap[item.category].count++;
+      }
+    });
+
+    return Object.values(catMap);
+  }, [allProducts]);
+
+  // products filter
+  const filteredProducts =
+    selectedCategory === "All"
+      ? allProducts
+      : allProducts.filter((p) => p.category === selectedCategory);
+
   return (
     <div className="w-full">
       {/* top page */}
-      <div className="relative w-full h-[71.6vh] bg-[#FFF4F5]">
-        <div className="absolute top-[30vh] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
-          <div className="font-['Fredoka'] font-[900] text-[4.5vh]">
-            <span className="text-[#707070]">Home</span>
-            <span className="text-[#DB6885] ml-1">/ Menu</span>
+      <div className="relative w-full h-[298px] lg:h-[71.6vh] bg-[#FFF4F5]">
+        <div className="absolute top-[129px] lg:top-[30vh] left-1/2 -translate-x-1/2 flex flex-col items-center lg:gap-1">
+          <div className="font-['Fredoka'] font-[900] text-[4.5vw] lg:text-[4.5vh]">
+            <Link href="/" className="mr-1 font-['fredoka'] font-[900] text-zinc-600 hover:text-[#DB6885] hover:underline">Home</Link>
+            <Link href="/menu" className="text-[#DB6885] ml-1 font-[900]">/ Menu</Link>
           </div>
-          <h1 className="font-['figtree'] text-[11.5vh] font-[900]">
+          <h1 className="font-['figtree'] text-[8.2vw] lg:text-[11.5vh] font-[900]">
             Our Menu
           </h1>
         </div>
       </div>
 
-      {/* Menu */}
-      <TabGroup className="w-full min-h-[210vh] mt-[13.8vh] flex justify-between gap-[14.5vh] px-[18px]">
-        <TabList className="w-[22.5vw] flex flex-col gap-5">
-          <h1 className="text-[4vh] text-zinc-600 font-['figtree'] font-[900] mb-[1.1vh]">
+      <div className="w-full min-h-[210vh] mt-[13.8vh] flex flex-col lg:flex-row justify-normal lg:justify-between gap-[14.5vh] px-[18px]">
+        {/* Sidebar - Categories */}
+        <div className="relative w-full lg:w-[22.5vw] flex flex-col gap-5">
+          <h2 className="text-[4vh] text-zinc-600 font-['figtree'] font-[900] mb-[1.1vh]">
             Categories
-          </h1>
-          {categories.map(({ category, uid }) => (
-            <div key={uid}>
-              {category.map((item, index) => {
-                return (
-                  <Tab
-                    key={index}
-                    className="w-full rounded-2xl py-[1.9vh] px-[2.1vh] flex items-center gap-4 justify-start text-sm font-semibold focus:not-data-focus:outline-none hover:bg-[#DB6885] data-selected:bg-[#DB6885] data-selected:text-white hover:text-white border border-zinc-300 shadow-2xs"
-                  >
-                    <Image
-                      src={item.imageURL}
-                      alt="cate2"
-                      width={62.5}
-                      height={62.5}
-                    />
-                    <div className="flex flex-col items-start">
-                      <h1 className="text-[3.9vh]">{item.title}</h1>
-                      <h1 className="text-[3vh] font-['fredoka' font-[700]">
-                        {item.menuCount}
-                      </h1>
-                    </div>
-                  </Tab>
-                );
-              })}
-            </div>
-          ))}
+          </h2>
+          <div className="w-full lg:w-[22.5vw] flex-nowrap overflow-x-scroll lg:overflow-x-hidden scrollbar-hide flex flex-row lg:flex-col gap-5">
+            {/* All option */}
+            <button
+              onClick={() => setSelectedCategory("All")}
+              className={`w-[24vh] lg:w-full rounded-2xl flex-shrink-0 py-[1.9vh] px-[2.1vh] flex items-center gap-4 justify-start text-sm font-semibold focus:not-data-focus:outline-none hover:bg-[#DB6885] hover:text-white border border-zinc-300 shadow-2xs 
+           ${selectedCategory === "All" ? "bg-[#DB6885] text-white" : "bg-white"}`}
+            >
+              <Image
+                className="w-[10vh]"
+                src="/image/menu.png"
+                alt="cate2"
+                width={62.5}
+                height={62.5}
+              />
+              <div className="flex-1 text-left">
+                <p className="text-[3.9vh]">All</p>
+                <p className="text-[3vh] font-['fredoka'] font-[900]">
+                  {allProducts.length} Menu
+                </p>
+              </div>
+            </button>
+
+            {/* Dynamic categories */}
+            {categories.map((cat) => (
+              <button
+                key={cat.title}
+                onClick={() => setSelectedCategory(cat.title)}
+                className={`w-[36vh] flex-shrink-0 lg:w-full rounded-2xl py-[1.9vh] px-[2.1vh] flex items-center gap-4 justify-start text-sm font-semibold focus:not-data-focus:outline-none hover:bg-[#DB6885] hover:text-white border border-zinc-300 shadow-2xs
+            ${selectedCategory === cat.title ? "bg-[#DB6885] text-white" : "bg-white"}`}
+              >
+                <Image
+                  className="w-[10vh]"
+                  src={cat.imageURL}
+                  alt={cat.title}
+                  width={62.5}
+                  height={62.5}
+                />
+                <div className="flex flex-col items-start">
+                  <h1 className="text-[3.9vh]">{cat.title}</h1>
+                  <h1 className="text-[3vh] font-['fredoka'] font-[900]">
+                    {cat.count} Menu
+                  </h1>
+                </div>
+              </button>
+            ))}
+          </div>
 
           {/* Get 50% off! */}
-          <div className="relative w-[22.5vw] h-[75vh] mt-14 overflow-hidden">
-            <Image
+          <div className="hidden lg:block relative w-[22.5vw] h-[75vh] mt-14 overflow-hidden">
+            <img
               className="absolute w-full h-full object-top rounded-4xl z-[-1]"
               src="/image/footer.jpg"
               alt="bgImg"
-              height={400}
-              width={280}
             />
             <div className="w-full h-full flex flex-col items-start justify-center pl-6 gap-4">
               <h1 className="text-white font-['figtree'] font-[900] text-[3.5vh]">
@@ -243,59 +150,72 @@ const menu = () => {
               </button>
             </div>
           </div>
-        </TabList>
+        </div>
 
-        <TabPanels className="relative w-[67.4vw] min-h-[100vh]">
-          {categories.map(({ uid, menuCards, option }) => (
-            <TabPanel key={uid} className="w-full flex flex-col">
-              <div className="flex w-full">
-                {option.map((item, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="w-full flex items-center justify-between"
+        {/* Right side - Products */}
+        <div className="relative w-full lg:w-[67.4vw] min-h-[100vh]">
+          <div className="w-full flex items-center justify-between">
+            <h1 className="text-[4.3vh] text-black font-['figtree'] font-[900]">
+              {selectedCategory} Menu
+            </h1>
+            <h1 className="text-[3vh] font-['fredoka'] font-[700] text-[#DB6885]">
+              {filteredProducts.length} Menu
+            </h1>
+          </div>
+
+          <div className="w-full flex flex-wrap items-center justify-center gap-x-[6vw] gap-y-[9vw]">
+            {filteredProducts.map((product) => (
+              <div
+                key={product.id}
+                className="relative w-[160px] lg:w-[40vh] h-[215px] lg:h-[50vh] rounded-xl flex flex-col items-center"
+              >
+                <img
+                  className="w-[200px] lg:w-[34vh] h-[155px] lg:h-[34vh] absolute lg:top-5"
+                  src={product.imageURL as string}
+                  alt={product.title as string}
+                />
+
+                <div className="group w-full h-36 flex items-center justify-center gap-8 mt-48 lg:mt-54">
+                  <div className="flex flex-col items-center justify-center mb-40 lg:mb-8">
+                    <Link
+                      key={product.id}
+                      href={`productpage/${product.id}`}
+                      className="text-[17px] lg:text-[3.9vh] font-[900] text-center font-['figtree'] hover:text-[#DB6885] hover:underline transition-all ease-linear duration-200 cursor-pointer"
                     >
-                      <h1 className="text-[4.3vh] text-black font-['figtree'] font-[900]">
-                        {item.title}
-                      </h1>
-                      <h1 className="text-[3vh] font-['fredoka' font-[700] text-[#DB6885]">
-                        {item.counts}
-                      </h1>
-                    </div>
-                  );
-                })}
+                      {product.title}
+                    </Link>
+                    <h2 className="font-['Fredoka'] text-sm lg:text-[3vh] text-[#DB6885] font-black">
+                      ₹ {product.price}
+                    </h2>
+                  </div>
+                </div>
               </div>
-
-              <div className="w-full flex flex-wrap items-center justify-start gap-x-21">
-                {menuCards.map((menuCard, index) => (
-                  <li
-                    key={index}
-                    className="relative w-[40vh] h-[50vh] rounded-xl flex flex-col items-center"
-                  >
-                    <Image
-                      className="w-[34vh] h-[34vh] absolute top-5"
-                      src={menuCard.imageURL}
-                      alt="food-1"
-                      width={100}
-                      height={100}
-                    />
-                    <div className="group w-full h-36 flex items-center justify-center gap-10 mt-54">
-                      <div className="flex flex-col items-center justify-center mb-8">
-                        <h1 className="text-[3.9vh] font-[900] font-['figtree'] hover:text-[#DB6885] hover:underline transition-all ease-linear duration-200 cursor-pointer">
-                          {menuCard.title}
-                        </h1>
-                        <h2 className="font-['Fredoka'] text-[3vh] text-[#DB6885] font-black">
-                          {menuCard.price}
-                        </h2>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </div>
-            </TabPanel>
-          ))}
-        </TabPanels>
-      </TabGroup>
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* Get 50% off! (For Mobile) */}
+      <div className="block lg:hidden relative w-[91vw] mx-auto h-[50vh] mt-14 overflow-hidden my-14">
+        <img
+          className="absolute w-full h-full object-cover rounded-4xl z-[-1]"
+          src="/image/footer.jpg"
+          alt="bgImg"
+        />
+        <div className="w-full h-full flex flex-col items-start justify-center px-7 gap-2">
+          <h1 className="text-white font-['figtree'] font-[900] text-[2.62vh]">
+            Limited Time Offer
+          </h1>
+          <h1 className="text-white font-['figtree'] font-[400] w-64 text-[6vh]">
+            Get 50% Off!
+          </h1>
+          <h1 className="w-64 text-white font-['figtree'] text-[1.7vh] leading-[2]">
+            enjoy a 50% discount on all our premium features
+          </h1>
+          <button className="py-4 px-10 bg-[#FFC107] rounded-full font-['figtree'] font-[600]">
+            Get it now
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

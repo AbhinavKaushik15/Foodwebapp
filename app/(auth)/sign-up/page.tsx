@@ -18,7 +18,6 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
   const SignupAccount = async () => {
     setLoading(true);
     if (!fullName || !email || !password) {
@@ -38,16 +37,16 @@ const Signup = () => {
       setTimeout(() => {
         window.location.href = "/login";
       }, 100);
-    } catch (error) {
-      toast.error("Sign-up failed!");
+    } catch (error: any) {
+      toast.error(error?.message || "Something went wrong!");
       setLoading(false);
     }
   };
   return (
     <>
-      <div className="w-full min-h-[155vh]">
+      <div className="w-full h-[800px] md:min-h-[155vh]">
         <Image
-          className="absolute top-0 right-0 w-[32vw]"
+          className="hidden md:flex absolute top-0 right-0 w-[32vw]"
           src="/image/hero-shape.png"
           alt="shape"
           width={1000}
@@ -55,7 +54,7 @@ const Signup = () => {
         />
 
         <Image
-          className="absolute top-[10vh] right-[70px] w-[37.45vw]"
+          className="hidden md:flex absolute top-[10vh] right-[70px] w-[37.45vw]"
           src="/image/hero-cake.webp"
           alt="cake-shape"
           width={800}
@@ -63,17 +62,17 @@ const Signup = () => {
         />
       </div>
 
-      <div className="absolute top-34 left-[25vh] w-[42vw] h-[110vh] border border-zinc-300 rounded-3xl flex flex-col items-center gap-[5vh] justify-center px-[10vh]">
+      <div className="absolute top-28 md:top-34 -translate-x-1/2 md:translate-0 left-1/2 md:left-[25vh] w-[90vw] md:w-[42vw] h-[600px] md:h-[110vh] border border-zinc-300 rounded-3xl flex flex-col items-center gap-5 md:gap-[5vh] justify-center px-8 md:px-[10vh]">
         <div className="flex flex-col gap-3 items-center mb-3">
-          <h1 className="text-[5.5vh] font-['fredoka'] text-[#DB6885] font-[900]">
+          <h1 className="text-[25px] md:text-[5.5vh] font-['fredoka'] text-[#DB6885] font-[900]">
             Welcome
           </h1>
-          <h1 className="text-[3.7vh] font-['figtree'] font-[900]">
+          <h1 className="text-[4.5vw] md:text-[3.7vh] font-['figtree'] font-[900] whitespace-nowrap">
             Sign up to create account
           </h1>
         </div>
         <input
-          className="py-5 w-full border outline-[#DB6885] font-[500] text-xl placeholder:text-zinc-500 text-zinc-500 border-zinc-300 rounded-full px-[7vh]"
+          className="py-4 md:py-5 w-full border outline-[#DB6885] font-[500] text-md md:text-xl placeholder:text-zinc-500 text-zinc-500 border-zinc-300 rounded-full px-8 md:px-[7vh]"
           type="text"
           name="fullName"
           value={fullName}
@@ -81,7 +80,7 @@ const Signup = () => {
           placeholder="Full Name"
         />
         <input
-          className="py-5 w-full border outline-[#DB6885] font-[500] text-xl placeholder:text-zinc-500 text-zinc-500 border-zinc-300 rounded-full px-[7vh]"
+          className="py-4 md:py-5 w-full border outline-[#DB6885] font-[500] text-md md:text-xl placeholder:text-zinc-500 text-zinc-500 border-zinc-300 rounded-full px-8 md:px-[7vh]"
           type="email"
           name="email"
           value={email}
@@ -89,19 +88,19 @@ const Signup = () => {
           placeholder="Email Address"
         />
         <input
-          className="py-5 w-full border outline-[#DB6885] font-[500] text-xl border-zinc-300 rounded-full placeholder:text-zinc-500 text-zinc-500 px-[7vh]"
-          type="text"
+          className="py-4 md:py-5 w-full border outline-[#DB6885] font-[500] text-md md:text-xl border-zinc-300 rounded-full placeholder:text-zinc-500 text-zinc-500 px-8 md:px-[7vh]"
+          type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
         <button
           onClick={SignupAccount}
-          className="w-full text-white font-[500] bg-[#DB6885] py-5 rounded-full text-lg hover:text-black hover:bg-[#FEBE0B] transition-all duration-200 ease-linear"
+          className="w-full text-white font-[500] bg-[#DB6885] py-4 md:py-5 rounded-full text-md md:text-lg hover:text-black hover:bg-[#FEBE0B] transition-all duration-200 ease-linear"
         >
           Create Account
         </button>
-        <p>
+        <p className="text-[3.5vw] md:text-lg">
           Have an account?
           <Link className="text-[#DB6885] ml-1" href="/login">
             Login

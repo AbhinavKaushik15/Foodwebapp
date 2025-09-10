@@ -11,7 +11,7 @@ const ChatbotIcon = () => {
   return (
     <Link
       href={user ? "/chatbot" : "/login"}
-      className={`fixed right-10 bottom-10 z-[10] ${pathname === "/chatbot" ? "hidden" : "flex"}`}
+      className={`fixed right-4 sm:right-10 bottom-10 z-[10] ${pathname === "/chatbot" ? "hidden" : "flex"}`}
     >
       <div className="group relative bg-black border-4 border-[#DB6885] w-16 h-16 rounded-full flex items-center justify-center">
         <button>

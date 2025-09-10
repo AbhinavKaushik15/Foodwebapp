@@ -12,18 +12,111 @@ const mycart = () => {
   return (
     <div className="w-full">
       {/* top page */}
-      <div className="relative w-full h-[71.6vh]">
-        <div className="absolute top-[30vh] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
-          <div className="font-['Fredoka'] font-[900] text-[4.5vh]">
-            <span className="text-[#707070]">Home</span>
-            <span className="text-[#DB6885] ml-1">/ My Cart</span>
+      <div className="relative w-full h-[298px] md:h-[71.6vh] bg-[#FFF4F5]">
+        <div className="absolute top-[129px] md:top-[30vh] left-1/2 -translate-x-1/2 flex flex-col items-center md:gap-1">
+          <div className="font-['Fredoka'] font-[900] text-[4.5vw] md:text-[4.5vh]">
+            <Link
+              href="/"
+              className="mr-1 font-['fredoka'] font-[900] text-zinc-600 hover:text-[#DB6885] hover:underline"
+            >
+              Home
+            </Link>
+            <Link href="/about" className="text-[#DB6885] ml-1 font-[900]">
+              / My Cart
+            </Link>
           </div>
-          <h1 className="font-['figtree'] text-[11.5vh] font-[900]">My Cart</h1>
+          <h1 className="font-['figtree'] text-[8.2vw] md:text-[11.5vh] font-[900]">
+            My Cart
+          </h1>
         </div>
       </div>
 
-      {/* Products Table */}
-      <div className="w-full mt-24 min-h-[50vh] overflow-x-auto px-[18px]">
+      {/* Products Table for Mobile */}
+      <div className="w-full min-h-[40vh] flex md:hidden flex-col mt-5 mb-5">
+        <div>
+          <div>
+            <Image
+              src="/image/food-1.webp"
+              alt="cartPics"
+              width={170}
+              height={170}
+            />
+          </div>
+          <div className="w-[91vw] flex items-center -mt-4 justify-between mx-auto">
+            <div className="font-[900] text-[5.2vw] font-['figtree']">
+              Chococheese Cake
+            </div>
+            <button className="group relative flex h-10 w-9 flex-col items-center justify-center overflow-hidden rounded-xl bg-[#DB6885] hover:bg-red-600">
+              <svg
+                viewBox="0 0 1.625 1.625"
+                className="absolute -top-7 fill-white delay-100 group-hover:top-6 group-hover:animate-[spin_1.4s] group-hover:duration-1000"
+                height="15"
+                width="15"
+              >
+                <path d="M.471 1.024v-.52a.1.1 0 0 0-.098.098v.618c0 .054.044.098.098.098h.487a.1.1 0 0 0 .098-.099h-.39c-.107 0-.195 0-.195-.195"></path>
+                <path d="M1.219.601h-.163A.1.1 0 0 1 .959.504V.341A.033.033 0 0 0 .926.309h-.26a.1.1 0 0 0-.098.098v.618c0 .054.044.098.098.098h.487a.1.1 0 0 0 .098-.099v-.39a.033.033 0 0 0-.032-.033"></path>
+                <path d="m1.245.465-.15-.15a.02.02 0 0 0-.016-.006.023.023 0 0 0-.023.022v.108c0 .036.029.065.065.065h.107a.023.023 0 0 0 .023-.023.02.02 0 0 0-.007-.016"></path>
+              </svg>
+              <svg
+                width="16"
+                fill="none"
+                viewBox="0 0 39 7"
+                className="origin-right duration-500 group-hover:rotate-90"
+              >
+                <line
+                  strokeWidth="4"
+                  stroke="white"
+                  y2="5"
+                  x2="39"
+                  y1="5"
+                ></line>
+                <line
+                  strokeWidth="3"
+                  stroke="white"
+                  y2="1.5"
+                  x2="26.0357"
+                  y1="1.5"
+                  x1="12"
+                ></line>
+              </svg>
+              <svg width="16" fill="none" viewBox="0 0 33 39" className="">
+                <mask fill="white" id="path-1-inside-1_8_19">
+                  <path d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z"></path>
+                </mask>
+                <path
+                  mask="url(#path-1-inside-1_8_19)"
+                  fill="white"
+                  d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z"
+                ></path>
+                <path strokeWidth="4" stroke="white" d="M12 6L12 29"></path>
+                <path strokeWidth="4" stroke="white" d="M21 6V29"></path>
+              </svg>
+            </button>
+          </div>
+          <div className="w-[91vw] mx-auto flex items-center justify-between mt-6.5">
+            <div className="ml-6">
+              <QuantityButton />
+            </div>
+            <div className="flex flex-col items-center">
+              <h1 className="text-[4.8vw] font-[800]">Price</h1>
+              <p className="font-['fredoka'] font-[900] text-[#DB6885] text-lg">
+                $2.5
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <h1 className="text-[4.8vw] font-[800]">Total</h1>
+              <p className="font-['fredoka'] font-[900] text-[#DB6885] text-lg">
+                $2.5
+              </p>
+            </div>
+          </div>
+          <div className="w-[93vw] mx-auto border-[0.5px] border-zinc-200 mt-8"></div>
+        </div>
+      </div>
+
+      {/* Products Table for Tablets & Desktop */}
+      <div className="hidden md:block w-full mt-24 min-h-[50vh] overflow-x-auto px-[18px]">
         <table className="table">
           {/* head */}
           <thead>
@@ -120,7 +213,7 @@ const mycart = () => {
       </div>
 
       {/* Coupon & Subtotal section */}
-      <div className="w-full min-h-[69vh] px-[18px] flex justify-between">
+      {/* <div className="w-full min-h-[69vh] px-[18px] flex justify-between">
         <div className="left w-[31vw] flex flex-col gap-3.5">
           <h1 className="font-['figtree'] font-[800] text-[23px]">Coupon</h1>
           <div className="flex items-center gap-3">
@@ -165,7 +258,7 @@ const mycart = () => {
             </h1>
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

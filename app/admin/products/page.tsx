@@ -18,12 +18,13 @@ const products = () => {
         </Link>
       </div>
       <div className="overflow-x-auto rounded-xl w-full mt-5">
-        <table className="table">
+        <table className="table inline-block">
           <thead>
             <tr className="bg-white">
               <th>S No.</th>
               <th>Image</th>
               <th>Title</th>
+              <th>Category</th>
               <th>Price</th>
               <th>Stock</th>
               <th>Order</th>
@@ -47,6 +48,7 @@ const products = () => {
                     </div>
                   </td>
                   <td>{item.title}</td>
+                  <td>{item.category}</td>
                   <td>₹ {item.price}</td>
                   <td>{item.stock}</td>
                   <td>3</td>

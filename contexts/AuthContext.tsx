@@ -1,7 +1,13 @@
 "use client";
 import { auth, fireDb } from "@/lib/firestore/firebase";
 import { onAuthStateChanged, User } from "firebase/auth";
-import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  serverTimestamp,
+  setDoc,
+  Timestamp,
+} from "firebase/firestore";
 import { createContext, useContext, useEffect, useState } from "react";
 
 interface AuthProviderProps {
@@ -50,13 +56,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           name: user.displayName || "No Name",
           email: user.email,
           photoURL: user.photoURL || null,
-          createdAt: serverTimestamp(),
+          date: new Date().toLocaleString("en-US", {
+            month: "short",
+            day: "2-digit",
+            year: "numeric",
+          }),
         });
       } else {
         console.log("User already exists, skipping save...");
       }
-    } catch (error) {
-      console.error("Error saving user:", error);
+    } catch (error: any) {
+      console.error(error?.message || "Something went wrong!");
     }
   };
 

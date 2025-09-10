@@ -1,11 +1,7 @@
 import LogoutButton from "@/app/components/LogoutButton";
-import { auth } from "@/lib/firestore/firebase";
-import { signOut } from "firebase/auth";
 import {
-  Layers2,
   LayoutDashboard,
   PackageOpen,
-  ShieldCheck,
   ShoppingCart,
   Star,
   UserRound,
@@ -14,7 +10,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
-import toast from "react-hot-toast";
 
 interface MenuListProps {
   name: string;
@@ -40,8 +35,8 @@ export default function Sidebar() {
       icon: <ShoppingCart className="w-5 h-5" />,
     },
     {
-      name: "Customers",
-      link: "/admin/customers",
+      name: "Users",
+      link: "/admin/users",
       icon: <UserRound className="w-5 h-5" />,
     },
     {
@@ -49,15 +44,10 @@ export default function Sidebar() {
       link: "/admin/reviews",
       icon: <Star className="w-5 h-5" />,
     },
-    {
-      name: "Admins",
-      link: "/admin/admins",
-      icon: <ShieldCheck className="w-5 h-5" />,
-    },
   ];
 
   return (
-    <section className="h-screen px-6 w-[280px] border-r bg-white border-zinc-300 overflow-hidden flex flex-col z-[99999]">
+    <section className="h-screen px-6 w-[280px] z-[10000] border-r bg-white border-zinc-300 overflow-hidden flex flex-col">
       <Link className="flex items-center justify-center" href="/">
         <Image
           className="w-[100px] py-4"
@@ -82,7 +72,7 @@ function Tab({ item }: { item: MenuListProps }) {
 
   return (
     <li
-      className={`flex items-center justify-center mx-auto gap-10 rounded-lg py-2 w-50 mt-3 ${
+      className={`flex items-center z-[1000000] justify-center mx-auto gap-10 rounded-lg py-2 w-50 mt-3 ${
         isSelected
           ? "bg-[#DB6885] text-white"
           : "hover:bg-[#DB6885] hover:text-white"

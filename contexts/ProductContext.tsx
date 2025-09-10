@@ -22,6 +22,7 @@ interface Product {
   price: string | null;
   imageURL: string | null;
   description: string | null;
+  category: string | null;
   time: Timestamp;
   date: string | null;
   stock: string | null;
@@ -48,7 +49,9 @@ interface ProductContextValue {
   deleteProduct: (item: Product) => void;
 }
 
-const ProductContext = createContext<ProductContextValue | null>(null);
+const ProductContext = createContext<ProductContextValue | undefined>(
+  undefined
+);
 
 export const useProduct = () => {
   const context = useContext(ProductContext);
@@ -67,6 +70,7 @@ export const ProductProvider: React.FC<ProductProviderProps> = ({
     price: "",
     imageURL: "",
     description: "",
+    category: "",
     stock: "",
     time: Timestamp.now(),
     date: new Date().toLocaleString("en-US", {
@@ -85,7 +89,8 @@ export const ProductProvider: React.FC<ProductProviderProps> = ({
       !product.title ||
       !product.price ||
       !product.imageURL ||
-      !product.description
+      !product.description ||
+      !product.category
     ) {
       toast.error("All fields are required!");
       return;
@@ -101,6 +106,7 @@ export const ProductProvider: React.FC<ProductProviderProps> = ({
         price: "",
         imageURL: "",
         description: "",
+        category: "",
         stock: "",
         time: Timestamp.now(),
         date: new Date().toLocaleString("en-US", {

@@ -10,7 +10,7 @@ export default function NavbarWrapper() {
     "/admin/products",
     "/admin/categories",
     "/admin/order",
-    "/admin/customers",
+    "/admin/users",
     "/admin/reviews",
     "/admin/collections",
     "/admin/admins",

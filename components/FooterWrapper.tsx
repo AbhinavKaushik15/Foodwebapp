@@ -7,13 +7,11 @@ export default function FooterWrapper() {
   const pathname = usePathname();
 
   const hideFooterRoutes = [
-    "/login",
-    "/sign-up",
     "/admin",
     "/admin/products",
     "/admin/categories",
     "/admin/order",
-    "/admin/customers",
+    "/admin/users",
     "/admin/reviews",
     "/admin/collections",
     "/admin/admins",

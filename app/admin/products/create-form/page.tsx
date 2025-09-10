@@ -39,6 +39,7 @@ const createForm = () => {
           <input
             className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
             type="url"
+            required
             value={product.imageURL || ""}
             onChange={(e) =>
               setProduct({ ...product, imageURL: e.target.value })
@@ -66,11 +67,32 @@ const createForm = () => {
           </h1>
         </div>
 
+        <div className="relative">
+          <select
+            value={product.category || ""}
+            onChange={(e) =>
+              setProduct({ ...product, category: e.target.value })
+            }
+            className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
+          >
+            <option value="All">All</option>
+            <option value="Cake">Cake</option>
+            <option value="Cupcake">Cupcake</option>
+            <option value="Drinks">Drinks</option>
+            <option value="Donut">Donut</option>
+            <option value="Cookie">Cookie</option>
+            <option value="Macaron">Macaron</option>
+          </select>
+          <h1 className="absolute top-1 text-xs text-zinc-500 font-[600] left-3">
+            Category <span className="text-red-600">*</span>
+          </h1>
+        </div>
+
         {/* Stock */}
         <div className="relative">
           <input
             className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
-            type="text"
+            type="number"
             value={product.stock || ""}
             onChange={(e) => setProduct({ ...product, stock: e.target.value })}
             placeholder="Enter Stock"
@@ -84,7 +106,7 @@ const createForm = () => {
         <div className="relative">
           <input
             className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
-            type="text"
+            type="number"
             value={product.price || ""}
             onChange={(e) => setProduct({ ...product, price: e.target.value })}
             placeholder="Enter Price"

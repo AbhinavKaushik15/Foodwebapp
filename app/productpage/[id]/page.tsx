@@ -2,6 +2,7 @@
 import PopularMenuCards from "@/components/PopularMenuCards";
 import QuantityButton from "@/components/QuantityButton";
 import { useProduct } from "@/contexts/ProductContext";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 
 const ProductPage = () => {
@@ -15,7 +16,30 @@ const ProductPage = () => {
   return (
     <>
       {/* Product Detail */}
-      <div className="w-full min-h-[100vh] flex justify-center mt-34 text-[#2F3137]">
+      <div className="flex items-center mt-40 ml-2.5">
+        <Link
+          className="mx-2 text-[4.5vh] text-zinc-600 hover:text-[#DB6885] hover:underline font-['fredoka'] font-[900] bg-"
+          href="/"
+        >
+          Home
+        </Link>
+        <span className="text-[4.5vh] text-zinc-600 font-[900] font-['fredoka']">
+          /
+        </span>
+        <Link
+          className="mx-2 text-[4.5vh] text-zinc-600 hover:text-[#DB6885] hover:underline font-['fredoka'] font-[900]"
+          href="/menu"
+        >
+          Menu
+        </Link>
+        <span className="text-[4.5vh] text-zinc-600 font-[900] font-['fredoka']">
+          /
+        </span>
+        <h1 className="text-[4.5vh] text-[#DB6885] font-['fredoka'] font-[900] mx-1">
+          {product.title}
+        </h1>
+      </div>
+      <div className="w-full min-h-[100vh] flex justify-center mt-[11vh] text-[#2F3137]">
         <div className="left w-[45vw] h-full">
           <img
             className="w-[40vw] h-full object-cover mt-10"

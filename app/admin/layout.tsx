@@ -44,7 +44,7 @@ const layout = ({ children }: LayoutProps) => {
       </div>
       <div
         ref={sidebarRef}
-        className={`fixed flex md:hidden transition-all duration-300 ${isOpen ? "translate-x-0" : "-translate-x-[280px]"}`}
+        className={`fixed flex md:hidden transition-all z-[100000] duration-300 ${isOpen ? "translate-x-0" : "-translate-x-[280px]"}`}
       >
         <Sidebar />
       </div>
