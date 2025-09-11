@@ -46,7 +46,10 @@ const Homepage = () => {
           </p>
 
           <div className="flex items-center gap-2.5 md:gap-5 mt-3.5 md:mt-[5.1vh]">
-            <Link href="/my-cart" className="px-[40.2px] md:px-[3.1vw] text-md md:text-lg tracking-tight py-[18px] md:py-[2.8vh] shadow-[#DB6885] shadow-2xl bg-[#DB6885] hover:bg-[#FFC008] rounded-full text-white hover:text-black transition-all ease-linear duration-200 whitespace-nowrap">
+            <Link
+              href="/my-cart"
+              className="px-[40.2px] md:px-[3.1vw] text-md md:text-lg tracking-tight py-[18px] md:py-[2.8vh] shadow-[#DB6885] shadow-2xl bg-[#DB6885] hover:bg-[#FFC008] rounded-full text-white hover:text-black transition-all ease-linear duration-200 whitespace-nowrap"
+            >
               Order Now
             </Link>
             <Link
