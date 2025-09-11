@@ -9,7 +9,7 @@ const PopularMenuCards = () => {
 
   return (
     <>
-      <div className="relative w-full min-h-[135vh] md:min-h-[254vh] mt-34 md:mt-[11.2vh] flex flex-col items-center">
+      <div className="relative w-full my-24 min-h-[135vh] md:min-h-[254vh] mt-34 md:mt-[11.2vh] flex flex-col items-center">
         <div>
           <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-xl md:text-3xl text-center">
             Popular Menu

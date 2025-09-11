@@ -47,10 +47,10 @@ export default function Sidebar() {
   ];
 
   return (
-    <section className="h-screen px-6 w-[280px] z-[10000] border-r bg-white border-zinc-300 overflow-hidden flex flex-col">
+    <section className="h-screen px-6 w-[230px] md:w-[280px] z-[10000] border-r bg-white border-zinc-300 overflow-hidden flex flex-col">
       <Link className="flex items-center justify-center" href="/">
         <Image
-          className="w-[100px] py-4"
+          className="w-[80px] sm:w-[85px] py-4"
           src="/image/logo-color.webp"
           alt="logo"
           width={120}
@@ -72,7 +72,7 @@ function Tab({ item }: { item: MenuListProps }) {
 
   return (
     <li
-      className={`flex items-center z-[1000000] justify-center mx-auto gap-10 rounded-lg py-2 w-50 mt-3 ${
+      className={`flex items-center z-[1000000] justify-center mx-auto gap-10 rounded-lg py-1 md:py-2 w-44 md:w-50 mt-3 ${
         isSelected
           ? "bg-[#DB6885] text-white"
           : "hover:bg-[#DB6885] hover:text-white"

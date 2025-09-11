@@ -66,8 +66,15 @@ const menu = () => {
       <div className="relative w-full h-[298px] lg:h-[71.6vh] bg-[#FFF4F5]">
         <div className="absolute top-[129px] lg:top-[30vh] left-1/2 -translate-x-1/2 flex flex-col items-center lg:gap-1">
           <div className="font-['Fredoka'] font-[900] text-[4.5vw] lg:text-[4.5vh]">
-            <Link href="/" className="mr-1 font-['fredoka'] font-[900] text-zinc-600 hover:text-[#DB6885] hover:underline">Home</Link>
-            <Link href="/menu" className="text-[#DB6885] ml-1 font-[900]">/ Menu</Link>
+            <Link
+              href="/"
+              className="mr-1 font-['fredoka'] font-[900] text-zinc-600 hover:text-[#DB6885] hover:underline"
+            >
+              Home
+            </Link>
+            <Link href="/menu" className="text-[#DB6885] ml-1 font-[900]">
+              / Menu
+            </Link>
           </div>
           <h1 className="font-['figtree'] text-[8.2vw] lg:text-[11.5vh] font-[900]">
             Our Menu
@@ -75,29 +82,29 @@ const menu = () => {
         </div>
       </div>
 
-      <div className="w-full min-h-[210vh] mt-[13.8vh] flex flex-col lg:flex-row justify-normal lg:justify-between gap-[14.5vh] px-[18px]">
+      <div className="w-full max-h-[210vh] mt-[13.8vh] flex flex-col lg:flex-row justify-normal mb-0 lg:mb-40 lg:justify-between gap-[7.5vh] lg:gap-[14.5vh] px-[18px]">
         {/* Sidebar - Categories */}
         <div className="relative w-full lg:w-[22.5vw] flex flex-col gap-5">
-          <h2 className="text-[4vh] text-zinc-600 font-['figtree'] font-[900] mb-[1.1vh]">
+          <h2 className="text-[2.5vh] lg:text-[4vh] -mt-14 lg:mt-0 text-zinc-600 font-['figtree'] font-[900] mb-[1.1vh]">
             Categories
           </h2>
           <div className="w-full lg:w-[22.5vw] flex-nowrap overflow-x-scroll lg:overflow-x-hidden scrollbar-hide flex flex-row lg:flex-col gap-5">
             {/* All option */}
             <button
               onClick={() => setSelectedCategory("All")}
-              className={`w-[24vh] lg:w-full rounded-2xl flex-shrink-0 py-[1.9vh] px-[2.1vh] flex items-center gap-4 justify-start text-sm font-semibold focus:not-data-focus:outline-none hover:bg-[#DB6885] hover:text-white border border-zinc-300 shadow-2xs 
+              className={`w-[24vh] lg:w-full h-[9.7vh] lg:h-fit rounded-2xl flex-shrink-0 py-[1.9vh] px-[2.1vh] flex items-center gap-4 justify-start text-sm font-semibold focus:not-data-focus:outline-none hover:bg-[#DB6885] hover:text-white border border-zinc-300 shadow-2xs 
            ${selectedCategory === "All" ? "bg-[#DB6885] text-white" : "bg-white"}`}
             >
               <Image
-                className="w-[10vh]"
+                className="w-[5.3vh] lg:w-[10vh]"
                 src="/image/menu.png"
                 alt="cate2"
                 width={62.5}
                 height={62.5}
               />
               <div className="flex-1 text-left">
-                <p className="text-[3.9vh]">All</p>
-                <p className="text-[3vh] font-['fredoka'] font-[900]">
+                <p className="text-[2.3vh] lg:text-[3.9vh]">All</p>
+                <p className="text-[2.2vh] lg:text-[3vh] font-['fredoka'] font-[900]">
                   {allProducts.length} Menu
                 </p>
               </div>
@@ -108,19 +115,19 @@ const menu = () => {
               <button
                 key={cat.title}
                 onClick={() => setSelectedCategory(cat.title)}
-                className={`w-[36vh] flex-shrink-0 lg:w-full rounded-2xl py-[1.9vh] px-[2.1vh] flex items-center gap-4 justify-start text-sm font-semibold focus:not-data-focus:outline-none hover:bg-[#DB6885] hover:text-white border border-zinc-300 shadow-2xs
+                className={`w-[24vh] lg:w-full h-[9.7vh] lg:h-fit flex-shrink-0 rounded-2xl py-[1.9vh] px-[2.1vh] flex items-center gap-4 justify-start text-sm font-semibold focus:not-data-focus:outline-none hover:bg-[#DB6885] hover:text-white border border-zinc-300 shadow-2xs
             ${selectedCategory === cat.title ? "bg-[#DB6885] text-white" : "bg-white"}`}
               >
                 <Image
-                  className="w-[10vh]"
+                  className="w-[6vh] lg:w-[10vh]"
                   src={cat.imageURL}
                   alt={cat.title}
                   width={62.5}
                   height={62.5}
                 />
                 <div className="flex flex-col items-start">
-                  <h1 className="text-[3.9vh]">{cat.title}</h1>
-                  <h1 className="text-[3vh] font-['fredoka'] font-[900]">
+                  <h1 className="text-[2.3vh] lg:text-[3.9vh]">{cat.title}</h1>
+                  <h1 className="text-[2.2vh] lg:text-[3vh] font-['fredoka'] font-[900]">
                     {cat.count} Menu
                   </h1>
                 </div>
@@ -155,15 +162,15 @@ const menu = () => {
         {/* Right side - Products */}
         <div className="relative w-full lg:w-[67.4vw] min-h-[100vh]">
           <div className="w-full flex items-center justify-between">
-            <h1 className="text-[4.3vh] text-black font-['figtree'] font-[900]">
+            <h1 className="text-[2.6vh] lg:text-[4.3vh] text-zinc-600 lg:text-black font-['figtree'] font-[900]">
               {selectedCategory} Menu
             </h1>
-            <h1 className="text-[3vh] font-['fredoka'] font-[700] text-[#DB6885]">
+            <h1 className="text-[2vh] lg:text-[3vh] font-['fredoka'] font-[700] text-[#DB6885]">
               {filteredProducts.length} Menu
             </h1>
           </div>
 
-          <div className="w-full flex flex-wrap items-center justify-center gap-x-[6vw] gap-y-[9vw]">
+          <div className="w-full flex flex-wrap items-center justify-center mt-10 lg:mt-0 gap-x-[6vw] gap-y-[9vw] lg:gap-y-0">
             {filteredProducts.map((product) => (
               <div
                 key={product.id}
@@ -194,6 +201,7 @@ const menu = () => {
           </div>
         </div>
       </div>
+
       {/* Get 50% off! (For Mobile) */}
       <div className="block lg:hidden relative w-[91vw] mx-auto h-[50vh] mt-14 overflow-hidden my-14">
         <img

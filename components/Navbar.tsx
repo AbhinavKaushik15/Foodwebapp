@@ -11,7 +11,7 @@ const Navbar = () => {
   const { user } = useAuth();
   const pathname = usePathname();
 
-  const isAdmin = user && user.email === "abhinavsharmaas20000@gmail.com";
+  const isAdmin = user && user.email === "abhinav@gmail.com";
 
   const tabs = [
     { label: "home", path: "/" },

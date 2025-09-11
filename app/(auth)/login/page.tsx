@@ -40,11 +40,12 @@ const Login: React.FC<LoginContextValue> = () => {
       await saveUserToFirestore(loggedInUser);
 
       localStorage.setItem("user", JSON.stringify(loggedInUser));
-      toast.success("Login Successfull.");
-      if (loggedInUser.email === "abhinavsharmaas20000@gmail.com") {
-        router.push("/admin");
+      if (loggedInUser.email === "abhinav@gmail.com") {
+        toast.success("You are logged in as Admin.");
+        router.push("/");
       } else {
-        router.push("/profile");
+        toast.success("Login Successfull.");
+        router.push("/");
       }
       setEmail("");
       setPassword("");
@@ -63,11 +64,12 @@ const Login: React.FC<LoginContextValue> = () => {
       await saveUserToFirestore(loggedInUser);
 
       localStorage.setItem("user", JSON.stringify(loggedInUser));
-      toast.success("Login Successfull.");
-      if (loggedInUser.email === "abhinavsharmaas20000@gmail.com") {
-        router.push("/admin");
+      if (loggedInUser.email === "abhinav@gmail.com") {
+        toast.success("You are logged in as Admin.");
+        router.push("/");
       } else {
-        router.push("/profile");
+        toast.success("Login Successfull.");
+        router.push("/");
       }
     } catch (error: any) {
       toast.error(error?.message || "Something went wrong!");

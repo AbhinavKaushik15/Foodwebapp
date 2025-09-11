@@ -45,7 +45,7 @@ interface ProductContextValue {
   setAllProducts: React.Dispatch<React.SetStateAction<ProductWithId[]>>;
   getProduct: () => void;
   updateProductHandler: (item: Product) => void;
-  updateProduct: (item: Product) => void;
+  updateProduct: () => void;
   deleteProduct: (item: Product) => void;
 }
 
@@ -143,7 +143,7 @@ export const ProductProvider: React.FC<ProductProviderProps> = ({
     setProduct(item);
   };
 
-  const updateProduct = async (item: Product) => {
+  const updateProduct = async () => {
     try {
       await setDoc(doc(fireDb, "product", product.id as string), product);
       getProduct();

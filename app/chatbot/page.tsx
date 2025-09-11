@@ -60,7 +60,7 @@ const ChatbotPage = () => {
         </div>
       </div>
       <div className="flex flex-col items-center min-h-[40vh] bg-[#ffffffe5] p-14 font-['fredoka'] font-[900]">
-        <div className="w-full max-w-3xl rounded-2xl shadow-lg p-6 flex flex-col text-black border border-zinc-300">
+        <div className="w-[91vw] md:w-[60vw] rounded-2xl shadow-lg p-6 flex flex-col text-black border border-zinc-300">
           <h1 className="text-2xl font-bold text-center mb-4">
             Fofood AI Chatbot
           </h1>

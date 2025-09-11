@@ -28,7 +28,7 @@ const LogoutButton = () => {
   return (
     <button
       onClick={handleLogout}
-      className="group w-49 flex items-center justify-center mx-auto mt-3 h-11 bg-[#DB6885] rounded-lg cursor-pointer relative overflow-hidden transition-all duration-200 shadow-lg hover:w-49 active:translate-x-1 active:translate-y-1"
+      className="group w-44 md:w-49 flex items-center justify-center mx-auto mt-3 h-11 bg-[#DB6885] rounded-lg cursor-pointer relative overflow-hidden transition-all duration-200 shadow-lg hover:w-49 active:translate-x-1 active:translate-y-1"
     >
       <div className="flex items-center justify-center w-49 transition-all duration-300 group-hover:justify-start group-hover:px-12">
         <svg className="w-4 h-4" viewBox="0 0 512 512" fill="white">

@@ -255,7 +255,7 @@ const about = () => {
       </div>
 
       {/* Testimonial */}
-      <div className="my-28">
+      <div className="my-[10vh] md:my-[24vh]">
         <Testimonial />
       </div>
     </div>

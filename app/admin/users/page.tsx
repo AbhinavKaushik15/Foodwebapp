@@ -42,7 +42,7 @@ const users = () => {
                   <td>{user.email}</td>
                   <td>{user.uid}</td>
                   <td>
-                    {user.email === "abhinavsharmaas20000@gmail.com"
+                    {user.email === "abhinav@gmail.com"
                       ? "admin"
                       : "user"}
                   </td>
