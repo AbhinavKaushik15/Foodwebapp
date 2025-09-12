@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const Testimonial = () => {
   return (
-    <div className="relative w-full min-h-[80vh] md:min-h-[250vh] mt-20 md:mt-0">
+    <div className="relative w-full min-h-[86vh] md:min-h-[135vh]">
       <Image
         className="absolute w-[92vw] md:w-[96vw] h-[85vh] md:h-[130vh] left-1/2 -translate-x-1/2 object-cover"
         src="/image/bg-testimonial.jpg"

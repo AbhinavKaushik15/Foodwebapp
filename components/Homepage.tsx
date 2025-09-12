@@ -13,7 +13,7 @@ const Homepage = () => {
     document.title = "Homepage | Fofood";
   }, []);
   return (
-    <>
+    <div className="bg-white text-black">
       {/* Hero Section */}
       <div className="relative w-full h-[1070px] md:h-[100vh] bg-[#FFF4F5]">
         <Image
@@ -229,7 +229,7 @@ const Homepage = () => {
       </div>
 
       {/* About us */}
-      <div className="w-full h-[640px] md:h-[200vh] lg:h-[100vh] flex flex-col lg:flex-row items-center justify-between">
+      <div className="w-full h-[720px] md:h-[200vh] lg:h-[100vh] flex flex-col lg:flex-row items-center justify-between">
         <div className="left-imgs w-full h-[83vw] md:h-[90vh] flex md:items-center justify-center gap-3 md:gap-8 px-3 md:px-[2.8vh]">
           <Image
             className="w-[45vw] lg:w-[21vw] h-[65vw] md:h-[67vh] rounded-2xl mt-5 object-cover"
@@ -247,7 +247,7 @@ const Homepage = () => {
           />
         </div>
 
-        <div className="right-details w-full lg:w-1/2 h-[90vh] py-7 md:py-10 px-4 md:px-[8.1vh]">
+        <div className="right-details w-full lg:w-1/2 md:h-[90vh] px-4 md:px-[8.1vh]">
           <h3 className="text-[#DB6885] text-xl md:text-[2.15vw] font-black font-['Fredoka']">
             About us
           </h3>
@@ -276,9 +276,9 @@ const Homepage = () => {
       <Testimonial />
 
       {/* Our Blog */}
-      <div className="flex flex-col h-[2600px] md:h-[182vh] gap-8.5 mb-44 mt-34 md:mt-0">
+      <div className="flex flex-col h-[2800px] md:h-[205vh] gap-8.5 md:mt-0">
         <div className="md:mt-13">
-          <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-xl md:text-3xl text-center">
+          <h3 className="font-['Fredoka'] font-[900] text-xl md:text-3xl text-center">
             Our Blog
           </h3>
           <h1 className="font-['figtree'] text-[25px] md:text-[8.7vh] text-center font-[900] mt-2 md:mt-4">
@@ -287,7 +287,7 @@ const Homepage = () => {
         </div>
         <OurBlog />
       </div>
-    </>
+    </div>
   );
 };
 

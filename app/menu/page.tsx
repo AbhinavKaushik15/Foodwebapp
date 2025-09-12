@@ -136,11 +136,11 @@ const menu = () => {
           </div>
 
           {/* Get 50% off! */}
-          <div className="hidden lg:block relative w-[22.5vw] h-[75vh] mt-14 overflow-hidden">
+          <div className="hidden lg:block relative w-[22.5vw] h-[75vh] mt-14 overflow-hidden bg-[#DB6885] rounded-4xl">
             <img
               className="absolute w-full h-full object-top rounded-4xl z-[-1]"
               src="/image/footer.jpg"
-              alt="bgImg"
+              alt="bgpmg"
             />
             <div className="w-full h-full flex flex-col items-start justify-center pl-6 gap-4">
               <h1 className="text-white font-['figtree'] font-[900] text-[3.5vh]">

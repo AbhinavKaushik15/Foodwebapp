@@ -226,10 +226,10 @@ const Navbar = () => {
             )}
 
             <Link
-              className={`px-[27.3px] py-[7.2px] rounded-full text-[17px] font-['figtree'] font-[600] tracking-tight transition-all duration-200 ease-linear ${pathname === "/contact" ? "border border-[#DB6885] text-white bg-[#DB6885]" : "border hover:border-[#DB6885] hover:bg-[#DB6885] hover:text-white"}`}
+              className={`px-[27.3px] py-[7.2px] rounded-full text-[17px] font-['figtree'] font-[600] tracking-tight border-zinc-800 transition-all duration-200 ease-linear ${pathname === "/contact" ? "border border-[#DB6885] text-white bg-[#DB6885]" : "border hover:border-[#DB6885] hover:bg-[#DB6885] hover:text-white"}`}
               href="/contact"
             >
-              <div>Contact us</div>
+              <div className="text-zinc-800">Contact us</div>
             </Link>
           </div>
         </div>
@@ -237,7 +237,7 @@ const Navbar = () => {
         {/* Mobile */}
         <div className="flex lg:hidden items-center gap-3">
           <Link onClick={() => setIsOpen(false)} href="/my-cart">
-            <ShoppingCart className="font-[100] w-6.5 h-6.5" />
+            <ShoppingCart className="font-[100] w-6.5 h-6.5 text-black" />
           </Link>
           <button
             onClick={() => setIsOpen(!isOpen)}

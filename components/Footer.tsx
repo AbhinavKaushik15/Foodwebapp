@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="relative w-full h-[1150px] md:h-[170vh] lg:h-[115.6vh]">
+    <div className="relative w-full max-h-[177vh] md:h-[170vh] lg:h-[115.6vh]">
       <Image
         className="w-full h-[1150px] md:h-[170vh] lg:h-[115.6vh] object-cover"
         src="/image/footer.jpg"

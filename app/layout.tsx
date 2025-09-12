@@ -45,7 +45,7 @@ export default function RootLayout({
             <LocomotiveProvider>
               <NavbarWrapper />
               <ChatbotIcon />
-              <main className="flex-grow">{children}</main>
+              <main className="flex-grow bg-white text-black">{children}</main>
               <FooterWrapper />
             </LocomotiveProvider>
           </AuthProvider>

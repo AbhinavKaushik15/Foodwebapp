@@ -38,8 +38,8 @@ const OurBlog = () => {
   ];
 
   return (
-    <div className="w-full min-h-[148vh]">
-      <div className="w-full flex flex-wrap items-center justify-center gap-x-[4vh] gap-y-[50px] md:gap-y-[11vh] px-2 md:mt-10">
+    <div className="w-full h-[2500px] md:h-[200vh]">
+      <div className="w-full flex flex-wrap items-center justify-center gap-x-[4vh] gap-y-12 md:gap-y-[11vh] px-2 md:mt-10">
         {cardDetails.map((item, id) => {
           return (
             <div
