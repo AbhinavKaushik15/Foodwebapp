@@ -7,7 +7,7 @@ const products = () => {
   const { allProducts, deleteProduct, updateProductHandler } = useProduct();
 
   return (
-    <div className="w-full">
+    <div className="w-full text-black">
       <div className="flex items-center justify-between">
         <h1 className="text-lg font-[700]">Product</h1>
         <Link
@@ -20,7 +20,7 @@ const products = () => {
       <div className="overflow-x-auto rounded-xl w-full mt-5">
         <table className="table inline-block">
           <thead>
-            <tr className="bg-white">
+            <tr className="bg-white text-black">
               <th>S No.</th>
               <th>Image</th>
               <th>Title</th>

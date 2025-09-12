@@ -143,8 +143,8 @@ const Navbar = () => {
         </Link>
 
         {/* Tablet & Desktop */}
-        <div className="hidden sm:flex items-center lg:gap-[4.6vw] xl:gap-[5.9vw]">
-          <div className="hidden lg:flex items-center lg:gap-[4.4vw] xl:gap-[5.75vw] font-['fredoka'] font-[700]">
+        <div className="hidden lg:flex items-center lg:gap-[2.5vw] xl:gap-[5.9vw]">
+          <div className="hidden lg:flex items-center lg:gap-[4vw] xl:gap-[5.75vw] font-['fredoka'] font-[700]">
             {tabs.map(({ label, path }) => (
               <Link
                 key={label}
@@ -159,7 +159,7 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          <div className="hidden lg:flex items-center lg:gap-[3.2vw] xl:gap-[4.23vw] font-['fredoka'] font-[700]">
+          <div className="hidden lg:flex items-center lg:gap-[3vw] xl:gap-[4.23vw] font-['fredoka'] font-[700]">
             <Link
               className={`flex items-center gap-2 tracking-wide ${
                 pathname === "/my-favorites"
@@ -226,10 +226,10 @@ const Navbar = () => {
             )}
 
             <Link
-              className={`px-[27.3px] py-[7.2px] rounded-full text-[17px] font-['figtree'] font-[600] tracking-tight border-zinc-800 transition-all duration-200 ease-linear ${pathname === "/contact" ? "border border-[#DB6885] text-white bg-[#DB6885]" : "border hover:border-[#DB6885] hover:bg-[#DB6885] hover:text-white"}`}
+              className={`px-[27.3px] py-[7.2px] rounded-full text-[17px] font-['figtree'] font-[600] tracking-tight transition-all duration-200 ease-linear ${pathname === "/contact" ? "border border-[#DB6885] text-white bg-[#DB6885]" : "border hover:border-[#DB6885] hover:bg-[#DB6885] hover:text-white text-zinc-800"}`}
               href="/contact"
             >
-              <div className="text-zinc-800">Contact us</div>
+              <div>Contact us</div>
             </Link>
           </div>
         </div>

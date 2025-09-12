@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css";
 import Testimonial from "@/components/Testimonial";
@@ -13,7 +11,7 @@ const about = () => {
     document.title = "About | Fofood";
   }, []);
   return (
-    <div className="w-full">
+    <div className="w-full bg-white">
       {/* top page */}
       <div className="relative w-full h-[298px] md:h-[71.6vh] bg-[#FFF4F5]">
         <div className="absolute top-[129px] md:top-[30vh] left-1/2 -translate-x-1/2 flex flex-col items-center md:gap-1">
@@ -28,7 +26,7 @@ const about = () => {
               / About
             </Link>
           </div>
-          <h1 className="font-['figtree'] text-[8.2vw] md:text-[11.5vh] font-[900]">
+          <h1 className="font-['figtree'] text-[8.2vw] md:text-[11.5vh] font-[900] text-black">
             About
           </h1>
         </div>
@@ -57,7 +55,7 @@ const about = () => {
           <h3 className="text-[#DB6885] text-xl md:text-[2.15vw] font-black font-['Fredoka']">
             About us
           </h3>
-          <h1 className="font-['figtree'] font-[900] text-[25px] md:text-[8.6vh] mt-3">
+          <h1 className="font-['figtree'] font-[900] text-[25px] md:text-[8.6vh] mt-3 text-black">
             Our History
           </h1>
           <p className="w-full md:w-[35vw] text-zinc-600 text-[3.6vw] md:text-[2.6vh] leading-[1.8] md:leading-[2.1] mt-4 md:mt-6">
@@ -79,7 +77,7 @@ const about = () => {
           <div className="w-14 md:w-[9.5vh] h-14 md:h-[9.5vh] bg-[#FFF4F5] font-['fredoka'] font-[900] text-[#DB6885] rounded-full flex items-center justify-center text-xl md:text-3xl">
             01
           </div>
-          <h1 className="text-[6vw] md:text-[3.95vh] font-['figtree'] font-[900] mt-[17px] md:mt-7">
+          <h1 className="text-[6vw] md:text-[3.95vh] font-['figtree'] font-[900] mt-[17px] md:mt-7 text-black">
             Collective Collaboration
           </h1>
           <p className="text-zinc-600 text-[3.6vw] md:text-[2.6vh] leading-[2.1] mt-[16px] md:mt-5 tracking-tight">
@@ -95,7 +93,7 @@ const about = () => {
           <div className="w-14 md:w-[9.5vh] h-14 md:h-[9.5vh] bg-[#FFF4F5] font-['fredoka'] font-[900] text-[#DB6885] rounded-full flex items-center justify-center text-xl md:text-3xl">
             02
           </div>
-          <h1 className="text-[6vw] md:text-[3.95vh] font-['figtree'] font-[900] mt-[17px] md:mt-7">
+          <h1 className="text-[6vw] md:text-[3.95vh] font-['figtree'] font-[900] mt-[17px] md:mt-7 text-black">
             Commitment to Community
           </h1>
           <p className="text-zinc-600 text-[3.6vw] md:text-[2.6vh] leading-[2.1] mt-[16px] md:mt-5 tracking-tight">
@@ -110,7 +108,7 @@ const about = () => {
           <div className="w-14 md:w-[9.5vh] h-14 md:h-[9.5vh] bg-[#FFF4F5] font-['fredoka'] font-[900] text-[#DB6885] rounded-full flex items-center justify-center text-xl md:text-3xl">
             03
           </div>
-          <h1 className="text-[6vw] md:text-[3.95vh] font-['figtree'] font-[900] mt-[17px] md:mt-7">
+          <h1 className="text-[6vw] md:text-[3.95vh] font-['figtree'] font-[900] mt-[17px] md:mt-7 text-black">
             Technology-driven Impact
           </h1>
           <p className="text-zinc-600 text-[3.6vw] md:text-[2.6vh] leading-[2.1] mt-[16px] md:mt-5 tracking-tight">
@@ -145,7 +143,7 @@ const about = () => {
       </video>
       <div className="w-full max-h-[130vw] md:h-[122vh] px-5 md:px-[18px] flex items-center justify-between mt-10 md:mt-0">
         <div className="left w-full md:w-[44.6vw]">
-          <h1 className="text-[5.7vw] md:text-[9vh] font-['figtree'] font-[900]">
+          <h1 className="text-[5.7vw] md:text-[9vh] font-['figtree'] font-[900] text-black">
             One Meal at a Time
           </h1>
           <p className="text-zinc-600 text-[3.6vw] md:text-[2.6vh] leading-[2.1] mt-[16px] md:mt-5 tracking-tight">
@@ -187,7 +185,7 @@ const about = () => {
         <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-xl md:text-3xl text-center">
           Our Chefs
         </h3>
-        <h1 className="font-['figtree'] text-[25px] md:text-[8.7vh] text-center font-[900] mt-2 md:mt-4">
+        <h1 className="font-['figtree'] text-[25px] md:text-[8.7vh] text-center font-[900] mt-2 md:mt-4 text-black">
           Meet Our Talented Chefs
         </h1>
 
@@ -203,7 +201,7 @@ const about = () => {
               />
             </div>
             <div className="mt-[4vh] flex flex-col items-center justify-center gap-2">
-              <h1 className="text-[5.1vw] md:text-[3.9vh] font-['figtree'] font-[900]">
+              <h1 className="text-[5.1vw] md:text-[3.9vh] font-['figtree'] font-[900] text-black">
                 Chef Ethan Mitchell
               </h1>
               <h2 className="text-[4.8vw] md:text-[3.6vh] text-zinc-500 font-['figtree'] font-[900]">
@@ -223,7 +221,7 @@ const about = () => {
               />
             </div>
             <div className="mt-[4vh] flex flex-col items-center justify-center gap-2">
-              <h1 className="text-[5.1vw] md:text-[3.9vh] font-['figtree'] font-[900]">
+              <h1 className="text-[5.1vw] md:text-[3.9vh] font-['figtree'] font-[900] text-black">
                 Chef Marcus Thompson
               </h1>
               <h2 className="text-[4.8vw] md:text-[3.6vh] text-zinc-500 font-['figtree'] font-[900]">
@@ -243,7 +241,7 @@ const about = () => {
               />
             </div>
             <div className="mt-[4vh] flex flex-col items-center justify-center gap-2">
-              <h1 className="text-[5.1vw] md:text-[3.9vh] font-['figtree'] font-[900]">
+              <h1 className="text-[5.1vw] md:text-[3.9vh] font-['figtree'] font-[900] text-black">
                 Chef Alexander Scott
               </h1>
               <h2 className="text-[4.8vw] md:text-[3.6vh] text-zinc-500 font-['figtree'] font-[900]">
@@ -255,7 +253,7 @@ const about = () => {
       </div>
 
       {/* Testimonial */}
-      <div className="my-[10vh] md:my-[24vh]">
+      <div className="py-[10vh] md:py-[24vh]">
         <Testimonial />
       </div>
     </div>

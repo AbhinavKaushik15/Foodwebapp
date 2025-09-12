@@ -32,7 +32,7 @@ const QuantityButton = () => {
         onClick={() => handleMinus()}
         className="py-[11.75px] px-3 w-14 border-[0.5px] hover:bg-[#DB6885] hover:text-white border-zinc-200"
       >
-        <Minus />
+        <Minus className="text-black" />
       </button>
       <input
         value={count}
@@ -44,7 +44,7 @@ const QuantityButton = () => {
         onClick={() => handlePlus()}
         className={`py-[11.75px] px-3 w-14 border-[0.5px] text text-center hover:bg-[#DB6885] hover:text-white border-zinc-200 ${count === 6 ? "cursor-not-allowed hover:bg-zinc-400" : ""}`}
       >
-        <Plus />
+        <Plus className="text-black" />
       </button>
     </div>
   );

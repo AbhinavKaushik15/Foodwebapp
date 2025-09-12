@@ -38,7 +38,7 @@ const layout = ({ children }: LayoutProps) => {
   }, []);
 
   return (
-    <main className="relative flex w-full">
+    <main className="relative flex w-full bg-white">
       <div className="hidden md:flex">
         <Sidebar />
       </div>

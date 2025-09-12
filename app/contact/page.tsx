@@ -23,19 +23,19 @@ const contact = () => {
               / Contact
             </Link>
           </div>
-          <h1 className="font-['figtree'] text-[8.2vw] md:text-[11.5vh] font-[900]">
+          <h1 className="font-['figtree'] text-[8.2vw] md:text-[11.5vh] font-[900] text-black">
             Contact us
           </h1>
         </div>
       </div>
 
       {/* Main Section */}
-      <div className="w-full h-[170vh] md:h-[155vh] px-6 md:px-[18px] flex flex-col md:flex-row mb-20 md:mb-0">
+      <div className="w-full h-[170vh] md:h-[155vh] px-6 md:px-[18px] flex flex-col md:flex-row mb-20 md:mb-0 bg-white">
         <div className="left w-full md:w-[49.37vw] h-full flex flex-col items-start justify-center">
           <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-xl md:text-3xl text-center">
             Contact us
           </h3>
-          <h1 className="font-['figtree'] text-[25px] md:text-[8.7vh] text-center font-[900] mt-4 whitespace-nowrap">
+          <h1 className="font-['figtree'] text-[25px] md:text-[8.7vh] text-center font-[900] mt-4 whitespace-nowrap text-black">
             Get in Touch with Us
           </h1>
           <p className="w-full md:w-[46vw] text-zinc-600 text-[15px] md:text-[2.6vh] leading-[2.1] mt-6">
@@ -79,23 +79,23 @@ const contact = () => {
 
         <div className="right w-full md:w-[49.37vw] h-full flex justify-end items-center">
           <div className="boundry w-full md:w-[45vw] h-[103vh] md:h-[128vh] border border-zinc-300 rounded-3xl flex flex-col items-center gap-5 md:gap-[5vh] justify-center px-5 md:px-[10vh]">
-            <h1 className="text-[5.5vw] md:text-[3.7vh] font-['figtree'] font-[900]">
+            <h1 className="text-[5.5vw] md:text-[3.7vh] font-['figtree'] font-[900] text-black">
               Please use the contact details provided below to get in touch with
               us:
             </h1>
             <div className="w-full h-[0.5px] border-zinc-300 border-[0.3px]"></div>
             <input
-              className="py-4 md:py-5 w-full border outline-[#DB6885] font-[500] text-lg md:text-xl border-zinc-300 rounded-full placeholder:text-zinc-600 px-7 md:px-[7vh]"
+              className="text-black py-4 md:py-5 w-full border hover:border-[#DB6885] focus:outline-[#DB6885] font-[500] text-lg md:text-xl border-zinc-300 rounded-full placeholder:text-zinc-600 px-7 md:px-[7vh]"
               type="text"
               placeholder="Name"
             />
             <input
-              className="py-4 md:py-5 w-full border outline-[#DB6885] font-[500] text-lg md:text-xl border-zinc-300 rounded-full placeholder:text-zinc-600 px-7 md:px-[7vh]"
+              className="text-black py-4 md:py-5 w-full border hover:border-[#DB6885] outline-[#DB6885] font-[500] text-lg md:text-xl border-zinc-300 rounded-full placeholder:text-zinc-600 px-7 md:px-[7vh]"
               type="mail"
               placeholder="Email Address"
             />
             <textarea
-              className="py-4 md:py-5 w-full h-[40vh] max-h-[40vh] border outline-[#DB6885] font-[600] text-lg md:text-xl border-zinc-300 rounded-4xl placeholder:text-zinc-600 px-7 md:px-[7vh]"
+              className="py-4 text-black md:py-5 w-full h-[40vh] max-h-[40vh] border hover:border-[#DB6885] outline-[#DB6885] font-[600] text-lg md:text-xl border-zinc-300 rounded-4xl placeholder:text-zinc-600 px-7 md:px-[7vh]"
               placeholder="Message"
             ></textarea>
             <button className="w-full text-white font-[500] bg-[#DB6885] py-4 md:py-5 rounded-full text-lg hover:text-zinc-600 hover:bg-[#FEBE0B] transition-all duration-700 ease-linear">

@@ -76,73 +76,77 @@ const menu = () => {
               / Menu
             </Link>
           </div>
-          <h1 className="font-['figtree'] text-[8.2vw] lg:text-[11.5vh] font-[900]">
+          <h1 className="font-['figtree'] text-[8.2vw] lg:text-[11.5vh] font-[900] text-black">
             Our Menu
           </h1>
         </div>
       </div>
 
-      <div className="w-full max-h-[210vh] mt-[13.8vh] flex flex-col lg:flex-row justify-normal mb-0 lg:mb-40 lg:justify-between gap-[7.5vh] lg:gap-[14.5vh] px-[18px]">
+      <div className="w-full min-h-[230vh] lg:min-h-[240vh] py-[13.8vh] flex flex-col lg:flex-row justify-normal lg:justify-between gap-[7.5vh] lg:gap-[14.5vh] lg:px-[18px] bg-green-300">
         {/* Sidebar - Categories */}
-        <div className="relative w-full lg:w-[22.5vw] flex flex-col gap-5">
-          <h2 className="text-[2.5vh] lg:text-[4vh] -mt-14 lg:mt-0 text-zinc-600 font-['figtree'] font-[900] mb-[1.1vh]">
-            Categories
-          </h2>
-          <div className="w-full lg:w-[22.5vw] flex-nowrap overflow-x-scroll lg:overflow-x-hidden scrollbar-hide flex flex-row lg:flex-col gap-5">
-            {/* All option */}
-            <button
-              onClick={() => setSelectedCategory("All")}
-              className={`w-[24vh] lg:w-full h-[9.7vh] lg:h-fit rounded-2xl flex-shrink-0 py-[1.9vh] px-[2.1vh] flex items-center gap-4 justify-start text-sm font-semibold focus:not-data-focus:outline-none hover:bg-[#DB6885] hover:text-white border border-zinc-300 shadow-2xs 
-           ${selectedCategory === "All" ? "bg-[#DB6885] text-white" : "bg-white"}`}
-            >
-              <Image
-                className="w-[5.3vh] lg:w-[10vh]"
-                src="/image/menu.png"
-                alt="cate2"
-                width={62.5}
-                height={62.5}
-              />
-              <div className="flex-1 text-left">
-                <p className="text-[2.3vh] lg:text-[3.9vh]">All</p>
-                <p className="text-[2.2vh] lg:text-[3vh] font-['fredoka'] font-[900]">
-                  {allProducts.length} Menu
-                </p>
-              </div>
-            </button>
-
-            {/* Dynamic categories */}
-            {categories.map((cat) => (
+        <div className="relative w-full lg:w-[22.5vw] flex flex-col justify-normal lg:justify-between gap-5">
+          <div>
+            <h2 className="text-[2.5vh] pb-5 lg:text-[4vh] px-2 lg:px-0 -mt-14 lg:mt-0 text-zinc-600 font-['figtree'] font-[900] mb-[1.1vh]">
+              Categories
+            </h2>
+            <div className="w-full lg:w-[22.5vw] flex-nowrap overflow-x-scroll lg:overflow-x-hidden scrollbar-hide flex flex-row lg:flex-col gap-5 px-2 lg:px-0">
+              {/* All option */}
               <button
-                key={cat.title}
-                onClick={() => setSelectedCategory(cat.title)}
-                className={`w-[24vh] lg:w-full h-[9.7vh] lg:h-fit flex-shrink-0 rounded-2xl py-[1.9vh] px-[2.1vh] flex items-center gap-4 justify-start text-sm font-semibold focus:not-data-focus:outline-none hover:bg-[#DB6885] hover:text-white border border-zinc-300 shadow-2xs
-            ${selectedCategory === cat.title ? "bg-[#DB6885] text-white" : "bg-white"}`}
+                onClick={() => setSelectedCategory("All")}
+                className={`w-[24vh] lg:w-full h-[9.7vh] lg:h-fit rounded-2xl flex-shrink-0 py-[1.9vh] px-[2.1vh] flex items-center gap-4 justify-start text-sm font-semibold focus:not-data-focus:outline-none hover:bg-[#DB6885] hover:text-white border border-zinc-300 shadow-2xs 
+           ${selectedCategory === "All" ? "bg-[#DB6885] text-white" : "text-black"}`}
               >
                 <Image
-                  className="w-[6vh] lg:w-[10vh]"
-                  src={cat.imageURL}
-                  alt={cat.title}
+                  className="w-[5.3vh] lg:w-[10vh]"
+                  src="/image/menu.png"
+                  alt="cate2"
                   width={62.5}
                   height={62.5}
                 />
-                <div className="flex flex-col items-start">
-                  <h1 className="text-[2.3vh] lg:text-[3.9vh]">{cat.title}</h1>
-                  <h1 className="text-[2.2vh] lg:text-[3vh] font-['fredoka'] font-[900]">
-                    {cat.count} Menu
-                  </h1>
+                <div className="flex-1 text-left">
+                  <p className="text-[2.3vh] lg:text-[3.9vh]">All</p>
+                  <p className="text-[2.2vh] lg:text-[3vh] font-['fredoka'] font-[900]">
+                    {allProducts.length} Menu
+                  </p>
                 </div>
               </button>
-            ))}
+
+              {/* Dynamic categories */}
+              {categories.map((cat) => (
+                <button
+                  key={cat.title}
+                  onClick={() => setSelectedCategory(cat.title)}
+                  className={`w-[24vh] lg:w-full h-[9.7vh] lg:h-fit flex-shrink-0 rounded-2xl py-[1.9vh] px-[2.1vh] flex items-center gap-4 justify-start text-sm font-semibold focus:not-data-focus:outline-none hover:bg-[#DB6885] hover:text-white border border-zinc-300 shadow-2xs
+            ${selectedCategory === cat.title ? "bg-[#DB6885] text-white" : "text-black"}`}
+                >
+                  <Image
+                    className="w-[6vh] lg:w-[10vh]"
+                    src={cat.imageURL}
+                    alt={cat.title}
+                    width={62.5}
+                    height={62.5}
+                  />
+                  <div className="flex flex-col items-start">
+                    <h1 className="text-[2.3vh] lg:text-[3.9vh]">
+                      {cat.title}
+                    </h1>
+                    <h1 className="text-[2.2vh] lg:text-[3vh] font-['fredoka'] font-[900]">
+                      {cat.count} Menu
+                    </h1>
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Get 50% off! */}
-          <div className="hidden lg:block relative w-[22.5vw] h-[75vh] mt-14 overflow-hidden bg-[#DB6885] rounded-4xl">
+          <div className="hidden lg:flex relative w-[22.5vw] h-[75vh] mt-14 overflow-hidden">
             <img
-              className="absolute w-full h-full object-top rounded-4xl z-[-1]"
+              className="absolute w-full h-full object-cover rounded-4xl z-[1]"
               src="/image/footer.jpg"
-              alt="bgpmg"
+              alt="bgImg"
             />
-            <div className="w-full h-full flex flex-col items-start justify-center pl-6 gap-4">
+            <div className="w-full h-full flex flex-col items-start justify-center pl-6 gap-4 z-[2]">
               <h1 className="text-white font-['figtree'] font-[900] text-[3.5vh]">
                 Limited Time Offer
               </h1>
@@ -161,7 +165,7 @@ const menu = () => {
 
         {/* Right side - Products */}
         <div className="relative w-full lg:w-[67.4vw] min-h-[100vh]">
-          <div className="w-full flex items-center justify-between">
+          <div className="w-full flex items-center justify-between px-2 lg:px-0">
             <h1 className="text-[2.6vh] lg:text-[4.3vh] text-zinc-600 lg:text-black font-['figtree'] font-[900]">
               {selectedCategory} Menu
             </h1>
@@ -187,7 +191,7 @@ const menu = () => {
                     <Link
                       key={product.id}
                       href={`productpage/${product.id}`}
-                      className="text-[17px] lg:text-[3.9vh] font-[900] text-center font-['figtree'] hover:text-[#DB6885] hover:underline transition-all ease-linear duration-200 cursor-pointer"
+                      className="text-[17px] lg:text-[3.9vh] font-[900] text-center font-['figtree'] hover:text-[#DB6885] hover:underline transition-all ease-linear duration-200 cursor-pointer text-black"
                     >
                       {product.title}
                     </Link>
@@ -200,28 +204,28 @@ const menu = () => {
             ))}
           </div>
         </div>
-      </div>
 
-      {/* Get 50% off! (For Mobile) */}
-      <div className="block lg:hidden relative w-[91vw] mx-auto h-[50vh] mt-14 overflow-hidden my-14 bg-[#DB6885] rounded-4xl">
-        <img
-          className="absolute w-full h-full object-cover rounded-4xl z-[-1]"
-          src="/image/footer.jpg"
-          alt="bgImg"
-        />
-        <div className="w-full h-full flex flex-col items-start justify-center px-7 gap-2">
-          <h1 className="text-white font-['figtree'] font-[900] text-[2.62vh]">
-            Limited Time Offer
-          </h1>
-          <h1 className="text-white font-['figtree'] font-[400] w-64 text-[6vh]">
-            Get 50% Off!
-          </h1>
-          <h1 className="w-64 text-white font-['figtree'] text-[1.7vh] leading-[2]">
-            enjoy a 50% discount on all our premium features
-          </h1>
-          <button className="py-4 px-10 bg-[#FFC107] rounded-full font-['figtree'] font-[600]">
-            Get it now
-          </button>
+        {/* Get 50% off! (For Mobile) */}
+        <div className="flex lg:hidden relative w-[91vw] mx-auto h-[50vh] overflow-hidden">
+          <img
+            className="absolute w-full h-full object-cover rounded-4xl z-[1]"
+            src="/image/footer.jpg"
+            alt="bgImg"
+          />
+          <div className="w-full h-full flex flex-col items-start justify-center px-7 gap-2 z-[2]">
+            <h1 className="text-white font-['figtree'] font-[900] text-[2.62vh]">
+              Limited Time Offer
+            </h1>
+            <h1 className="text-white font-['figtree'] font-[400] w-64 text-[6vh]">
+              Get 50% Off!
+            </h1>
+            <h1 className="w-64 text-white font-['figtree'] text-[1.7vh] leading-[2]">
+              enjoy a 50% discount on all our premium features
+            </h1>
+            <button className="py-4 px-10 bg-[#FFC107] rounded-full font-['figtree'] font-[600]">
+              Get it now
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -256,7 +256,7 @@ export default function Login() {
 
   return (
     <>
-      <div className="w-full h-[800px] md:min-h-[140vh]">
+      <div className="w-full h-[800px] md:min-h-[140vh] bg-white">
         <Image
           className="hidden md:flex absolute top-0 right-0 w-[32vw]"
           src="/image/hero-shape.png"
@@ -279,7 +279,7 @@ export default function Login() {
           <h1 className="text-[25px] md:text-[5.5vh] font-['fredoka'] text-[#DB6885] font-[900]">
             Welcome
           </h1>
-          <h1 className="text-[4.5vw] md:text-[3.7vh] font-['figtree'] font-[900]">
+          <h1 className="text-[4.5vw] md:text-[3.7vh] font-['figtree'] font-[900] text-black">
             Sign in to your account
           </h1>
         </div>
@@ -340,7 +340,7 @@ export default function Login() {
           </svg>
           {isLoading ? "Loading..." : "Login with Google"}
         </button>
-        <p className="text-[3.5vw] md:text-[1.2vw]">
+        <p className="text-[3.5vw] md:text-[1.2vw] text-black">
           Don't have an account?
           <Link className="text-[#DB6885] ml-1" href="/sign-up">
             Sign up

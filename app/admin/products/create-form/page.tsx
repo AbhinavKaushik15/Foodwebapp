@@ -9,7 +9,7 @@ const createForm = () => {
     <div className="w-full">
       {/* top header */}
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-[700]">Create New Product</h1>
+        <h1 className="text-lg font-[700] text-black">Create New Product</h1>
         <button
           onClick={addProduct}
           className="px-3 py-1.5 bg-[#DB6885] text-white font-[600] rounded-lg hover:bg-[#db6885e1] cursor-pointer"
@@ -19,11 +19,11 @@ const createForm = () => {
       </div>
 
       {/* inputs */}
-      <div className="w-full flex flex-col gap-5 mt-5">
+      <div className=" text-black w-full flex flex-col gap-5 mt-5">
         {/* title */}
         <div className="relative">
           <input
-            className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
+            className="px-3 text-black pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
             type="text"
             value={product.title || ""}
             onChange={(e) => setProduct({ ...product, title: e.target.value })}
@@ -37,7 +37,7 @@ const createForm = () => {
         {/* Image URL */}
         <div className="relative">
           <input
-            className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
+            className="px-3 text-black pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885] "
             type="url"
             required
             value={product.imageURL || ""}
@@ -54,7 +54,7 @@ const createForm = () => {
         {/* Description */}
         <div className="relative">
           <input
-            className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
+            className="px-3 text-black pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
             type="text"
             value={product.description || ""}
             onChange={(e) =>
@@ -67,7 +67,8 @@ const createForm = () => {
           </h1>
         </div>
 
-        <div className="relative">
+        {/* category */}
+        <div className="relative text-black">
           <select
             value={product.category || ""}
             onChange={(e) =>
@@ -91,7 +92,7 @@ const createForm = () => {
         {/* Stock */}
         <div className="relative">
           <input
-            className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
+            className="px-3 text-black pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
             type="number"
             value={product.stock || ""}
             onChange={(e) => setProduct({ ...product, stock: e.target.value })}
@@ -105,7 +106,7 @@ const createForm = () => {
         {/* Price */}
         <div className="relative">
           <input
-            className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
+            className="px-3 text-black pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
             type="number"
             value={product.price || ""}
             onChange={(e) => setProduct({ ...product, price: e.target.value })}

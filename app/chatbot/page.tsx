@@ -54,12 +54,14 @@ const ChatbotPage = () => {
               / Chatbot
             </Link>
           </div>
-          <h1 className="font-['figtree'] text-[8.2vw] md:text-[11.5vh] font-[900]">
+          <h1 className="font-['figtree'] text-[8.2vw] md:text-[11.5vh] font-[900] text-black">
             Our Chatbot
           </h1>
         </div>
       </div>
-      <div className="flex flex-col items-center min-h-[40vh] bg-[#ffffffe5] p-14 font-['fredoka'] font-[900]">
+
+      {/* Chat Tab */}
+      <div className="flex flex-col items-center min-h-[40vh] bg-[#fff] p-14 font-['fredoka'] font-[900]">
         <div className="w-[91vw] md:w-[60vw] rounded-2xl shadow-lg p-6 flex flex-col text-black border border-zinc-300">
           <h1 className="text-2xl font-bold text-center mb-4">
             Fofood AI Chatbot

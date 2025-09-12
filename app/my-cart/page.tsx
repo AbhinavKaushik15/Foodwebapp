@@ -25,14 +25,14 @@ const mycart = () => {
               / My Cart
             </Link>
           </div>
-          <h1 className="font-['figtree'] text-[8.2vw] md:text-[11.5vh] font-[900]">
+          <h1 className="font-['figtree'] text-[8.2vw] md:text-[11.5vh] font-[900] text-black">
             My Cart
           </h1>
         </div>
       </div>
 
       {/* Products Table for Mobile */}
-      <div className="w-full min-h-[40vh] flex md:hidden flex-col mt-5 mb-5">
+      <div className="w-full min-h-[40vh] flex md:hidden flex-col py-5 bg-white">
         <div>
           <div>
             <Image
@@ -43,7 +43,7 @@ const mycart = () => {
             />
           </div>
           <div className="w-[91vw] flex items-center -mt-4 justify-between mx-auto">
-            <div className="font-[900] text-[5.2vw] font-['figtree']">
+            <div className="font-[900] text-[5.2vw] font-['figtree'] text-black">
               Chococheese Cake
             </div>
             <button className="group relative flex h-10 w-9 flex-col items-center justify-center overflow-hidden rounded-xl bg-[#DB6885] hover:bg-red-600">
@@ -98,14 +98,14 @@ const mycart = () => {
               <QuantityButton />
             </div>
             <div className="flex flex-col items-center">
-              <h1 className="text-[4.8vw] font-[800]">Price</h1>
+              <h1 className="text-[4.8vw] font-[800] text-black">Price</h1>
               <p className="font-['fredoka'] font-[900] text-[#DB6885] text-lg">
                 $2.5
               </p>
             </div>
 
             <div className="flex flex-col items-center">
-              <h1 className="text-[4.8vw] font-[800]">Total</h1>
+              <h1 className="text-[4.8vw] font-[800] text-black">Total</h1>
               <p className="font-['fredoka'] font-[900] text-[#DB6885] text-lg">
                 $2.5
               </p>
@@ -116,7 +116,7 @@ const mycart = () => {
       </div>
 
       {/* Products Table for Tablets & Desktop */}
-      <div className="hidden md:block w-full mt-24 min-h-[50vh] overflow-x-auto px-[18px]">
+      <div className="hidden md:block w-full pt-24 min-h-[50vh] overflow-x-auto px-[18px] bg-white">
         <table className="table">
           {/* head */}
           <thead>
@@ -143,7 +143,7 @@ const mycart = () => {
                     </div>
                   </div>
                   <div>
-                    <div className="font-[900] text-2xl font-['figtree']">
+                    <div className="font-[900] text-2xl font-['figtree'] text-black">
                       Chococheese Cake
                     </div>
                   </div>
@@ -213,24 +213,24 @@ const mycart = () => {
       </div>
 
       {/* Coupon & Subtotal section */}
-      {/* <div className="w-full min-h-[69vh] px-[18px] flex justify-between">
-        <div className="left w-[31vw] flex flex-col gap-3.5">
-          <h1 className="font-['figtree'] font-[800] text-[23px]">Coupon</h1>
-          <div className="flex items-center gap-3">
+      <div className="w-full min-h-[69vh] px-[18px] pt-5 pb-14 flex flex-col md:flex-row justify-between bg-white">
+        <div className="left w-full md:w-[31vw] flex flex-col gap-3.5">
+          <h1 className="font-['figtree'] font-[800] text-[23px] text-black">Coupon</h1>
+          <div className="flex items-start md:items-center flex-col md:flex-row gap-3">
             <input
-              className="px-[1.3vw] w-[34.4vh] text-lg tracking-tight py-[3vh] bg-[#FFF4F5] outline-[#DB6885] rounded-full text-black hover:text-black transition-all ease-linear duration-200"
+              className="px-6 md:px-[1.3vw] w-full md:w-[34.4vh] text-lg tracking-tight py-[3vh] bg-[#FFF4F5] outline-[#DB6885] rounded-full text-black hover:text-black transition-all ease-linear duration-200"
               placeholder="Coupon code"
               type="text"
             />
-            <button className="px-[2vw] w-[30vh] font-[700] font-['figtree'] text-[2.6vh] py-[3.3vh] shadow-[#DB6885] shadow-2xl bg-[#DB6885] hover:bg-[#FFC008] rounded-full text-white hover:text-black transition-all ease-linear duration-200">
+            <button className="px-[2vw] w-[30vh] font-[700] font-['figtree'] whitespace-nowrap text-[2.6vh] py-[3.3vh] shadow-[#DB6885] shadow-2xl bg-[#DB6885] hover:bg-[#FFC008] rounded-full text-white hover:text-black transition-all ease-linear duration-200">
               Apply Coupon
             </button>
           </div>
         </div>
 
-        <div className="right w-[32vw] flex flex-col gap-12 mt-11">
+        <div className="right w-full md:w-[32vw] flex flex-col gap-12 mt-11">
           <div className="flex items-center justify-between">
-            <h1 className="font-['figtree'] font-[900] text-[3.6vh]">
+            <h1 className="font-['figtree'] font-[900] text-[3.6vh] text-black">
               Subtotal
             </h1>
             <h2 className="font-['fredoka'] font-[900] text-[#DB6885] text-[3.2vh]">
@@ -238,7 +238,7 @@ const mycart = () => {
             </h2>
           </div>
           <div className="flex items-center justify-between">
-            <h1 className="font-['figtree'] font-[900] text-[4.5vh]">Total</h1>
+            <h1 className="font-['figtree'] font-[900] text-[4.5vh] text-black">Total</h1>
             <h2 className="font-['fredoka'] font-black text-[#DB6885] text-[4.3vh]">
               $7.4
             </h2>
@@ -258,7 +258,7 @@ const mycart = () => {
             </h1>
           </Link>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

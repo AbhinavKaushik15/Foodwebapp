@@ -44,7 +44,7 @@ const Signup = () => {
   };
   return (
     <>
-      <div className="w-full h-[800px] md:min-h-[155vh]">
+      <div className="w-full h-[800px] md:min-h-[155vh] bg-white">
         <Image
           className="hidden md:flex absolute top-0 right-0 w-[32vw]"
           src="/image/hero-shape.png"
@@ -67,7 +67,7 @@ const Signup = () => {
           <h1 className="text-[25px] md:text-[5.5vh] font-['fredoka'] text-[#DB6885] font-[900]">
             Welcome
           </h1>
-          <h1 className="text-[4.5vw] md:text-[3.7vh] font-['figtree'] font-[900] whitespace-nowrap">
+          <h1 className="text-[4.5vw] md:text-[3.7vh] font-['figtree'] font-[900] whitespace-nowrap text-black">
             Sign up to create account
           </h1>
         </div>
@@ -100,7 +100,7 @@ const Signup = () => {
         >
           Create Account
         </button>
-        <p className="text-[3.5vw] md:text-lg">
+        <p className="text-[3.5vw] md:text-lg text-black">
           Have an account?
           <Link className="text-[#DB6885] ml-1" href="/login">
             Login

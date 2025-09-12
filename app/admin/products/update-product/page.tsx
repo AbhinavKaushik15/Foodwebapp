@@ -9,7 +9,7 @@ const UpdateProductPage = () => {
     <div className="w-full">
       {/* top header */}
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-[700]">Update Product</h1>
+        <h1 className="text-lg font-[700] text-black">Update Product</h1>
         <button
           className="px-3 py-1.5 bg-[#DB6885] text-white font-[600] rounded-lg hover:bg-[#db6885e1] cursor-pointer"
           onClick={updateProduct}
@@ -23,7 +23,7 @@ const UpdateProductPage = () => {
         {/* title */}
         <div className="relative">
           <input
-            className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
+            className="text-black px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
             type="text"
             value={product.title || ""}
             onChange={(e) => setProduct({ ...product, title: e.target.value })}
@@ -37,7 +37,7 @@ const UpdateProductPage = () => {
         {/* Image URL */}
         <div className="relative">
           <input
-            className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
+            className="text-black px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
             type="url"
             required
             value={product.imageURL || ""}
@@ -54,7 +54,7 @@ const UpdateProductPage = () => {
         {/* Description */}
         <div className="relative">
           <input
-            className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
+            className="text-black px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
             type="text"
             value={product.description || ""}
             onChange={(e) =>
@@ -74,7 +74,7 @@ const UpdateProductPage = () => {
             onChange={(e) =>
               setProduct({ ...product, category: e.target.value })
             }
-            className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
+            className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 text-black placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
           >
             <option value="All">All</option>
             <option value="Cake">Cake</option>
@@ -92,7 +92,7 @@ const UpdateProductPage = () => {
         {/* Stock */}
         <div className="relative">
           <input
-            className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
+            className="text-black px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
             type="number"
             value={product.stock || ""}
             onChange={(e) => setProduct({ ...product, stock: e.target.value })}
@@ -106,7 +106,7 @@ const UpdateProductPage = () => {
         {/* Price */}
         <div className="relative">
           <input
-            className="px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
+            className="text-black px-3 pt-5 pb-2 w-96 bg-white border border-zinc-300 placeholder:text-zinc-300 text-md font-[400] rounded-lg hover:border-[#DB6885] outline-[#DB6885]"
             type="number"
             value={product.price || ""}
             onChange={(e) => setProduct({ ...product, price: e.target.value })}

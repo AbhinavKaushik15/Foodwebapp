@@ -17,7 +17,7 @@ const Testimonial = () => {
         <h3 className="font-['Fredoka'] text-[#DB6885] font-[900] text-xl md:text-3xl text-center">
           Testimonial
         </h3>
-        <h1 className="font-['figtree'] text-[25px] md:text-[8.7vh] text-center font-[900] mt-2 md:mt-4">
+        <h1 className="font-['figtree'] text-[25px] md:text-[8.7vh] text-center font-[900] mt-2 md:mt-4 text-black">
           What People Say
         </h1>
       </div>
@@ -35,7 +35,7 @@ const Testimonial = () => {
               width={50}
               height={50}
             />
-            <h1 className="text-md md:text-xl font-[900] font-['figtree']">
+            <h1 className="text-md md:text-xl font-[900] font-['figtree'] text-black">
               It's very Delicious!
             </h1>
             <p>⭐⭐⭐⭐⭐</p>
@@ -58,7 +58,7 @@ const Testimonial = () => {
               width={50}
               height={50}
             />
-            <h1 className="text-md md:text-xl font-[900] font-['figtree']">
+            <h1 className="text-md md:text-xl font-[900] font-['figtree'] text-black">
               It's very Delicious!
             </h1>
             <p>⭐⭐⭐⭐⭐</p>
