@@ -203,7 +203,7 @@ const menu = () => {
       </div>
 
       {/* Get 50% off! (For Mobile) */}
-      <div className="block lg:hidden relative w-[91vw] mx-auto h-[50vh] mt-14 overflow-hidden my-14">
+      <div className="block lg:hidden relative w-[91vw] mx-auto h-[50vh] mt-14 overflow-hidden my-14 bg-[#DB6885] rounded-4xl">
         <img
           className="absolute w-full h-full object-cover rounded-4xl z-[-1]"
           src="/image/footer.jpg"

@@ -278,7 +278,7 @@ const Homepage = () => {
       {/* Our Blog */}
       <div className="flex flex-col h-[2800px] md:h-[205vh] gap-8.5 md:mt-0">
         <div className="md:mt-13">
-          <h3 className="font-['Fredoka'] font-[900] text-xl md:text-3xl text-center">
+          <h3 className="font-['Fredoka'] font-[900] text-xl md:text-3xl text-center text-[#DB6885]">
             Our Blog
           </h3>
           <h1 className="font-['figtree'] text-[25px] md:text-[8.7vh] text-center font-[900] mt-2 md:mt-4">
